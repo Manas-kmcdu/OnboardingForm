@@ -568,7 +568,7 @@
 
     const btn = document.getElementById('submitBtn');
     btn.disabled = true;
-    btn.textContent = '⏳ Submitting...';
+    btn.textContent = 'Submitting...';
 
     // JSON payload — Zoho Flow maps each key to a Zoho Sheet column
     const payload = {
@@ -598,13 +598,20 @@
     };
 
    try {
+  const formData = new FormData();
+
+  // append all fields manually
+  for (const key in payload) {
+    formData.append(key, payload[key]);
+  }
+
   await fetch(ZOHO_WEBHOOK, {
     method: 'POST',
-    mode: 'no-cors', // 🔥 bypass CORS
-    body: JSON.stringify(payload)
+    mode: 'no-cors', // ✅ no CORS error now
+    body: formData   // ✅ no preflight
   });
 
-  // ✅ Always assume success (no-cors doesn't return response)
+  // success UI
   document.getElementById('mentorForm').style.display = 'none';
   document.getElementById('successMsg').style.display = 'block';
   window.scrollTo({ top: 0, behavior: 'smooth' });
