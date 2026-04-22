@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Occult Gurukul — Mentor Onboarding</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0d0a0e;
+    --parchment: #f5ede0;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --crimson: #8b1a1a;
+    --deep-purple: #1a0a2e;
+    --mist: #2e1f4a;
+    --silver: #c8c0d4;
+    --accent: #6b3fa0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--ink);
+    background-image:
+      radial-gradient(ellipse at 20% 10%, rgba(107,63,160,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(139,26,26,0.12) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23c9a84c' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    font-family: 'EB Garamond', serif;
+    color: var(--parchment);
+    min-height: 100vh;
+    padding: 40px 20px 80px;
+  }
+
+  /* Sigil watermark */
+  body::before {
+    content: '☽ ✦ ☾';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-15deg);
+    font-size: 300px;
+    color: rgba(201,168,76,0.02);
+    pointer-events: none;
+    z-index: 0;
+    letter-spacing: -20px;
+  }
+
+  .page-wrapper {
+    max-width: 760px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Header Card */
+  .header-card {
+    background: linear-gradient(135deg, var(--deep-purple) 0%, #0f0520 60%, var(--crimson) 200%);
+    border: 1px solid rgba(201,168,76,0.4);
+    border-top: 5px solid var(--gold);
+    border-radius: 4px 4px 0 0;
+    padding: 48px 40px 36px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+  }
+
+  .header-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.12) 0%, transparent 70%);
+  }
+
+  .sigil {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 16px;
+    filter: drop-shadow(0 0 12px rgba(201,168,76,0.5));
+    animation: glow 3s ease-in-out infinite alternate;
+    line-height: 1;
+  }
+
+  @keyframes glow {
+    from { filter: drop-shadow(0 0 8px rgba(201,168,76,0.3)); }
+    to   { filter: drop-shadow(0 0 20px rgba(201,168,76,0.7)); }
+  }
+
+  .header-card h1 {
+    font-family: 'Cinzel Decorative', cursive;
+    font-size: clamp(20px, 4vw, 28px);
+    color: var(--gold);
+    letter-spacing: 0.05em;
+    line-height: 1.3;
+    position: relative;
+    margin-bottom: 8px;
+  }
+
+  .header-card .subtitle {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--silver);
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    position: relative;
+  }
+
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .divider span { color: var(--gold); font-size: 16px; }
+
+  .header-desc {
+    font-size: 16px;
+    line-height: 1.8;
+    color: rgba(245,237,224,0.85);
+    position: relative;
+    font-style: italic;
+  }
+
+  .required-note {
+    margin-top: 16px;
+    font-size: 13px;
+    color: rgba(201,168,76,0.7);
+    position: relative;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.05em;
+  }
+
+  .required-note span { color: var(--crimson); }
+
+  /* Form Cards */
+  .form-card {
+    background: rgba(13,10,14,0.92);
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 0;
+    padding: 32px 40px;
+    margin-top: 12px;
+    backdrop-filter: blur(10px);
+    transition: border-color 0.3s;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+
+  .form-card:hover { border-color: rgba(201,168,76,0.35); }
+
+  .form-card:last-of-type { border-radius: 0 0 4px 4px; }
+
+  .section-heading {
+    font-family: 'Cinzel', serif;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-heading .rune { font-size: 18px; }
+
+  label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    color: var(--parchment);
+    margin-bottom: 10px;
+    letter-spacing: 0.03em;
+  }
+
+  label .req { color: var(--crimson); margin-left: 3px; }
+
+  label .hint {
+    display: block;
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: rgba(200,192,212,0.65);
+    font-style: italic;
+    margin-top: 3px;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+
+  .field-group { margin-bottom: 28px; }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  textarea,
+  select {
+    width: 100%;
+    background: rgba(26,10,46,0.6);
+    border: 1px solid rgba(201,168,76,0.25);
+    border-radius: 2px;
+    color: var(--parchment);
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    padding: 12px 16px;
+    outline: none;
+    transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
+  }
+
+  input:focus, textarea:focus, select:focus {
+    border-color: var(--gold);
+    background: rgba(26,10,46,0.9);
+    box-shadow: 0 0 0 3px rgba(201,168,76,0.1), inset 0 0 20px rgba(201,168,76,0.03);
+  }
+
+  input::placeholder, textarea::placeholder { color: rgba(200,192,212,0.3); }
+
+  textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
+
+  select {
+    appearance: none;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 7L11 1' stroke='%23c9a84c' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+  }
+
+  select option { background: #0d0a0e; color: var(--parchment); }
+
+  /* Two column */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 580px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* Checkboxes */
+  .checkbox-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+  }
+
+  .checkbox-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid rgba(201,168,76,0.15);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: rgba(26,10,46,0.3);
+  }
+
+  .checkbox-item:hover {
+    border-color: rgba(201,168,76,0.4);
+    background: rgba(26,10,46,0.6);
+  }
+
+  .checkbox-item input[type="checkbox"] {
+    display: none;
+  }
+
+  .checkbox-item.checked {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .custom-check {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border: 1px solid rgba(201,168,76,0.4);
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    color: var(--gold);
+    margin-top: 1px;
+    transition: all 0.2s;
+  }
+
+  .checkbox-item.checked .custom-check {
+    background: rgba(201,168,76,0.2);
+    border-color: var(--gold);
+  }
+
+  .checkbox-label {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    color: rgba(245,237,224,0.85);
+    line-height: 1.4;
+  }
+
+  .checkbox-label .category {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    color: rgba(201,168,76,0.6);
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  /* Category accordion */
+  .category-block {
+    border: 1px solid rgba(201,168,76,0.18);
+    border-radius: 2px;
+    margin-bottom: 12px;
+    overflow: hidden;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    cursor: pointer;
+    background: rgba(26,10,46,0.5);
+    transition: background 0.2s;
+    user-select: none;
+  }
+
+  .category-header:hover { background: rgba(26,10,46,0.8); }
+
+  .cat-title {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: var(--gold-light);
+    letter-spacing: 0.08em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .cat-icon { font-size: 18px; }
+  .cat-count {
+    font-size: 11px;
+    color: rgba(201,168,76,0.5);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    letter-spacing: 0;
+  }
+
+  .cat-arrow {
+    color: var(--gold);
+    font-size: 12px;
+    transition: transform 0.3s;
+  }
+
+  .category-block.open .cat-arrow { transform: rotate(180deg); }
+
+  .category-courses {
+    display: none;
+    padding: 4px 18px 14px;
+    background: rgba(13,10,14,0.7);
+  }
+
+  .category-block.open .category-courses { display: block; }
+
+  .course-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  /* Radio buttons */
+  .radio-group { display: flex; flex-wrap: wrap; gap: 10px; }
+
+  .radio-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid rgba(201,168,76,0.2);
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+    background: rgba(26,10,46,0.3);
+  }
+
+  .radio-item:hover { border-color: rgba(201,168,76,0.45); background: rgba(26,10,46,0.6); }
+
+  .radio-item input { display: none; }
+
+  .radio-item.selected {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.08);
+  }
+
+  .custom-radio {
+    width: 16px; height: 16px;
+    border: 1.5px solid rgba(201,168,76,0.4);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s;
+  }
+
+  .radio-item.selected .custom-radio {
+    border-color: var(--gold);
+  }
+
+  .radio-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: none;
+  }
+
+  .radio-item.selected .radio-dot { display: block; }
+
+  .radio-label {
+    font-family: 'EB Garamond', serif;
+    font-size: 15px;
+    color: rgba(245,237,224,0.85);
+  }
+
+  /* Submit button */
+  .submit-wrap {
+    text-align: center;
+    padding: 40px 0 20px;
+  }
+
+  .submit-btn {
+    background: linear-gradient(135deg, #2a0f0f 0%, var(--crimson) 50%, #4a1a6a 100%);
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    padding: 16px 48px;
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 4px 20px rgba(139,26,26,0.3), inset 0 1px 0 rgba(201,168,76,0.2);
+  }
+
+  .submit-btn::before {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(201,168,76,0.15) 0%, transparent 60%);
+    transition: all 0.5s;
+  }
+
+  .submit-btn:hover {
+    box-shadow: 0 8px 30px rgba(139,26,26,0.5), 0 0 20px rgba(201,168,76,0.15);
+    border-color: var(--gold-light);
+    color: #fff;
+    transform: translateY(-1px);
+  }
+
+  .submit-btn:hover::before {
+    top: -50%;
+    left: -50%;
+  }
+
+  .submit-btn:active { transform: translateY(0); }
+
+  /* Success message */
+  .success-msg {
+    display: none;
+    text-align: center;
+    padding: 60px 40px;
+    background: rgba(13,10,14,0.92);
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    margin-top: 12px;
+  }
+
+  .success-msg .sigil { font-size: 64px; margin-bottom: 20px; }
+  .success-msg h2 { font-family: 'Cinzel Decorative', cursive; color: var(--gold); font-size: 22px; margin-bottom: 12px; }
+  .success-msg p { color: rgba(245,237,224,0.75); font-size: 17px; line-height: 1.7; font-style: italic; }
+
+  /* Progress bar */
+  .progress-bar {
+    height: 2px;
+    background: rgba(201,168,76,0.1);
+    border-radius: 1px;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--crimson), var(--gold));
+    border-radius: 1px;
+    transition: width 0.4s ease;
+    width: 0%;
+  }
+
+  /* Decorative corners */
+  .corner-ornament {
+    position: absolute;
+    width: 30px; height: 30px;
+    border-color: rgba(201,168,76,0.3);
+    border-style: solid;
+  }
+
+  .corner-ornament.tl { top: 10px; left: 10px; border-width: 1px 0 0 1px; }
+  .corner-ornament.tr { top: 10px; right: 10px; border-width: 1px 1px 0 0; }
+  .corner-ornament.bl { bottom: 10px; left: 10px; border-width: 0 0 1px 1px; }
+  .corner-ornament.br { bottom: 10px; right: 10px; border-width: 0 1px 1px 0; }
+
+  .scrollbar-note {
+    font-family: 'Cinzel', serif;
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: rgba(201,168,76,0.35);
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  @media (max-width: 600px) {
+    .form-card { padding: 24px 20px; }
+    .header-card { padding: 36px 24px 28px; }
+    .course-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page-wrapper">
+
+  <!-- Header -->
+  <div class="header-card">
+    <div class="corner-ornament tl"></div>
+    <div class="corner-ornament tr"></div>
+    <div class="corner-ornament bl"></div>
+    <div class="corner-ornament br"></div>
+    <span class="sigil">🔮</span>
+    <h1>Occult Gurukul</h1>
+    <div class="subtitle">Mentor Onboarding — Recording Sessions</div>
+    <div class="divider"><span>✦</span></div>
+    <p class="header-desc">Welcome, Keeper of Ancient Wisdom. This sacred form initiates your journey as a mentor with Occult Gurukul. Share your expertise and help us illuminate seekers on their path of esoteric knowledge.</p>
+    <div class="required-note"><span>*</span> Denotes a required field</div>
+    <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+  </div>
+
+  <form id="mentorForm" novalidate>
+
+    <!-- Section 1: Personal Details -->
+    <div class="form-card">
+      <div class="section-heading"><span class="rune">☽</span> Personal Details</div>
+
+      <div class="two-col">
+        <div class="field-group">
+          <label>Full Name <span class="req">*</span></label>
+          <input type="text" name="full_name" placeholder="As it should appear on certificates" required>
+        </div>
+        <div class="field-group">
+          <label>Preferred Name / Occult Name
+            <span class="hint">The name you go by in your practice</span>
+          </label>
+          <input type="text" name="preferred_name" placeholder="e.g. Guru Shankar, Pandit Vidhya">
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="field-group">
+          <label>Email Address <span class="req">*</span></label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="field-group">
+          <label>WhatsApp / Phone Number <span class="req">*</span></label>
+          <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="field-group">
+          <label>City & State <span class="req">*</span></label>
+          <input type="text" name="location" placeholder="e.g. Varanasi, Uttar Pradesh" required>
+        </div>
+        <div class="field-group">
+          <label>Country <span class="req">*</span></label>
+          <select name="country" required>
+            <option value="">— Select —</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>Canada</option>
+            <option>Australia</option>
+            <option>UAE</option>
+            <option>Singapore</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>Website / Social Profile
+          <span class="hint">YouTube channel, Instagram, personal site — wherever seekers can find you</span>
+        </label>
+        <input type="url" name="website" placeholder="https://...">
+      </div>
+    </div>
+
+    <!-- Section 2: Credentials -->
+    <div class="form-card">
+      <div class="section-heading"><span class="rune">⊕</span> Expertise & Credentials</div>
+
+      <div class="field-group">
+        <label>Years of Active Practice <span class="req">*</span></label>
+        <div class="radio-group" id="yearsGroup">
+          <div class="radio-item" data-group="years" data-value="1-3"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">1–3 Years</span></div>
+          <div class="radio-item" data-group="years" data-value="4-7"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">4–7 Years</span></div>
+          <div class="radio-item" data-group="years" data-value="8-15"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">8–15 Years</span></div>
+          <div class="radio-item" data-group="years" data-value="15+"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">15+ Years</span></div>
+          <div class="radio-item" data-group="years" data-value="25+"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">25+ Years</span></div>
+        </div>
+        <input type="hidden" name="years_practice" id="yearsPractice">
+      </div>
+
+      <div class="field-group">
+        <label>Teaching / Guiding Experience <span class="req">*</span></label>
+        <div class="radio-group" id="teachGroup">
+          <div class="radio-item" data-group="teach" data-value="none"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">No prior teaching</span></div>
+          <div class="radio-item" data-group="teach" data-value="informal"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Informal / Personal</span></div>
+          <div class="radio-item" data-group="teach" data-value="workshops"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Workshops & Events</span></div>
+          <div class="radio-item" data-group="teach" data-value="online"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Online Courses</span></div>
+          <div class="radio-item" data-group="teach" data-value="institutional"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Institutional / Gurukul</span></div>
+        </div>
+        <input type="hidden" name="teaching_exp" id="teachingExp">
+      </div>
+
+      <div class="field-group">
+        <label>Brief Bio / Lineage <span class="req">*</span>
+          <span class="hint">Your spiritual lineage, mentors, initiations, and path of study</span>
+        </label>
+        <textarea name="bio" placeholder="Describe your path, lineage, teachers, and key initiations or certifications..." rows="4" required></textarea>
+      </div>
+
+      <div class="field-group">
+        <label>Languages You Can Teach In <span class="req">*</span></label>
+        <div class="checkbox-grid" id="langGrid">
+          <div class="checkbox-item" data-name="lang_hindi"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Hindi</span></div>
+          <div class="checkbox-item" data-name="lang_english"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">English</span></div>
+          <div class="checkbox-item" data-name="lang_sanskrit"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Sanskrit</span></div>
+          <div class="checkbox-item" data-name="lang_tamil"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Tamil</span></div>
+          <div class="checkbox-item" data-name="lang_telugu"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Telugu</span></div>
+          <div class="checkbox-item" data-name="lang_marathi"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Marathi</span></div>
+          <div class="checkbox-item" data-name="lang_bengali"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Bengali</span></div>
+          <div class="checkbox-item" data-name="lang_other"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Other</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Topics & Courses -->
+    <div class="form-card">
+      <div class="section-heading"><span class="rune">✦</span> Courses You Can Record
+        <span style="margin-left:auto; font-family:'EB Garamond',serif; font-size:13px; color:rgba(200,192,212,0.5); font-style:italic; font-weight:400; letter-spacing:0;">Select all that apply</span>
+      </div>
+
+      <p style="font-size:14px; color:rgba(200,192,212,0.6); margin-bottom:20px; font-style:italic;">Click a category to expand it and choose specific courses. Select every topic you are confident teaching.</p>
+
+      <!-- Category 1: Astrology -->
+      <div class="category-block" data-cat="astrology">
+        <div class="category-header">
+          <span class="cat-title"><span class="cat-icon">♈</span> Vedic & Western Astrology <span class="cat-count">(16 courses)</span></span>
+          <span class="cat-arrow">▾</span>
+        </div>
+        <div class="category-courses">
+          <div class="course-list">
+            <div class="checkbox-item" data-name="course_jyotish_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Jyotish Fundamentals</span></div>
+            <div class="checkbox-item" data-name="course_birth_chart"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Birth Chart Reading</span></div>
+            <div class="checkbox-item" data-name="course_navagraha"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Navagraha & Planetary Influence</span></div>
+            <div class="checkbox-item" data-name="course_dasha"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Dasha & Mahadasha Systems</span></div>
+            <div class="checkbox-item" data-name="course_nakshatras"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">27 Nakshatras Deep Dive</span></div>
+            <div class="checkbox-item" data-name="course_transit"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Transits & Gochar</span></div>
+            <div class="checkbox-item" data-name="course_mundane"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Mundane Astrology</span></div>
+            <div class="checkbox-item" data-name="course_remedies_astro"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Astrological Remedies</span></div>
+            <div class="checkbox-item" data-name="course_prashna"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Prashna / Horary Astrology</span></div>
+            <div class="checkbox-item" data-name="course_medical_astro"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Medical Astrology</span></div>
+            <div class="checkbox-item" data-name="course_financial_astro"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Financial Astrology</span></div>
+            <div class="checkbox-item" data-name="course_relationship_astro"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Relationship & Synastry</span></div>
+            <div class="checkbox-item" data-name="course_western_astro"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Western Astrology Intro</span></div>
+            <div class="checkbox-item" data-name="course_kp"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">KP (Krishnamurti Paddhati)</span></div>
+            <div class="checkbox-item" data-name="course_lal_kitab"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Lal Kitab Astrology</span></div>
+            <div class="checkbox-item" data-name="course_varshaphal"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Varshaphal / Solar Return</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 2: Numerology & Vastu -->
+      <div class="category-block" data-cat="numerology">
+        <div class="category-header">
+          <span class="cat-title"><span class="cat-icon">🔢</span> Numerology & Vastu Shastra <span class="cat-count">(15 courses)</span></span>
+          <span class="cat-arrow">▾</span>
+        </div>
+        <div class="category-courses">
+          <div class="course-list">
+            <div class="checkbox-item" data-name="course_num_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Numerology Fundamentals</span></div>
+            <div class="checkbox-item" data-name="course_life_path"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Life Path & Destiny Numbers</span></div>
+            <div class="checkbox-item" data-name="course_name_num"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Name Numerology</span></div>
+            <div class="checkbox-item" data-name="course_chaldean"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Chaldean Numerology</span></div>
+            <div class="checkbox-item" data-name="course_pythagorean"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Pythagorean Numerology</span></div>
+            <div class="checkbox-item" data-name="course_personal_year"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Personal Year Cycles</span></div>
+            <div class="checkbox-item" data-name="course_vastu_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Vastu Shastra Basics</span></div>
+            <div class="checkbox-item" data-name="course_vastu_home"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Vastu for Home & Interiors</span></div>
+            <div class="checkbox-item" data-name="course_vastu_office"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Vastu for Office & Business</span></div>
+            <div class="checkbox-item" data-name="course_vastu_remedies"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Vastu Remedies Without Demolition</span></div>
+            <div class="checkbox-item" data-name="course_pyramid_vastu"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Pyramid Vastu</span></div>
+            <div class="checkbox-item" data-name="course_geopathic"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Geopathic Stress & Earth Energies</span></div>
+            <div class="checkbox-item" data-name="course_feng_shui"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Feng Shui Fundamentals</span></div>
+            <div class="checkbox-item" data-name="course_num_vastu_combo"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Numerology + Vastu Integration</span></div>
+            <div class="checkbox-item" data-name="course_dowsing"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Dowsing & Pendulum for Vastu</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 3: Tarot & Divination -->
+      <div class="category-block" data-cat="tarot">
+        <div class="category-header">
+          <span class="cat-title"><span class="cat-icon">🃏</span> Tarot, Oracle & Divination Arts <span class="cat-count">(16 courses)</span></span>
+          <span class="cat-arrow">▾</span>
+        </div>
+        <div class="category-courses">
+          <div class="course-list">
+            <div class="checkbox-item" data-name="course_tarot_beginners"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Tarot for Beginners</span></div>
+            <div class="checkbox-item" data-name="course_major_arcana"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Major Arcana Deep Dive</span></div>
+            <div class="checkbox-item" data-name="course_minor_arcana"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Minor Arcana & Court Cards</span></div>
+            <div class="checkbox-item" data-name="course_tarot_spreads"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Tarot Spreads & Layouts</span></div>
+            <div class="checkbox-item" data-name="course_tarot_professional"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Professional Tarot Reading</span></div>
+            <div class="checkbox-item" data-name="course_lenormand"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Lenormand Card System</span></div>
+            <div class="checkbox-item" data-name="course_oracle_cards"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Oracle Card Reading</span></div>
+            <div class="checkbox-item" data-name="course_astro_tarot"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Astro-Tarot Integration</span></div>
+            <div class="checkbox-item" data-name="course_pendulum"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Pendulum Divination</span></div>
+            <div class="checkbox-item" data-name="course_runes"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Rune Reading</span></div>
+            <div class="checkbox-item" data-name="course_iching"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">I Ching & Hexagrams</span></div>
+            <div class="checkbox-item" data-name="course_scrying"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Scrying & Crystal Ball</span></div>
+            <div class="checkbox-item" data-name="course_tasseography"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Tasseography (Tea Leaf Reading)</span></div>
+            <div class="checkbox-item" data-name="course_palmistry"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Palmistry / Hasta Rekha</span></div>
+            <div class="checkbox-item" data-name="course_face_reading"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Face Reading / Physiognomy</span></div>
+            <div class="checkbox-item" data-name="course_samudrik_shastra"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Samudrik Shastra</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 4: Energy Healing & Meditation -->
+      <div class="category-block" data-cat="healing">
+        <div class="category-header">
+          <span class="cat-title"><span class="cat-icon">🌀</span> Energy Healing & Meditation <span class="cat-count">(17 courses)</span></span>
+          <span class="cat-arrow">▾</span>
+        </div>
+        <div class="category-courses">
+          <div class="course-list">
+            <div class="checkbox-item" data-name="course_reiki_1"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Reiki Level 1 & 2</span></div>
+            <div class="checkbox-item" data-name="course_reiki_master"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Reiki Mastership</span></div>
+            <div class="checkbox-item" data-name="course_pranic_healing"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Pranic Healing</span></div>
+            <div class="checkbox-item" data-name="course_chakra_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">7 Chakra System Basics</span></div>
+            <div class="checkbox-item" data-name="course_chakra_advanced"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Advanced Chakra Healing</span></div>
+            <div class="checkbox-item" data-name="course_aura_reading"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Aura Reading & Cleansing</span></div>
+            <div class="checkbox-item" data-name="course_crystal_healing"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Crystal Healing Therapy</span></div>
+            <div class="checkbox-item" data-name="course_sound_healing"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Sound Healing & Singing Bowls</span></div>
+            <div class="checkbox-item" data-name="course_access_bars"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Access Bars & Consciousness</span></div>
+            <div class="checkbox-item" data-name="course_theta_healing"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Theta Healing</span></div>
+            <div class="checkbox-item" data-name="course_meditation_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Guided Meditation Fundamentals</span></div>
+            <div class="checkbox-item" data-name="course_kundalini_yoga"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Kundalini Awakening & Yoga</span></div>
+            <div class="checkbox-item" data-name="course_tantra_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Tantra Shastra Basics</span></div>
+            <div class="checkbox-item" data-name="course_third_eye"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Third Eye Activation</span></div>
+            <div class="checkbox-item" data-name="course_past_life"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Past Life Regression</span></div>
+            <div class="checkbox-item" data-name="course_manifestation"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Law of Attraction & Manifestation</span></div>
+            <div class="checkbox-item" data-name="course_sigil_magick"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Sigil Creation & Magick</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 5: Mantras, Rituals & Tantra -->
+      <div class="category-block" data-cat="mantras">
+        <div class="category-header">
+          <span class="cat-title"><span class="cat-icon">🕉️</span> Mantras, Rituals & Sadhana <span class="cat-count">(15 courses)</span></span>
+          <span class="cat-arrow">▾</span>
+        </div>
+        <div class="category-courses">
+          <div class="course-list">
+            <div class="checkbox-item" data-name="course_mantra_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Mantra Vigyan Fundamentals</span></div>
+            <div class="checkbox-item" data-name="course_beej_mantra"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Beej Mantras & Siddhi</span></div>
+            <div class="checkbox-item" data-name="course_yantra"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Yantra & Sacred Geometry</span></div>
+            <div class="checkbox-item" data-name="course_pooja_vidhi"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Pooja Vidhi & Rituals</span></div>
+            <div class="checkbox-item" data-name="course_havan"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Havan & Yagya Procedures</span></div>
+            <div class="checkbox-item" data-name="course_mala_jaap"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Mala & Jaap Sadhana</span></div>
+            <div class="checkbox-item" data-name="course_deity_sadhana"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Deity-Specific Sadhana</span></div>
+            <div class="checkbox-item" data-name="course_kali_sadhana"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Kali / Durga Sadhana</span></div>
+            <div class="checkbox-item" data-name="course_shiva_sadhana"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Shiva & Shaivite Practices</span></div>
+            <div class="checkbox-item" data-name="course_vashikaran_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Understanding Vashikaran (Ethics)</span></div>
+            <div class="checkbox-item" data-name="course_kavach"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Kavach & Protective Rituals</span></div>
+            <div class="checkbox-item" data-name="course_nazar_drishti"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Nazar & Drishti Dosha Removal</span></div>
+            <div class="checkbox-item" data-name="course_pitra_dosha"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Pitra Dosha Remedies</span></div>
+            <div class="checkbox-item" data-name="course_vastu_puja"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Vastu Puja & Space Clearing</span></div>
+            <div class="checkbox-item" data-name="course_lal_kitab_totke"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Lal Kitab Totke & Upay</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 6: Gemology & Sacred Sciences -->
+      <div class="category-block" data-cat="gemology">
+        <div class="category-header">
+          <span class="cat-title"><span class="cat-icon">💎</span> Gemology & Sacred Sciences <span class="cat-count">(15 courses)</span></span>
+          <span class="cat-arrow">▾</span>
+        </div>
+        <div class="category-courses">
+          <div class="course-list">
+            <div class="checkbox-item" data-name="course_gems_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Ratna Shastra Fundamentals</span></div>
+            <div class="checkbox-item" data-name="course_navratna"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Navratna — 9 Planetary Gems</span></div>
+            <div class="checkbox-item" data-name="course_gem_prescription"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Gem Prescription by Birth Chart</span></div>
+            <div class="checkbox-item" data-name="course_gem_authentication"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Gem Authentication & Quality</span></div>
+            <div class="checkbox-item" data-name="course_rudraksha"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Rudraksha Identification & Use</span></div>
+            <div class="checkbox-item" data-name="course_crystal_properties"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Crystal Metaphysical Properties</span></div>
+            <div class="checkbox-item" data-name="course_crystal_grids"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Crystal Grids & Layouts</span></div>
+            <div class="checkbox-item" data-name="course_gem_remedies"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Gem Therapy Remedies</span></div>
+            <div class="checkbox-item" data-name="course_color_therapy"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Color Therapy & Chromotherapy</span></div>
+            <div class="checkbox-item" data-name="course_sacred_metals"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Sacred Metals (Gold, Silver, Copper)</span></div>
+            <div class="checkbox-item" data-name="course_parad"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Parad (Mercury) Vigyan</span></div>
+            <div class="checkbox-item" data-name="course_herbs_occult"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Herbs & Plants in Occult</span></div>
+            <div class="checkbox-item" data-name="course_sacred_geometry"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Sacred Geometry Principles</span></div>
+            <div class="checkbox-item" data-name="course_alchemy"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Alchemy & Rasayana Shastra</span></div>
+            <div class="checkbox-item" data-name="course_astro_gems"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Astro-Gemology Integration</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category 7: Paranormal & Psychic Arts -->
+      <div class="category-block" data-cat="paranormal">
+        <div class="category-header">
+          <span class="cat-title"><span class="cat-icon">👁️</span> Paranormal & Psychic Arts <span class="cat-count">(15 courses)</span></span>
+          <span class="cat-arrow">▾</span>
+        </div>
+        <div class="category-courses">
+          <div class="course-list">
+            <div class="checkbox-item" data-name="course_psychic_basics"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Developing Psychic Abilities</span></div>
+            <div class="checkbox-item" data-name="course_clairvoyance"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Clairvoyance & Remote Viewing</span></div>
+            <div class="checkbox-item" data-name="course_mediumship"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Mediumship & Spirit Communication</span></div>
+            <div class="checkbox-item" data-name="course_ghost_investigation"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Ghost Investigation Basics</span></div>
+            <div class="checkbox-item" data-name="course_entity_clearing"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Entity Clearing & Space Healing</span></div>
+            <div class="checkbox-item" data-name="course_astral_projection"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Astral Projection & OBE</span></div>
+            <div class="checkbox-item" data-name="course_lucid_dreaming"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Lucid Dreaming & Dream Yoga</span></div>
+            <div class="checkbox-item" data-name="course_dream_interpretation"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Dream Interpretation & Symbology</span></div>
+            <div class="checkbox-item" data-name="course_telepathy"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Telepathy & Mind-to-Mind</span></div>
+            <div class="checkbox-item" data-name="course_psychometry"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Psychometry (Object Reading)</span></div>
+            <div class="checkbox-item" data-name="course_automatic_writing"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Automatic Writing</span></div>
+            <div class="checkbox-item" data-name="course_black_magic_protection"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Black Magic Identification & Protection</span></div>
+            <div class="checkbox-item" data-name="course_witchcraft_wicca"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Witchcraft & Wicca Intro</span></div>
+            <div class="checkbox-item" data-name="course_shamanism"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Shamanism & Soul Retrieval</span></div>
+            <div class="checkbox-item" data-name="course_akashic_records"><input type="checkbox"><div class="custom-check"></div><span class="checkbox-label">Akashic Records Reading</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="field-group" style="margin-top:20px;">
+        <label>Any Other Topics / Custom Course Ideas
+          <span class="hint">Mention any niche or specialty topics not listed above</span>
+        </label>
+        <textarea name="custom_topics" placeholder="e.g. Nadi Jyotish, Swar Vigyan, Karmakand, Shabar Mantras, Dowsing with Lecher Antenna..." rows="3"></textarea>
+      </div>
+    </div>
+
+    <!-- Section 4: Recording Readiness -->
+    <div class="form-card">
+      <div class="section-heading"><span class="rune">🎙️</span> Recording Readiness</div>
+
+      <div class="field-group">
+        <label>Do you have access to a camera/mic setup? <span class="req">*</span></label>
+        <div class="radio-group" id="setupGroup">
+          <div class="radio-item" data-group="setup" data-value="professional"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Yes – Professional Studio</span></div>
+          <div class="radio-item" data-group="setup" data-value="basic"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Yes – Basic Home Setup</span></div>
+          <div class="radio-item" data-group="setup" data-value="phone"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Phone / Webcam Only</span></div>
+          <div class="radio-item" data-group="setup" data-value="no_setup"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">No – Need Assistance</span></div>
+        </div>
+        <input type="hidden" name="recording_setup" id="recordingSetup">
+      </div>
+
+      <div class="field-group">
+        <label>Preferred Recording Mode <span class="req">*</span></label>
+        <div class="radio-group" id="modeGroup">
+          <div class="radio-item" data-group="mode" data-value="screen_ppt"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Screen + Slides</span></div>
+          <div class="radio-item" data-group="mode" data-value="face_cam"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Talking Head (Face Cam)</span></div>
+          <div class="radio-item" data-group="mode" data-value="mixed"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Mixed (Both)</span></div>
+          <div class="radio-item" data-group="mode" data-value="whiteboard"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Whiteboard / Blackboard</span></div>
+          <div class="radio-item" data-group="mode" data-value="open"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Open to Guidance</span></div>
+        </div>
+        <input type="hidden" name="recording_mode" id="recordingMode">
+      </div>
+
+      <div class="two-col">
+        <div class="field-group">
+          <label>Availability to Start Recording <span class="req">*</span></label>
+          <select name="availability" required>
+            <option value="">— Select —</option>
+            <option>Within 1 Week</option>
+            <option>Within 2–4 Weeks</option>
+            <option>1–2 Months</option>
+            <option>After 2 Months</option>
+          </select>
+        </div>
+        <div class="field-group">
+          <label>Estimated Hours per Week for Recording</label>
+          <select name="hours_per_week">
+            <option value="">— Select —</option>
+            <option>1–3 hours</option>
+            <option>4–6 hours</option>
+            <option>7–10 hours</option>
+            <option>10+ hours</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label>Revenue / Collaboration Model Preference</label>
+        <div class="radio-group" id="revenueGroup">
+          <div class="radio-item" data-group="revenue" data-value="revenue_share"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Revenue Share</span></div>
+          <div class="radio-item" data-group="revenue" data-value="fixed_fee"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Fixed Recording Fee</span></div>
+          <div class="radio-item" data-group="revenue" data-value="both"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Hybrid (Both)</span></div>
+          <div class="radio-item" data-group="revenue" data-value="discuss"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Open to Discussion</span></div>
+        </div>
+        <input type="hidden" name="revenue_model" id="revenueModel">
+      </div>
+    </div>
+
+    <!-- Section 5: Additional Info -->
+    <div class="form-card">
+      <div class="section-heading"><span class="rune">☾</span> Final Invocation</div>
+
+      <div class="field-group">
+        <label>Sample Video / Demo Link
+          <span class="hint">A YouTube, Instagram, or Drive link showcasing your teaching style</span>
+        </label>
+        <input type="url" name="demo_link" placeholder="https://...">
+      </div>
+
+      <div class="field-group">
+        <label>How did you hear about Occult Gurukul?</label>
+        <select name="referral">
+          <option value="">— Select —</option>
+          <option>Instagram</option>
+          <option>YouTube</option>
+          <option>WhatsApp / Forwarded Message</option>
+          <option>Friend / Colleague</option>
+          <option>Google Search</option>
+          <option>Occult Community / Forum</option>
+          <option>Event / Seminar</option>
+          <option>Other</option>
+        </select>
+      </div>
+
+      <div class="field-group">
+        <label>Message to the Gurukul
+          <span class="hint">Anything else you would like us to know — your vision, your teaching philosophy, or a question</span>
+        </label>
+        <textarea name="message" placeholder="Share your intentions with Occult Gurukul..." rows="4"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label>I agree to Occult Gurukul's content standards and ethical guidelines <span class="req">*</span></label>
+        <div class="checkbox-grid">
+          <div class="checkbox-item" data-name="agree_ethics" id="agreeEthics"><input type="checkbox" name="agree_ethics"><div class="custom-check"></div><span class="checkbox-label">Yes, I agree and commit to ethical, responsible teachings</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="submit-wrap">
+      <button type="submit" class="submit-btn">✦ Submit Your Application ✦</button>
+      <p class="scrollbar-note" style="margin-top:16px;">Your submission will be reviewed by the Occult Gurukul team within 3–5 working days</p>
+    </div>
+
+  </form>
+
+  <!-- Success Message -->
+  <div class="success-msg" id="successMsg">
+    <span class="sigil">🌙</span>
+    <h2>Application Received</h2>
+    <div class="divider"><span>✦</span></div>
+    <p>The stars have recorded your intent, wise one.<br>Our team will reach out within 3–5 working days to begin your journey as a mentor with Occult Gurukul.</p>
+  </div>
+
+</div>
+
+<script>
+  // Radio buttons
+  document.querySelectorAll('.radio-item').forEach(item => {
+    item.addEventListener('click', () => {
+      const group = item.dataset.group;
+      document.querySelectorAll(`.radio-item[data-group="${group}"]`).forEach(r => r.classList.remove('selected'));
+      item.classList.add('selected');
+      const hiddenId = group === 'years' ? 'yearsPractice' :
+                       group === 'teach' ? 'teachingExp' :
+                       group === 'setup' ? 'recordingSetup' :
+                       group === 'mode'  ? 'recordingMode' :
+                       group === 'revenue' ? 'revenueModel' : null;
+      if (hiddenId) document.getElementById(hiddenId).value = item.dataset.value;
+      updateProgress();
+    });
+  });
+
+  // Checkboxes
+  document.querySelectorAll('.checkbox-item').forEach(item => {
+    item.addEventListener('click', () => {
+      item.classList.toggle('checked');
+      const check = item.querySelector('.custom-check');
+      check.textContent = item.classList.contains('checked') ? '✓' : '';
+      updateProgress();
+    });
+  });
+
+  // Category accordions
+  document.querySelectorAll('.category-header').forEach(header => {
+    header.addEventListener('click', () => {
+      const block = header.parentElement;
+      const isOpen = block.classList.contains('open');
+      document.querySelectorAll('.category-block').forEach(b => b.classList.remove('open'));
+      if (!isOpen) block.classList.add('open');
+    });
+  });
+
+  // Progress tracking
+  function updateProgress() {
+    const required = document.querySelectorAll('[required], #yearsPractice, #teachingExp, #recordingSetup, #recordingMode');
+    let filled = 0;
+    required.forEach(el => {
+      if (el.value && el.value.trim() !== '') filled++;
+    });
+    // Count at least one lang checkbox
+    const langChecked = document.querySelectorAll('[data-name^="lang_"].checked').length;
+    if (langChecked > 0) filled++;
+    
+    const total = required.length + 1;
+    const pct = Math.min(100, Math.round((filled / total) * 100));
+    document.getElementById('progressFill').style.width = pct + '%';
+  }
+
+  document.querySelectorAll('input, textarea, select').forEach(el => {
+    el.addEventListener('input', updateProgress);
+    el.addEventListener('change', updateProgress);
+  });
+
+  // Form submission
+  document.getElementById('mentorForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Basic validation
+    const required = this.querySelectorAll('[required]');
+    let valid = true;
+    required.forEach(el => {
+      if (!el.value.trim()) { el.focus(); valid = false; return false; }
+    });
+
+    if (!document.getElementById('yearsPractice').value) {
+      alert('Please select your years of practice.'); valid = false;
+    }
+    if (!document.getElementById('agreeEthics').classList.contains('checked')) {
+      alert('Please agree to our ethical guidelines.'); valid = false;
+    }
+
+    if (!valid) return;
+
+    document.getElementById('mentorForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+</body>
+</html>
