@@ -568,7 +568,7 @@
 
     const btn = document.getElementById('submitBtn');
     btn.disabled = true;
-    btn.textContent = 'Submitting...';
+    btn.textContent = '⏳ Submitting...';
 
     // JSON payload — Zoho Flow maps each key to a Zoho Sheet column
     const payload = {
@@ -597,30 +597,28 @@
       submitted_at:        new Date().toISOString()
     };
 
-   try {
-  const formData = new FormData();
+    try {
+      const res = await fetch(ZOHO_WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
 
-  // append all fields manually
-  for (const key in payload) {
-    formData.append(key, payload[key]);
-  }
-
-  await fetch(ZOHO_WEBHOOK, {
-    method: 'POST',
-    mode: 'no-cors', // ✅ no CORS error now
-    body: formData   // ✅ no preflight
+      if (res.ok) {
+        document.getElementById('mentorForm').style.display = 'none';
+        document.getElementById('successMsg').style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        toast('✗ Submission failed (HTTP ' + res.status + '). Please try again.', 6000);
+        btn.disabled = false;
+        btn.textContent = '✦ Submit Your Application ✦';
+      }
+    } catch (err) {
+      toast('✗ Network error. Please check your connection and try again.', 6000);
+      btn.disabled = false;
+      btn.textContent = '✦ Submit Your Application ✦';
+    }
   });
-
-  // success UI
-  document.getElementById('mentorForm').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-
-} catch (err) {
-  toast('✗ Submission failed. Please try again.', 6000);
-  btn.disabled = false;
-  btn.textContent = '✦ Submit Your Application ✦';
-}
 </script>
 </body>
 </html>
