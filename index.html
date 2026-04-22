@@ -597,28 +597,23 @@
       submitted_at:        new Date().toISOString()
     };
 
-    try {
-      const res = await fetch(ZOHO_WEBHOOK, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      if (res.ok) {
-        document.getElementById('mentorForm').style.display = 'none';
-        document.getElementById('successMsg').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        toast('✗ Submission failed (HTTP ' + res.status + '). Please try again.', 6000);
-        btn.disabled = false;
-        btn.textContent = '✦ Submit Your Application ✦';
-      }
-    } catch (err) {
-      toast('✗ Network error. Please check your connection and try again.', 6000);
-      btn.disabled = false;
-      btn.textContent = '✦ Submit Your Application ✦';
-    }
+   try {
+  await fetch(ZOHO_WEBHOOK, {
+    method: 'POST',
+    mode: 'no-cors', // 🔥 bypass CORS
+    body: JSON.stringify(payload)
   });
+
+  // ✅ Always assume success (no-cors doesn't return response)
+  document.getElementById('mentorForm').style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+
+} catch (err) {
+  toast('✗ Submission failed. Please try again.', 6000);
+  btn.disabled = false;
+  btn.textContent = '✦ Submit Your Application ✦';
+}
 </script>
 </body>
 </html>
