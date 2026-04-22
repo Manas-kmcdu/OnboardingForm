@@ -1,4 +1,7 @@
+
+
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -122,356 +125,677 @@
 
   <form id="mentorForm" novalidate>
 
-    <!-- Section 1: Personal Details -->
-    <div class="form-card">
-      <div class="section-heading"><span class="rune">☽</span> Personal Details</div>
-      <div class="two-col">
-        <div class="field-group">
-          <label>Full Name <span class="req">*</span></label>
-          <input type="text" name="full_name" placeholder="As it should appear on certificates" required>
-        </div>
-        <div class="field-group">
-          <label>Preferred / Occult Name <span class="hint">The name you go by in your practice</span></label>
-          <input type="text" name="preferred_name" placeholder="e.g. Guru Shankar, Pandit Vidhya">
-        </div>
-      </div>
-      <div class="two-col">
-        <div class="field-group">
-          <label>Email Address <span class="req">*</span></label>
-          <input type="email" name="email" placeholder="your@email.com" required>
-        </div>
-        <div class="field-group">
-          <label>WhatsApp / Phone Number <span class="req">*</span></label>
-          <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
-        </div>
-      </div>
-      <div class="two-col">
-        <div class="field-group">
-          <label>City &amp; State <span class="req">*</span></label>
-          <input type="text" name="location" placeholder="e.g. Varanasi, Uttar Pradesh" required>
-        </div>
-        <div class="field-group">
-          <label>Country <span class="req">*</span></label>
-          <select name="country" required>
-            <option value="">— Select —</option>
-            <option>India</option><option>USA</option><option>UK</option>
-            <option>Canada</option><option>Australia</option><option>UAE</option>
-            <option>Singapore</option><option>Other</option>
-          </select>
-        </div>
-      </div>
-      <div class="field-group">
-        <label>Website / Social Profile <span class="hint">YouTube, Instagram, or personal site</span></label>
-        <input type="url" name="website" placeholder="https://...">
+```
+<!-- Section 1: Personal Details -->
+<div class="form-card">
+  <div class="section-heading"><span class="rune">☽</span> Personal Details</div>
+  <div class="two-col">
+    <div class="field-group">
+      <label>Full Name <span class="req">*</span></label>
+      <input type="text" name="full_name" placeholder="As it should appear on certificates" required>
+    </div>
+    <div class="field-group">
+      <label>Preferred / Occult Name <span class="hint">The name you go by in your practice</span></label>
+      <input type="text" name="preferred_name" placeholder="e.g. Guru Shankar, Pandit Vidhya">
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="field-group">
+      <label>Email Address <span class="req">*</span></label>
+      <input type="email" name="email" placeholder="your@email.com" required>
+    </div>
+    <div class="field-group">
+      <label>WhatsApp / Phone Number <span class="req">*</span></label>
+      <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
+    </div>
+  </div>
+  <div class="two-col">
+    <div class="field-group">
+      <label>City &amp; State <span class="req">*</span></label>
+      <input type="text" name="location" placeholder="e.g. Varanasi, Uttar Pradesh" required>
+    </div>
+    <div class="field-group">
+      <label>Country <span class="req">*</span></label>
+      <select name="country" required>
+        <option value="">— Select —</option>
+        <option>India</option><option>USA</option><option>UK</option>
+        <option>Canada</option><option>Australia</option><option>UAE</option>
+        <option>Singapore</option><option>Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="field-group">
+    <label>Website / Social Profile <span class="hint">YouTube, Instagram, or personal site</span></label>
+    <input type="url" name="website" placeholder="https://...">
+  </div>
+</div>
+
+<!-- Section 2: Credentials -->
+<div class="form-card">
+  <div class="section-heading"><span class="rune">⊕</span> Expertise &amp; Credentials</div>
+  <div class="field-group">
+    <label>Years of Active Practice <span class="req">*</span></label>
+    <div class="radio-group">
+      <div class="radio-item" data-group="years" data-value="1-3 Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">1–3 Years</span></div>
+      <div class="radio-item" data-group="years" data-value="4-7 Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">4–7 Years</span></div>
+      <div class="radio-item" data-group="years" data-value="8-15 Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">8–15 Years</span></div>
+      <div class="radio-item" data-group="years" data-value="15+ Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">15+ Years</span></div>
+      <div class="radio-item" data-group="years" data-value="25+ Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">25+ Years</span></div>
+    </div>
+    <input type="hidden" name="years_practice" id="yearsPractice">
+  </div>
+  <div class="field-group">
+    <label>Teaching / Guiding Experience <span class="req">*</span></label>
+    <div class="radio-group">
+      <div class="radio-item" data-group="teach" data-value="No prior teaching"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">No prior teaching</span></div>
+      <div class="radio-item" data-group="teach" data-value="Informal / Personal"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Informal / Personal</span></div>
+      <div class="radio-item" data-group="teach" data-value="Workshops and Events"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Workshops &amp; Events</span></div>
+      <div class="radio-item" data-group="teach" data-value="Online Courses"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Online Courses</span></div>
+      <div class="radio-item" data-group="teach" data-value="Institutional / Gurukul"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Institutional / Gurukul</span></div>
+    </div>
+    <input type="hidden" name="teaching_experience" id="teachingExp">
+  </div>
+  <div class="field-group">
+    <label>Brief Bio / Lineage <span class="req">*</span>
+      <span class="hint">Your spiritual lineage, mentors, initiations, and path of study</span>
+    </label>
+    <textarea name="bio" placeholder="Describe your path, lineage, teachers, and key initiations or certifications..." rows="4" required></textarea>
+  </div>
+  <div class="field-group">
+    <label>Languages You Can Teach In <span class="req">*</span></label>
+    <div class="checkbox-grid">
+      <div class="checkbox-item"><input type="checkbox" name="languages" value="Hindi"><div class="custom-check"></div><span class="checkbox-label">Hindi</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="languages" value="English"><div class="custom-check"></div><span class="checkbox-label">English</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="languages" value="Sanskrit"><div class="custom-check"></div><span class="checkbox-label">Sanskrit</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="languages" value="Tamil"><div class="custom-check"></div><span class="checkbox-label">Tamil</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="languages" value="Telugu"><div class="custom-check"></div><span class="checkbox-label">Telugu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="languages" value="Marathi"><div class="custom-check"></div><span class="checkbox-label">Marathi</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="languages" value="Bengali"><div class="custom-check"></div><span class="checkbox-label">Bengali</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="languages" value="Other"><div class="custom-check"></div><span class="checkbox-label">Other</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- Section 3: Courses -->
+<div class="form-card">
+  <div class="section-heading"><span class="rune">✦</span> Courses You Can Record
+    <span style="margin-left:auto;font-family:'EB Garamond',serif;font-size:13px;color:var(--text-hint);font-style:normal;font-weight:400;letter-spacing:0;text-transform:none;">Select all that apply</span>
+  </div>
+  <p style="font-size:14px;color:var(--text-light);margin-bottom:14px;font-style:normal;">Click a category to expand it and choose specific courses.</p>
+  <div class="selected-count">Selected: <span id="courseCount">0</span> courses</div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">♈</span> Pure Astrology — Foundations &amp; Chart Reading <span class="cat-count">(30 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Astrology Basics"><div class="custom-check"></div><span class="checkbox-label">Astrology Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="12 Houses Deep Dive"><div class="custom-check"></div><span class="checkbox-label">12 Houses Deep Dive</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="12 Signs Psychology"><div class="custom-check"></div><span class="checkbox-label">12 Signs Psychology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="9 Planets Explained"><div class="custom-check"></div><span class="checkbox-label">9 Planets Explained</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Lagna Importance"><div class="custom-check"></div><span class="checkbox-label">Lagna Importance</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Moon Chart Reading"><div class="custom-check"></div><span class="checkbox-label">Moon Chart Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Sun Chart Reading"><div class="custom-check"></div><span class="checkbox-label">Sun Chart Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Planetary Dignities"><div class="custom-check"></div><span class="checkbox-label">Planetary Dignities</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Retrograde Planets"><div class="custom-check"></div><span class="checkbox-label">Retrograde Planets</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Combustion in Astrology"><div class="custom-check"></div><span class="checkbox-label">Combustion in Astrology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Aspects Explained"><div class="custom-check"></div><span class="checkbox-label">Aspects Explained</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Conjunction Basics"><div class="custom-check"></div><span class="checkbox-label">Conjunction Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Stellium Meaning"><div class="custom-check"></div><span class="checkbox-label">Stellium Meaning</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Elements & Modalities"><div class="custom-check"></div><span class="checkbox-label">Elements &amp; Modalities</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Chart Structure Basics"><div class="custom-check"></div><span class="checkbox-label">Chart Structure Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="How to Read Any Chart"><div class="custom-check"></div><span class="checkbox-label">How to Read Any Chart</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Lagna-Based Interpretation"><div class="custom-check"></div><span class="checkbox-label">Lagna-Based Interpretation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Multi-Chart Synthesis"><div class="custom-check"></div><span class="checkbox-label">Multi-Chart Synthesis</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Transit Reading"><div class="custom-check"></div><span class="checkbox-label">Transit Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Planetary Strength (Shadbala)"><div class="custom-check"></div><span class="checkbox-label">Planetary Strength (Shadbala)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Yogas Identification"><div class="custom-check"></div><span class="checkbox-label">Yogas Identification</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Prediction Basics"><div class="custom-check"></div><span class="checkbox-label">Prediction Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Prediction"><div class="custom-check"></div><span class="checkbox-label">Advanced Prediction</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Event Timing"><div class="custom-check"></div><span class="checkbox-label">Event Timing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Case Study Analysis"><div class="custom-check"></div><span class="checkbox-label">Case Study Analysis</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Birth Time Rectification"><div class="custom-check"></div><span class="checkbox-label">Birth Time Rectification</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Chart Pattern Recognition"><div class="custom-check"></div><span class="checkbox-label">Chart Pattern Recognition</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Planet Dominance"><div class="custom-check"></div><span class="checkbox-label">Planet Dominance</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Weak Planet Fix"><div class="custom-check"></div><span class="checkbox-label">Weak Planet Fix</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Chart Correction Techniques"><div class="custom-check"></div><span class="checkbox-label">Chart Correction Techniques</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🪐</span> Pure Astrology — Dashas &amp; Timing <span class="cat-count">(18 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Vimshottari Dasha"><div class="custom-check"></div><span class="checkbox-label">Vimshottari Dasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Yogini Dasha"><div class="custom-check"></div><span class="checkbox-label">Yogini Dasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Chara Dasha"><div class="custom-check"></div><span class="checkbox-label">Chara Dasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Narayana Dasha"><div class="custom-check"></div><span class="checkbox-label">Narayana Dasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Kalachakra Dasha"><div class="custom-check"></div><span class="checkbox-label">Kalachakra Dasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dasha Sandhi"><div class="custom-check"></div><span class="checkbox-label">Dasha Sandhi</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Conditional Dashas"><div class="custom-check"></div><span class="checkbox-label">Conditional Dashas</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dasha + Transit Integration"><div class="custom-check"></div><span class="checkbox-label">Dasha + Transit Integration</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Life Timeline Mapping"><div class="custom-check"></div><span class="checkbox-label">Life Timeline Mapping</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dasha Case Studies"><div class="custom-check"></div><span class="checkbox-label">Dasha Case Studies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rahu Mahadasha"><div class="custom-check"></div><span class="checkbox-label">Rahu Mahadasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Saturn Mahadasha"><div class="custom-check"></div><span class="checkbox-label">Saturn Mahadasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Venus Mahadasha"><div class="custom-check"></div><span class="checkbox-label">Venus Mahadasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Mars Mahadasha"><div class="custom-check"></div><span class="checkbox-label">Mars Mahadasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Jupiter Mahadasha"><div class="custom-check"></div><span class="checkbox-label">Jupiter Mahadasha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Navamsa (D9)"><div class="custom-check"></div><span class="checkbox-label">Navamsa (D9)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dashamsa (D10)"><div class="custom-check"></div><span class="checkbox-label">Dashamsa (D10)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Saptamsa (D7)"><div class="custom-check"></div><span class="checkbox-label">Saptamsa (D7)</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">📐</span> Pure Astrology — Divisional Charts &amp; Vargas <span class="cat-count">(12 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="D12 Parents"><div class="custom-check"></div><span class="checkbox-label">D12 Parents</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="D24 Education"><div class="custom-check"></div><span class="checkbox-label">D24 Education</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="D27 Strength"><div class="custom-check"></div><span class="checkbox-label">D27 Strength</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="D30 Misfortune"><div class="custom-check"></div><span class="checkbox-label">D30 Misfortune</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="D60 Karma"><div class="custom-check"></div><span class="checkbox-label">D60 Karma</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Vargas Integration"><div class="custom-check"></div><span class="checkbox-label">Vargas Integration</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Predictive Vargas"><div class="custom-check"></div><span class="checkbox-label">Predictive Vargas</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Marriage via D9"><div class="custom-check"></div><span class="checkbox-label">Marriage via D9</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Career via D10"><div class="custom-check"></div><span class="checkbox-label">Career via D10</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Childbirth via D7"><div class="custom-check"></div><span class="checkbox-label">Childbirth via D7</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Spiritual Charts"><div class="custom-check"></div><span class="checkbox-label">Spiritual Charts</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Vargas"><div class="custom-check"></div><span class="checkbox-label">Advanced Vargas</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🔭</span> Pure Astrology — Jaimini, Yogas &amp; Doshas <span class="cat-count">(25 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Jaimini Basics"><div class="custom-check"></div><span class="checkbox-label">Jaimini Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Karakas Deep Dive"><div class="custom-check"></div><span class="checkbox-label">Karakas Deep Dive</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Argala"><div class="custom-check"></div><span class="checkbox-label">Argala</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Jaimini Raj Yogas"><div class="custom-check"></div><span class="checkbox-label">Jaimini Raj Yogas</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Marriage Indicators (Jaimini)"><div class="custom-check"></div><span class="checkbox-label">Marriage Indicators (Jaimini)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Career Indicators (Jaimini)"><div class="custom-check"></div><span class="checkbox-label">Career Indicators (Jaimini)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Wealth Indicators (Jaimini)"><div class="custom-check"></div><span class="checkbox-label">Wealth Indicators (Jaimini)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Timing Events (Jaimini)"><div class="custom-check"></div><span class="checkbox-label">Timing Events (Jaimini)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Case Studies (Jaimini)"><div class="custom-check"></div><span class="checkbox-label">Advanced Case Studies (Jaimini)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Jaimini Remedies"><div class="custom-check"></div><span class="checkbox-label">Jaimini Remedies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Jaimini + Parashara"><div class="custom-check"></div><span class="checkbox-label">Jaimini + Parashara</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Jaimini for Professionals"><div class="custom-check"></div><span class="checkbox-label">Jaimini for Professionals</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Jaimini Certification"><div class="custom-check"></div><span class="checkbox-label">Jaimini Certification</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Raj Yogas"><div class="custom-check"></div><span class="checkbox-label">Raj Yogas</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dhan Yogas"><div class="custom-check"></div><span class="checkbox-label">Dhan Yogas</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Vipreet Raj Yoga"><div class="custom-check"></div><span class="checkbox-label">Vipreet Raj Yoga</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Neech Bhanga"><div class="custom-check"></div><span class="checkbox-label">Neech Bhanga</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Kemadruma"><div class="custom-check"></div><span class="checkbox-label">Kemadruma</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Kala Sarpa"><div class="custom-check"></div><span class="checkbox-label">Kala Sarpa</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Manglik Dosha"><div class="custom-check"></div><span class="checkbox-label">Manglik Dosha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Pitru Dosha"><div class="custom-check"></div><span class="checkbox-label">Pitru Dosha</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Guru Chandal"><div class="custom-check"></div><span class="checkbox-label">Guru Chandal</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Daridra Yoga"><div class="custom-check"></div><span class="checkbox-label">Daridra Yoga</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Jaimini Aspects"><div class="custom-check"></div><span class="checkbox-label">Jaimini Aspects</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Career via Jaimini"><div class="custom-check"></div><span class="checkbox-label">Career via Jaimini</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🕰</span>  Pure Astrology — Muhurat &amp; Prashna <span class="cat-count">(20 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Muhurat Basics"><div class="custom-check"></div><span class="checkbox-label">Muhurat Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Marriage Muhurat"><div class="custom-check"></div><span class="checkbox-label">Marriage Muhurat</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Business Muhurat"><div class="custom-check"></div><span class="checkbox-label">Business Muhurat</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Investment Muhurat"><div class="custom-check"></div><span class="checkbox-label">Investment Muhurat</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Property Muhurat"><div class="custom-check"></div><span class="checkbox-label">Property Muhurat</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Surgery Muhurat"><div class="custom-check"></div><span class="checkbox-label">Surgery Muhurat</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Travel Muhurat"><div class="custom-check"></div><span class="checkbox-label">Travel Muhurat</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Griha Pravesh"><div class="custom-check"></div><span class="checkbox-label">Griha Pravesh</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Education Muhurat"><div class="custom-check"></div><span class="checkbox-label">Education Muhurat</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Agreement Muhurat"><div class="custom-check"></div><span class="checkbox-label">Agreement Muhurat</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Prashna Basics"><div class="custom-check"></div><span class="checkbox-label">Prashna Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Yes/No Predictions"><div class="custom-check"></div><span class="checkbox-label">Yes/No Predictions</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Lost Object"><div class="custom-check"></div><span class="checkbox-label">Lost Object</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Relationship Questions"><div class="custom-check"></div><span class="checkbox-label">Relationship Questions</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Career Questions"><div class="custom-check"></div><span class="checkbox-label">Career Questions</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Finance Questions"><div class="custom-check"></div><span class="checkbox-label">Finance Questions</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Court Cases"><div class="custom-check"></div><span class="checkbox-label">Court Cases</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Radical Charts"><div class="custom-check"></div><span class="checkbox-label">Radical Charts</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Moon in Prashna"><div class="custom-check"></div><span class="checkbox-label">Moon in Prashna</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Horary"><div class="custom-check"></div><span class="checkbox-label">Advanced Horary</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">📕</span> Lal Kitab Track <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Lal Kitab Basics"><div class="custom-check"></div><span class="checkbox-label">Lal Kitab Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Houses in Lal Kitab"><div class="custom-check"></div><span class="checkbox-label">Houses in Lal Kitab</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Planets in Lal Kitab"><div class="custom-check"></div><span class="checkbox-label">Planets in Lal Kitab</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Lal Kitab Remedies System"><div class="custom-check"></div><span class="checkbox-label">Lal Kitab Remedies System</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Debt & Money Remedies"><div class="custom-check"></div><span class="checkbox-label">Debt &amp; Money Remedies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Relationship Remedies (Lal Kitab)"><div class="custom-check"></div><span class="checkbox-label">Relationship Remedies (Lal Kitab)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Health Remedies (Lal Kitab)"><div class="custom-check"></div><span class="checkbox-label">Health Remedies (Lal Kitab)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Career Remedies (Lal Kitab)"><div class="custom-check"></div><span class="checkbox-label">Career Remedies (Lal Kitab)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dosha Correction (Lal Kitab)"><div class="custom-check"></div><span class="checkbox-label">Dosha Correction (Lal Kitab)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Practical Applications (Lal Kitab)"><div class="custom-check"></div><span class="checkbox-label">Practical Applications (Lal Kitab)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Case Studies (Lal Kitab)"><div class="custom-check"></div><span class="checkbox-label">Case Studies (Lal Kitab)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Remedies (Lal Kitab)"><div class="custom-check"></div><span class="checkbox-label">Advanced Remedies (Lal Kitab)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Lal Kitab Ethics"><div class="custom-check"></div><span class="checkbox-label">Lal Kitab Ethics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Prediction Techniques (Lal Kitab)"><div class="custom-check"></div><span class="checkbox-label">Prediction Techniques (Lal Kitab)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Lal Kitab Mastery"><div class="custom-check"></div><span class="checkbox-label">Lal Kitab Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🔢</span> Numerology Track <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Numerology Basics"><div class="custom-check"></div><span class="checkbox-label">Numerology Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Mulank"><div class="custom-check"></div><span class="checkbox-label">Mulank</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Bhagyank"><div class="custom-check"></div><span class="checkbox-label">Bhagyank</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Name Numerology"><div class="custom-check"></div><span class="checkbox-label">Name Numerology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Mobile Number Analysis"><div class="custom-check"></div><span class="checkbox-label">Mobile Number Analysis</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Business Name Numerology"><div class="custom-check"></div><span class="checkbox-label">Business Name Numerology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Signature Correction"><div class="custom-check"></div><span class="checkbox-label">Signature Correction</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Numerology Compatibility"><div class="custom-check"></div><span class="checkbox-label">Numerology Compatibility</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Timing via Numbers"><div class="custom-check"></div><span class="checkbox-label">Timing via Numbers</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Numerology Remedies"><div class="custom-check"></div><span class="checkbox-label">Numerology Remedies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Numerology Case Studies"><div class="custom-check"></div><span class="checkbox-label">Numerology Case Studies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Numerology"><div class="custom-check"></div><span class="checkbox-label">Advanced Numerology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Predictive Numerology"><div class="custom-check"></div><span class="checkbox-label">Predictive Numerology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Numerology + Astrology"><div class="custom-check"></div><span class="checkbox-label">Numerology + Astrology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Numerology Mastery"><div class="custom-check"></div><span class="checkbox-label">Numerology Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🃏</span> Tarot Track <span class="cat-count">(20 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Tarot Basics"><div class="custom-check"></div><span class="checkbox-label">Tarot Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Card Meanings"><div class="custom-check"></div><span class="checkbox-label">Card Meanings</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Beginner Spreads"><div class="custom-check"></div><span class="checkbox-label">Beginner Spreads</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Love Tarot"><div class="custom-check"></div><span class="checkbox-label">Love Tarot</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Career Tarot"><div class="custom-check"></div><span class="checkbox-label">Career Tarot</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Timing Techniques (Tarot)"><div class="custom-check"></div><span class="checkbox-label">Timing Techniques (Tarot)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Combinations (Tarot)"><div class="custom-check"></div><span class="checkbox-label">Combinations (Tarot)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Healing Tarot"><div class="custom-check"></div><span class="checkbox-label">Healing Tarot</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Journaling (Tarot)"><div class="custom-check"></div><span class="checkbox-label">Journaling (Tarot)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Professional Tarot"><div class="custom-check"></div><span class="checkbox-label">Professional Tarot</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Intuitive Tarot"><div class="custom-check"></div><span class="checkbox-label">Intuitive Tarot</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Shadow Tarot"><div class="custom-check"></div><span class="checkbox-label">Shadow Tarot</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Manifestation Tarot"><div class="custom-check"></div><span class="checkbox-label">Manifestation Tarot</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Daily Tarot Practice"><div class="custom-check"></div><span class="checkbox-label">Daily Tarot Practice</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Tarot Ethics"><div class="custom-check"></div><span class="checkbox-label">Tarot Ethics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Tarot + Intuition"><div class="custom-check"></div><span class="checkbox-label">Tarot + Intuition</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Tarot Case Studies"><div class="custom-check"></div><span class="checkbox-label">Tarot Case Studies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Tarot"><div class="custom-check"></div><span class="checkbox-label">Advanced Tarot</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Tarot Business Setup"><div class="custom-check"></div><span class="checkbox-label">Tarot Business Setup</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Tarot Mastery"><div class="custom-check"></div><span class="checkbox-label">Tarot Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">ᚱ</span> Runes Track <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Basics"><div class="custom-check"></div><span class="checkbox-label">Rune Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Meanings"><div class="custom-check"></div><span class="checkbox-label">Rune Meanings</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Casting"><div class="custom-check"></div><span class="checkbox-label">Rune Casting</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Spreads"><div class="custom-check"></div><span class="checkbox-label">Rune Spreads</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Runes"><div class="custom-check"></div><span class="checkbox-label">Advanced Runes</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Magic"><div class="custom-check"></div><span class="checkbox-label">Rune Magic</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Protection"><div class="custom-check"></div><span class="checkbox-label">Rune Protection</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Manifestation"><div class="custom-check"></div><span class="checkbox-label">Rune Manifestation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Healing"><div class="custom-check"></div><span class="checkbox-label">Rune Healing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Case Studies"><div class="custom-check"></div><span class="checkbox-label">Rune Case Studies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Nordic Symbolism"><div class="custom-check"></div><span class="checkbox-label">Nordic Symbolism</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Rituals"><div class="custom-check"></div><span class="checkbox-label">Rune Rituals</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Energy Work"><div class="custom-check"></div><span class="checkbox-label">Rune Energy Work</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Intuition"><div class="custom-check"></div><span class="checkbox-label">Rune Intuition</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Mastery"><div class="custom-check"></div><span class="checkbox-label">Rune Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🔮</span> Pendulum &amp; Dowsing Track <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Pendulum Basics"><div class="custom-check"></div><span class="checkbox-label">Pendulum Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Yes/No Dowsing"><div class="custom-check"></div><span class="checkbox-label">Yes/No Dowsing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Detection"><div class="custom-check"></div><span class="checkbox-label">Energy Detection</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Chakra Dowsing"><div class="custom-check"></div><span class="checkbox-label">Chakra Dowsing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Decision Making (Dowsing)"><div class="custom-check"></div><span class="checkbox-label">Decision Making (Dowsing)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Dowsing"><div class="custom-check"></div><span class="checkbox-label">Advanced Dowsing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dowsing Maps"><div class="custom-check"></div><span class="checkbox-label">Dowsing Maps</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Healing Dowsing"><div class="custom-check"></div><span class="checkbox-label">Healing Dowsing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Clearing Energy (Dowsing)"><div class="custom-check"></div><span class="checkbox-label">Clearing Energy (Dowsing)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dowsing Practice"><div class="custom-check"></div><span class="checkbox-label">Dowsing Practice</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Business Decisions (Dowsing)"><div class="custom-check"></div><span class="checkbox-label">Business Decisions (Dowsing)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Relationship Decisions (Dowsing)"><div class="custom-check"></div><span class="checkbox-label">Relationship Decisions (Dowsing)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Health Scanning (Dowsing)"><div class="custom-check"></div><span class="checkbox-label">Health Scanning (Dowsing)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Location Dowsing"><div class="custom-check"></div><span class="checkbox-label">Location Dowsing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dowsing Mastery"><div class="custom-check"></div><span class="checkbox-label">Dowsing Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">👁</span>  Psychic &amp; Intuition Development <span class="cat-count">(20 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Intuition Activation"><div class="custom-check"></div><span class="checkbox-label">Intuition Activation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Third Eye Awakening"><div class="custom-check"></div><span class="checkbox-label">Third Eye Awakening</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Psychic Development"><div class="custom-check"></div><span class="checkbox-label">Psychic Development</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Clairvoyance"><div class="custom-check"></div><span class="checkbox-label">Clairvoyance</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Aura Reading"><div class="custom-check"></div><span class="checkbox-label">Aura Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Scanning"><div class="custom-check"></div><span class="checkbox-label">Energy Scanning</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Psychic Protection"><div class="custom-check"></div><span class="checkbox-label">Psychic Protection</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Remote Viewing"><div class="custom-check"></div><span class="checkbox-label">Remote Viewing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Spirit Communication"><div class="custom-check"></div><span class="checkbox-label">Spirit Communication</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Psychic"><div class="custom-check"></div><span class="checkbox-label">Advanced Psychic</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Mediumship Basics"><div class="custom-check"></div><span class="checkbox-label">Mediumship Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Sensitivity"><div class="custom-check"></div><span class="checkbox-label">Energy Sensitivity</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Intuitive Decision Making"><div class="custom-check"></div><span class="checkbox-label">Intuitive Decision Making</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Inner Guidance System"><div class="custom-check"></div><span class="checkbox-label">Inner Guidance System</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Perception"><div class="custom-check"></div><span class="checkbox-label">Energy Perception</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Psychic Boundaries"><div class="custom-check"></div><span class="checkbox-label">Psychic Boundaries</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reading People Energetically"><div class="custom-check"></div><span class="checkbox-label">Reading People Energetically</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Intuition for Business"><div class="custom-check"></div><span class="checkbox-label">Intuition for Business</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Intuition for Relationships"><div class="custom-check"></div><span class="checkbox-label">Intuition for Relationships</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Psychic Mastery"><div class="custom-check"></div><span class="checkbox-label">Psychic Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">✋</span> Reiki &amp; Energy Healing Track <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reiki Level 1"><div class="custom-check"></div><span class="checkbox-label">Reiki Level 1</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reiki Level 2"><div class="custom-check"></div><span class="checkbox-label">Reiki Level 2</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Daily Reiki Practice"><div class="custom-check"></div><span class="checkbox-label">Daily Reiki Practice</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Chakra Healing"><div class="custom-check"></div><span class="checkbox-label">Chakra Healing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Emotional Healing"><div class="custom-check"></div><span class="checkbox-label">Emotional Healing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Distance Healing"><div class="custom-check"></div><span class="checkbox-label">Distance Healing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Money Healing"><div class="custom-check"></div><span class="checkbox-label">Money Healing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Relationship Healing"><div class="custom-check"></div><span class="checkbox-label">Relationship Healing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Health Healing (Reiki)"><div class="custom-check"></div><span class="checkbox-label">Health Healing (Reiki)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Protection"><div class="custom-check"></div><span class="checkbox-label">Energy Protection</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reiki + Manifestation"><div class="custom-check"></div><span class="checkbox-label">Reiki + Manifestation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reiki Case Studies"><div class="custom-check"></div><span class="checkbox-label">Reiki Case Studies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Reiki"><div class="custom-check"></div><span class="checkbox-label">Advanced Reiki</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reiki Business"><div class="custom-check"></div><span class="checkbox-label">Reiki Business</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reiki Mastery"><div class="custom-check"></div><span class="checkbox-label">Reiki Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🏠</span> Vastu Track <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Vastu Basics"><div class="custom-check"></div><span class="checkbox-label">Vastu Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Home Vastu"><div class="custom-check"></div><span class="checkbox-label">Home Vastu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Office Vastu"><div class="custom-check"></div><span class="checkbox-label">Office Vastu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Wealth Vastu"><div class="custom-check"></div><span class="checkbox-label">Wealth Vastu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Relationship Vastu"><div class="custom-check"></div><span class="checkbox-label">Relationship Vastu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Entrance Vastu"><div class="custom-check"></div><span class="checkbox-label">Entrance Vastu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Bedroom Vastu"><div class="custom-check"></div><span class="checkbox-label">Bedroom Vastu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Kitchen Vastu"><div class="custom-check"></div><span class="checkbox-label">Kitchen Vastu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Zero-cost Vastu Remedies"><div class="custom-check"></div><span class="checkbox-label">Zero-cost Vastu Remedies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Plants & Symbols (Vastu)"><div class="custom-check"></div><span class="checkbox-label">Plants &amp; Symbols (Vastu)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Space Clearing (Vastu)"><div class="custom-check"></div><span class="checkbox-label">Space Clearing (Vastu)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Flow (Vastu)"><div class="custom-check"></div><span class="checkbox-label">Energy Flow (Vastu)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Vastu Case Studies"><div class="custom-check"></div><span class="checkbox-label">Vastu Case Studies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Vastu"><div class="custom-check"></div><span class="checkbox-label">Advanced Vastu</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Vastu Mastery"><div class="custom-check"></div><span class="checkbox-label">Vastu Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🌙</span> Divination Systems Track <span class="cat-count">(19 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Coffee Reading"><div class="custom-check"></div><span class="checkbox-label">Coffee Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Tea Reading"><div class="custom-check"></div><span class="checkbox-label">Tea Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dice Divination"><div class="custom-check"></div><span class="checkbox-label">Dice Divination</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Coin Divination"><div class="custom-check"></div><span class="checkbox-label">Coin Divination</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Bibliomancy"><div class="custom-check"></div><span class="checkbox-label">Bibliomancy</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Charm Casting"><div class="custom-check"></div><span class="checkbox-label">Charm Casting</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Oil Divination"><div class="custom-check"></div><span class="checkbox-label">Oil Divination</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Rice Divination"><div class="custom-check"></div><span class="checkbox-label">Rice Divination</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Cowrie Reading"><div class="custom-check"></div><span class="checkbox-label">Cowrie Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Dream Interpretation"><div class="custom-check"></div><span class="checkbox-label">Dream Interpretation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Akashic Records"><div class="custom-check"></div><span class="checkbox-label">Akashic Records</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Past Life Reading"><div class="custom-check"></div><span class="checkbox-label">Past Life Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Spirit Animal Reading"><div class="custom-check"></div><span class="checkbox-label">Spirit Animal Reading</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Shamanic Journeying"><div class="custom-check"></div><span class="checkbox-label">Shamanic Journeying</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Egyptian Oracle"><div class="custom-check"></div><span class="checkbox-label">Egyptian Oracle</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Hermetic Systems"><div class="custom-check"></div><span class="checkbox-label">Hermetic Systems</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Hybrid Divination"><div class="custom-check"></div><span class="checkbox-label">Hybrid Divination</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Case Study Practice (Divination)"><div class="custom-check"></div><span class="checkbox-label">Case Study Practice (Divination)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Divination Mastery"><div class="custom-check"></div><span class="checkbox-label">Divination Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🧠</span> Theta Healing <span class="cat-count">(8 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Theta Healing Basics"><div class="custom-check"></div><span class="checkbox-label">Theta Healing Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Belief Work (Theta)"><div class="custom-check"></div><span class="checkbox-label">Belief Work (Theta)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Theta for Relationships"><div class="custom-check"></div><span class="checkbox-label">Theta for Relationships</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Theta for Health"><div class="custom-check"></div><span class="checkbox-label">Theta for Health</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Theta for Abundance"><div class="custom-check"></div><span class="checkbox-label">Theta for Abundance</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Theta Healing"><div class="custom-check"></div><span class="checkbox-label">Advanced Theta Healing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Theta Certification Prep"><div class="custom-check"></div><span class="checkbox-label">Theta Certification Prep</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Theta Mastery"><div class="custom-check"></div><span class="checkbox-label">Theta Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">✨</span> Energy &amp; Manifestation <span class="cat-count">(30 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Law of Attraction"><div class="custom-check"></div><span class="checkbox-label">Law of Attraction</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Scripting"><div class="custom-check"></div><span class="checkbox-label">Scripting</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="369 Method"><div class="custom-check"></div><span class="checkbox-label">369 Method</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Water Charging"><div class="custom-check"></div><span class="checkbox-label">Water Charging</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Candle Magic"><div class="custom-check"></div><span class="checkbox-label">Candle Magic</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Sigil Creation"><div class="custom-check"></div><span class="checkbox-label">Sigil Creation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Mirror Work"><div class="custom-check"></div><span class="checkbox-label">Mirror Work</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Affirmations"><div class="custom-check"></div><span class="checkbox-label">Affirmations</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Switchwords"><div class="custom-check"></div><span class="checkbox-label">Switchwords</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Grabovoi Codes"><div class="custom-check"></div><span class="checkbox-label">Grabovoi Codes</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Shifting"><div class="custom-check"></div><span class="checkbox-label">Energy Shifting</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Block Removal"><div class="custom-check"></div><span class="checkbox-label">Block Removal</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Money Manifestation"><div class="custom-check"></div><span class="checkbox-label">Money Manifestation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Love Manifestation"><div class="custom-check"></div><span class="checkbox-label">Love Manifestation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reality Shifting"><div class="custom-check"></div><span class="checkbox-label">Reality Shifting</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Frequency Work"><div class="custom-check"></div><span class="checkbox-label">Frequency Work</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Emotional Energy Release"><div class="custom-check"></div><span class="checkbox-label">Emotional Energy Release</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Shadow Work"><div class="custom-check"></div><span class="checkbox-label">Shadow Work</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Inner Child Healing"><div class="custom-check"></div><span class="checkbox-label">Inner Child Healing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Hygiene"><div class="custom-check"></div><span class="checkbox-label">Energy Hygiene</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Cord Cutting"><div class="custom-check"></div><span class="checkbox-label">Cord Cutting</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Protection Basics"><div class="custom-check"></div><span class="checkbox-label">Protection Basics</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Aura Cleansing"><div class="custom-check"></div><span class="checkbox-label">Aura Cleansing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Space Clearing (Energy)"><div class="custom-check"></div><span class="checkbox-label">Space Clearing (Energy)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Moon Rituals"><div class="custom-check"></div><span class="checkbox-label">Moon Rituals</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Elemental Magic"><div class="custom-check"></div><span class="checkbox-label">Elemental Magic</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Daily Ritual System"><div class="custom-check"></div><span class="checkbox-label">Daily Ritual System</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Weekly Reset"><div class="custom-check"></div><span class="checkbox-label">Weekly Reset</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Discipline"><div class="custom-check"></div><span class="checkbox-label">Energy Discipline</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Manifestation Mastery"><div class="custom-check"></div><span class="checkbox-label">Manifestation Mastery</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">💕</span> Love &amp; Attraction <span class="cat-count">(20 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Attract Love Using Astrology & Energy"><div class="custom-check"></div><span class="checkbox-label">Attract Love Using Astrology &amp; Energy</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Why You Attract the Wrong Partners"><div class="custom-check"></div><span class="checkbox-label">Why You Attract the Wrong Partners</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Heal Your Love Life Through Moon Energy"><div class="custom-check"></div><span class="checkbox-label">Heal Your Love Life Through Moon Energy</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Venus Activation for Love"><div class="custom-check"></div><span class="checkbox-label">Venus Activation for Love</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Remove Emotional Blocks in Love"><div class="custom-check"></div><span class="checkbox-label">Remove Emotional Blocks in Love</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Calling in a Soulmate (Astro + Manifestation)"><div class="custom-check"></div><span class="checkbox-label">Calling in a Soulmate (Astro + Manifestation)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Love Timing Through Astrology"><div class="custom-check"></div><span class="checkbox-label">Love Timing Through Astrology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Self-Love Activation Program"><div class="custom-check"></div><span class="checkbox-label">Self-Love Activation Program</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Heal Past Relationship Trauma"><div class="custom-check"></div><span class="checkbox-label">Heal Past Relationship Trauma</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Love Manifestation in 21 Days"><div class="custom-check"></div><span class="checkbox-label">Love Manifestation in 21 Days</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Why Love Doesn't Stay – Chart Analysis"><div class="custom-check"></div><span class="checkbox-label">Why Love Doesn't Stay – Chart Analysis</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Open Your Heart Chakra Safely"><div class="custom-check"></div><span class="checkbox-label">Open Your Heart Chakra Safely</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Attraction vs Attachment – Energy Work"><div class="custom-check"></div><span class="checkbox-label">Attraction vs Attachment – Energy Work</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Love Compatibility Basics (Astro + Tarot)"><div class="custom-check"></div><span class="checkbox-label">Love Compatibility Basics (Astro + Tarot)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Reignite Passion in Relationships"><div class="custom-check"></div><span class="checkbox-label">Reignite Passion in Relationships</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Stop Chasing – Start Attracting"><div class="custom-check"></div><span class="checkbox-label">Stop Chasing – Start Attracting</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Remove Love Blockages (Karmic + Energy)"><div class="custom-check"></div><span class="checkbox-label">Remove Love Blockages (Karmic + Energy)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Understanding Your Love Pattern"><div class="custom-check"></div><span class="checkbox-label">Understanding Your Love Pattern</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Divine Feminine / Masculine Balance"><div class="custom-check"></div><span class="checkbox-label">Divine Feminine / Masculine Balance</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energetic Boundaries in Love"><div class="custom-check"></div><span class="checkbox-label">Energetic Boundaries in Love</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">💍</span> Marriage &amp; Commitment <span class="cat-count">(20 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Marriage Delay – Causes & Remedies"><div class="custom-check"></div><span class="checkbox-label">Marriage Delay – Causes &amp; Remedies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="When Will You Get Married?"><div class="custom-check"></div><span class="checkbox-label">When Will You Get Married?</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Arranged vs Love Marriage Indicators"><div class="custom-check"></div><span class="checkbox-label">Arranged vs Love Marriage Indicators</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Fixing Marriage Blockages"><div class="custom-check"></div><span class="checkbox-label">Fixing Marriage Blockages</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Manglik Dosha – Practical Understanding"><div class="custom-check"></div><span class="checkbox-label">Manglik Dosha – Practical Understanding</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Second Marriage Yogas"><div class="custom-check"></div><span class="checkbox-label">Second Marriage Yogas</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Strengthening Marriage Bond (Energy Work)"><div class="custom-check"></div><span class="checkbox-label">Strengthening Marriage Bond (Energy Work)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="In-Laws Harmony Through Astrology"><div class="custom-check"></div><span class="checkbox-label">In-Laws Harmony Through Astrology</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Marriage Compatibility Deep Dive"><div class="custom-check"></div><span class="checkbox-label">Marriage Compatibility Deep Dive</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Divorce Indicators & Prevention"><div class="custom-check"></div><span class="checkbox-label">Divorce Indicators &amp; Prevention</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Karmic Marriages Explained"><div class="custom-check"></div><span class="checkbox-label">Karmic Marriages Explained</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Spouse Nature Prediction"><div class="custom-check"></div><span class="checkbox-label">Spouse Nature Prediction</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Marriage Timing Masterclass"><div class="custom-check"></div><span class="checkbox-label">Marriage Timing Masterclass</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Fixing Repeated Broken Alliances"><div class="custom-check"></div><span class="checkbox-label">Fixing Repeated Broken Alliances</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Healing Marriage Conflicts"><div class="custom-check"></div><span class="checkbox-label">Healing Marriage Conflicts</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Relationship Karma Release"><div class="custom-check"></div><span class="checkbox-label">Relationship Karma Release</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Post-Marriage Adjustment Energy Work"><div class="custom-check"></div><span class="checkbox-label">Post-Marriage Adjustment Energy Work</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Spouse Attraction Through Remedies"><div class="custom-check"></div><span class="checkbox-label">Spouse Attraction Through Remedies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Marriage Stability Indicators"><div class="custom-check"></div><span class="checkbox-label">Marriage Stability Indicators</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Sacred Commitment & Energy Alignment"><div class="custom-check"></div><span class="checkbox-label">Sacred Commitment &amp; Energy Alignment</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🌿</span> Health &amp; Emotional Wellbeing <span class="cat-count">(10 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Stress & Anxiety Healing (Astro + Energy)"><div class="custom-check"></div><span class="checkbox-label">Stress &amp; Anxiety Healing (Astro + Energy)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Sleep Issues – Causes & Remedies"><div class="custom-check"></div><span class="checkbox-label">Sleep Issues – Causes &amp; Remedies</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Emotional Healing Through Moon"><div class="custom-check"></div><span class="checkbox-label">Emotional Healing Through Moon</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Mental Clarity Activation"><div class="custom-check"></div><span class="checkbox-label">Mental Clarity Activation</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Overthinking Control System"><div class="custom-check"></div><span class="checkbox-label">Overthinking Control System</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Energy Detox & Cleansing"><div class="custom-check"></div><span class="checkbox-label">Energy Detox &amp; Cleansing</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Healing Chronic Patterns (Astrology Insight)"><div class="custom-check"></div><span class="checkbox-label">Healing Chronic Patterns (Astrology Insight)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Inner Child Healing Program"><div class="custom-check"></div><span class="checkbox-label">Inner Child Healing Program</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Emotional Stability Techniques"><div class="custom-check"></div><span class="checkbox-label">Emotional Stability Techniques</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Daily Energy Hygiene Routine"><div class="custom-check"></div><span class="checkbox-label">Daily Energy Hygiene Routine</span></div>
+    </div></div>
+  </div>
+
+  <div class="category-block">
+    <div class="category-header"><span class="cat-title"><span class="cat-icon">🕉</span>  Spiritual Growth &amp; Purpose <span class="cat-count">(5 courses)</span></span><span class="cat-arrow">▾</span></div>
+    <div class="category-courses"><div class="course-list">
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Find Your Life Purpose (Astrology)"><div class="custom-check"></div><span class="checkbox-label">Find Your Life Purpose (Astrology)</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Spiritual Awakening – Safe Path"><div class="custom-check"></div><span class="checkbox-label">Spiritual Awakening – Safe Path</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Karma & Past Life Understanding"><div class="custom-check"></div><span class="checkbox-label">Karma &amp; Past Life Understanding</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Connecting with Higher Guidance"><div class="custom-check"></div><span class="checkbox-label">Connecting with Higher Guidance</span></div>
+      <div class="checkbox-item"><input type="checkbox" name="courses" value="Building a Spiritual Routine"><div class="custom-check"></div><span class="checkbox-label">Building a Spiritual Routine</span></div>
+    </div></div>
+  </div>
+
+
+  <div class="field-group" style="margin-top:18px;">
+    <label>Any Other Topics / Custom Course Ideas <span class="hint">Mention any niche or specialty topics not listed above</span></label>
+    <textarea name="custom_topics" placeholder="e.g. Nadi Jyotish, Swar Vigyan, Karmakand, Shabar Mantras..." rows="3"></textarea>
+  </div>
+</div>
+
+<!-- Section 4: Recording Readiness -->
+<div class="form-card">
+  <div class="section-heading"><span class="rune">🎙️</span> Recording Readiness</div>
+  <div class="field-group">
+    <label>Do you have access to a camera/mic setup? <span class="req">*</span></label>
+    <div class="radio-group">
+      <div class="radio-item" data-group="setup" data-value="Yes - Professional Studio"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Yes – Professional Studio</span></div>
+      <div class="radio-item" data-group="setup" data-value="Yes - Basic Home Setup"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Yes – Basic Home Setup</span></div>
+      <div class="radio-item" data-group="setup" data-value="Phone / Webcam Only"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Phone / Webcam Only</span></div>
+      <div class="radio-item" data-group="setup" data-value="No - Need Assistance"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">No – Need Assistance</span></div>
+    </div>
+    <input type="hidden" name="recording_setup" id="recordingSetup">
+  </div>
+  <div class="field-group">
+    <label>Preferred Recording Mode <span class="req">*</span></label>
+    <div class="radio-group">
+      <div class="radio-item" data-group="mode" data-value="Screen + Slides"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Screen + Slides</span></div>
+      <div class="radio-item" data-group="mode" data-value="Talking Head (Face Cam)"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Talking Head (Face Cam)</span></div>
+      <div class="radio-item" data-group="mode" data-value="Mixed (Both)"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Mixed (Both)</span></div>
+      <div class="radio-item" data-group="mode" data-value="Whiteboard / Blackboard"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Whiteboard / Blackboard</span></div>
+      <div class="radio-item" data-group="mode" data-value="Open to Guidance"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Open to Guidance</span></div>
+    </div>
+    <input type="hidden" name="recording_mode" id="recordingMode">
+  </div>
+  <div class="two-col">
+    <div class="field-group">
+      <label>Availability to Start Recording <span class="req">*</span></label>
+      <select name="availability" required>
+        <option value="">— Select —</option>
+        <option>Within 1 Week</option>
+        <option>Within 2-4 Weeks</option>
+        <option>1-2 Months</option>
+        <option>After 2 Months</option>
+      </select>
+    </div>
+    <div class="field-group">
+      <label>Estimated Hours per Week for Recording</label>
+      <select name="hours_per_week">
+        <option value="">— Select —</option>
+        <option>1-3 hours</option>
+        <option>4-6 hours</option>
+        <option>7-10 hours</option>
+        <option>10+ hours</option>
+      </select>
+    </div>
+  </div>
+  <div class="field-group">
+    <label>Revenue / Collaboration Model Preference</label>
+    <div class="radio-group">
+      <div class="radio-item" data-group="revenue" data-value="Revenue Share"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Revenue Share</span></div>
+      <div class="radio-item" data-group="revenue" data-value="Fixed Recording Fee"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Fixed Recording Fee</span></div>
+      <div class="radio-item" data-group="revenue" data-value="Hybrid (Both)"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Hybrid (Both)</span></div>
+      <div class="radio-item" data-group="revenue" data-value="Open to Discussion"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Open to Discussion</span></div>
+    </div>
+    <input type="hidden" name="revenue_model" id="revenueModel">
+  </div>
+</div>
+
+<!-- Section 5: Final -->
+<div class="form-card">
+  <div class="section-heading"><span class="rune">☾</span> Final Details</div>
+  <div class="field-group">
+    <label>Sample Video / Demo Link <span class="hint">YouTube, Instagram, or Drive link showcasing your teaching style</span></label>
+    <input type="url" name="demo_link" placeholder="https://...">
+  </div>
+  <div class="field-group">
+    <label>How did you hear about Occult Gurukul?</label>
+    <select name="referral_source">
+      <option value="">— Select —</option>
+      <option>Instagram</option><option>YouTube</option>
+      <option>WhatsApp / Forwarded Message</option>
+      <option>Friend / Colleague</option><option>Google Search</option>
+      <option>Occult Community / Forum</option>
+      <option>Event / Seminar</option><option>Other</option>
+    </select>
+  </div>
+  <div class="field-group">
+    <label>Message to the Gurukul <span class="hint">Your vision, teaching philosophy, or any questions</span></label>
+    <textarea name="message" placeholder="Share your intentions with Occult Gurukul..." rows="4"></textarea>
+  </div>
+  <div class="field-group">
+    <label>I agree to Occult Gurukul's content standards and ethical guidelines <span class="req">*</span></label>
+    <div class="checkbox-grid">
+      <div class="checkbox-item" id="agreeEthics" style="max-width:100%">
+        <input type="checkbox" name="agree_ethics" value="Yes, I agree">
+        <div class="custom-check"></div>
+        <span class="checkbox-label">Yes, I agree and commit to ethical, responsible teachings</span>
       </div>
     </div>
+  </div>
+</div>
 
-    <!-- Section 2: Credentials -->
-    <div class="form-card">
-      <div class="section-heading"><span class="rune">⊕</span> Expertise &amp; Credentials</div>
-      <div class="field-group">
-        <label>Years of Active Practice <span class="req">*</span></label>
-        <div class="radio-group">
-          <div class="radio-item" data-group="years" data-value="1-3 Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">1–3 Years</span></div>
-          <div class="radio-item" data-group="years" data-value="4-7 Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">4–7 Years</span></div>
-          <div class="radio-item" data-group="years" data-value="8-15 Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">8–15 Years</span></div>
-          <div class="radio-item" data-group="years" data-value="15+ Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">15+ Years</span></div>
-          <div class="radio-item" data-group="years" data-value="25+ Years"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">25+ Years</span></div>
-        </div>
-        <input type="hidden" name="years_practice" id="yearsPractice">
-      </div>
-      <div class="field-group">
-        <label>Teaching / Guiding Experience <span class="req">*</span></label>
-        <div class="radio-group">
-          <div class="radio-item" data-group="teach" data-value="No prior teaching"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">No prior teaching</span></div>
-          <div class="radio-item" data-group="teach" data-value="Informal / Personal"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Informal / Personal</span></div>
-          <div class="radio-item" data-group="teach" data-value="Workshops and Events"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Workshops &amp; Events</span></div>
-          <div class="radio-item" data-group="teach" data-value="Online Courses"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Online Courses</span></div>
-          <div class="radio-item" data-group="teach" data-value="Institutional / Gurukul"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Institutional / Gurukul</span></div>
-        </div>
-        <input type="hidden" name="teaching_experience" id="teachingExp">
-      </div>
-      <div class="field-group">
-        <label>Brief Bio / Lineage <span class="req">*</span>
-          <span class="hint">Your spiritual lineage, mentors, initiations, and path of study</span>
-        </label>
-        <textarea name="bio" placeholder="Describe your path, lineage, teachers, and key initiations or certifications..." rows="4" required></textarea>
-      </div>
-      <div class="field-group">
-        <label>Languages You Can Teach In <span class="req">*</span></label>
-        <div class="checkbox-grid">
-          <div class="checkbox-item"><input type="checkbox" name="languages" value="Hindi"><div class="custom-check"></div><span class="checkbox-label">Hindi</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="languages" value="English"><div class="custom-check"></div><span class="checkbox-label">English</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="languages" value="Sanskrit"><div class="custom-check"></div><span class="checkbox-label">Sanskrit</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="languages" value="Tamil"><div class="custom-check"></div><span class="checkbox-label">Tamil</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="languages" value="Telugu"><div class="custom-check"></div><span class="checkbox-label">Telugu</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="languages" value="Marathi"><div class="custom-check"></div><span class="checkbox-label">Marathi</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="languages" value="Bengali"><div class="custom-check"></div><span class="checkbox-label">Bengali</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="languages" value="Other"><div class="custom-check"></div><span class="checkbox-label">Other</span></div>
-        </div>
-      </div>
-    </div>
+<div class="submit-wrap">
+  <button type="submit" class="submit-btn" id="submitBtn">✦ Submit Your Application ✦</button>
+  <p class="form-note" style="margin-top:12px;">Your submission will be reviewed by the Occult Gurukul team within 3–5 working days</p>
+</div>
+```
 
-    <!-- Section 3: Courses -->
-    <div class="form-card">
-      <div class="section-heading"><span class="rune">✦</span> Courses You Can Record
-        <span style="margin-left:auto;font-family:'EB Garamond',serif;font-size:13px;color:var(--text-hint);font-style:normal;font-weight:400;letter-spacing:0;text-transform:none;">Select all that apply</span>
-      </div>
-      <p style="font-size:14px;color:var(--text-light);margin-bottom:18px;font-style:normal;">Click a category to expand it and choose specific courses.</p>
-
-      <div class="category-block">
-        <div class="category-header"><span class="cat-title"><span class="cat-icon">♈</span> Vedic &amp; Western Astrology <span class="cat-count">(16 courses)</span></span><span class="cat-arrow">▾</span></div>
-        <div class="category-courses"><div class="course-list">
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Jyotish Fundamentals"><div class="custom-check"></div><span class="checkbox-label">Jyotish Fundamentals</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Birth Chart Reading"><div class="custom-check"></div><span class="checkbox-label">Birth Chart Reading</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Navagraha and Planetary Influence"><div class="custom-check"></div><span class="checkbox-label">Navagraha &amp; Planetary Influence</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Dasha and Mahadasha Systems"><div class="custom-check"></div><span class="checkbox-label">Dasha &amp; Mahadasha Systems</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="27 Nakshatras Deep Dive"><div class="custom-check"></div><span class="checkbox-label">27 Nakshatras Deep Dive</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Transits and Gochar"><div class="custom-check"></div><span class="checkbox-label">Transits &amp; Gochar</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Mundane Astrology"><div class="custom-check"></div><span class="checkbox-label">Mundane Astrology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Astrological Remedies"><div class="custom-check"></div><span class="checkbox-label">Astrological Remedies</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Prashna / Horary Astrology"><div class="custom-check"></div><span class="checkbox-label">Prashna / Horary Astrology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Medical Astrology"><div class="custom-check"></div><span class="checkbox-label">Medical Astrology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Financial Astrology"><div class="custom-check"></div><span class="checkbox-label">Financial Astrology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Relationship and Synastry"><div class="custom-check"></div><span class="checkbox-label">Relationship &amp; Synastry</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Western Astrology Intro"><div class="custom-check"></div><span class="checkbox-label">Western Astrology Intro</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="KP (Krishnamurti Paddhati)"><div class="custom-check"></div><span class="checkbox-label">KP (Krishnamurti Paddhati)</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Lal Kitab Astrology"><div class="custom-check"></div><span class="checkbox-label">Lal Kitab Astrology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Varshaphal / Solar Return"><div class="custom-check"></div><span class="checkbox-label">Varshaphal / Solar Return</span></div>
-        </div></div>
-      </div>
-
-      <div class="category-block">
-        <div class="category-header"><span class="cat-title"><span class="cat-icon">🔢</span> Numerology &amp; Vastu Shastra <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
-        <div class="category-courses"><div class="course-list">
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Numerology Fundamentals"><div class="custom-check"></div><span class="checkbox-label">Numerology Fundamentals</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Life Path and Destiny Numbers"><div class="custom-check"></div><span class="checkbox-label">Life Path &amp; Destiny Numbers</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Name Numerology"><div class="custom-check"></div><span class="checkbox-label">Name Numerology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Chaldean Numerology"><div class="custom-check"></div><span class="checkbox-label">Chaldean Numerology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Pythagorean Numerology"><div class="custom-check"></div><span class="checkbox-label">Pythagorean Numerology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Personal Year Cycles"><div class="custom-check"></div><span class="checkbox-label">Personal Year Cycles</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Vastu Shastra Basics"><div class="custom-check"></div><span class="checkbox-label">Vastu Shastra Basics</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Vastu for Home and Interiors"><div class="custom-check"></div><span class="checkbox-label">Vastu for Home &amp; Interiors</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Vastu for Office and Business"><div class="custom-check"></div><span class="checkbox-label">Vastu for Office &amp; Business</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Vastu Remedies Without Demolition"><div class="custom-check"></div><span class="checkbox-label">Vastu Remedies Without Demolition</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Pyramid Vastu"><div class="custom-check"></div><span class="checkbox-label">Pyramid Vastu</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Geopathic Stress and Earth Energies"><div class="custom-check"></div><span class="checkbox-label">Geopathic Stress &amp; Earth Energies</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Feng Shui Fundamentals"><div class="custom-check"></div><span class="checkbox-label">Feng Shui Fundamentals</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Numerology + Vastu Integration"><div class="custom-check"></div><span class="checkbox-label">Numerology + Vastu Integration</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Dowsing and Pendulum for Vastu"><div class="custom-check"></div><span class="checkbox-label">Dowsing &amp; Pendulum for Vastu</span></div>
-        </div></div>
-      </div>
-
-      <div class="category-block">
-        <div class="category-header"><span class="cat-title"><span class="cat-icon">🃏</span> Tarot, Oracle &amp; Divination Arts <span class="cat-count">(16 courses)</span></span><span class="cat-arrow">▾</span></div>
-        <div class="category-courses"><div class="course-list">
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Tarot for Beginners"><div class="custom-check"></div><span class="checkbox-label">Tarot for Beginners</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Major Arcana Deep Dive"><div class="custom-check"></div><span class="checkbox-label">Major Arcana Deep Dive</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Minor Arcana and Court Cards"><div class="custom-check"></div><span class="checkbox-label">Minor Arcana &amp; Court Cards</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Tarot Spreads and Layouts"><div class="custom-check"></div><span class="checkbox-label">Tarot Spreads &amp; Layouts</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Professional Tarot Reading"><div class="custom-check"></div><span class="checkbox-label">Professional Tarot Reading</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Lenormand Card System"><div class="custom-check"></div><span class="checkbox-label">Lenormand Card System</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Oracle Card Reading"><div class="custom-check"></div><span class="checkbox-label">Oracle Card Reading</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Astro-Tarot Integration"><div class="custom-check"></div><span class="checkbox-label">Astro-Tarot Integration</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Pendulum Divination"><div class="custom-check"></div><span class="checkbox-label">Pendulum Divination</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Rune Reading"><div class="custom-check"></div><span class="checkbox-label">Rune Reading</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="I Ching and Hexagrams"><div class="custom-check"></div><span class="checkbox-label">I Ching &amp; Hexagrams</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Scrying and Crystal Ball"><div class="custom-check"></div><span class="checkbox-label">Scrying &amp; Crystal Ball</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Tasseography (Tea Leaf Reading)"><div class="custom-check"></div><span class="checkbox-label">Tasseography (Tea Leaf Reading)</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Palmistry / Hasta Rekha"><div class="custom-check"></div><span class="checkbox-label">Palmistry / Hasta Rekha</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Face Reading / Physiognomy"><div class="custom-check"></div><span class="checkbox-label">Face Reading / Physiognomy</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Samudrik Shastra"><div class="custom-check"></div><span class="checkbox-label">Samudrik Shastra</span></div>
-        </div></div>
-      </div>
-
-      <div class="category-block">
-        <div class="category-header"><span class="cat-title"><span class="cat-icon">✨</span> Energy Healing &amp; Meditation <span class="cat-count">(17 courses)</span></span><span class="cat-arrow">▾</span></div>
-        <div class="category-courses"><div class="course-list">
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Reiki Level 1 and 2"><div class="custom-check"></div><span class="checkbox-label">Reiki Level 1 &amp; 2</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Reiki Mastership"><div class="custom-check"></div><span class="checkbox-label">Reiki Mastership</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Pranic Healing"><div class="custom-check"></div><span class="checkbox-label">Pranic Healing</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="7 Chakra System Basics"><div class="custom-check"></div><span class="checkbox-label">7 Chakra System Basics</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Advanced Chakra Healing"><div class="custom-check"></div><span class="checkbox-label">Advanced Chakra Healing</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Aura Reading and Cleansing"><div class="custom-check"></div><span class="checkbox-label">Aura Reading &amp; Cleansing</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Crystal Healing Therapy"><div class="custom-check"></div><span class="checkbox-label">Crystal Healing Therapy</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Sound Healing and Singing Bowls"><div class="custom-check"></div><span class="checkbox-label">Sound Healing &amp; Singing Bowls</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Access Bars and Consciousness"><div class="custom-check"></div><span class="checkbox-label">Access Bars &amp; Consciousness</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Theta Healing"><div class="custom-check"></div><span class="checkbox-label">Theta Healing</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Guided Meditation Fundamentals"><div class="custom-check"></div><span class="checkbox-label">Guided Meditation Fundamentals</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Kundalini Awakening and Yoga"><div class="custom-check"></div><span class="checkbox-label">Kundalini Awakening &amp; Yoga</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Tantra Shastra Basics"><div class="custom-check"></div><span class="checkbox-label">Tantra Shastra Basics</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Third Eye Activation"><div class="custom-check"></div><span class="checkbox-label">Third Eye Activation</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Past Life Regression"><div class="custom-check"></div><span class="checkbox-label">Past Life Regression</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Law of Attraction and Manifestation"><div class="custom-check"></div><span class="checkbox-label">Law of Attraction &amp; Manifestation</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Sigil Creation and Magick"><div class="custom-check"></div><span class="checkbox-label">Sigil Creation &amp; Magick</span></div>
-        </div></div>
-      </div>
-
-      <div class="category-block">
-        <div class="category-header"><span class="cat-title"><span class="cat-icon">🕉️</span> Mantras, Rituals &amp; Sadhana <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
-        <div class="category-courses"><div class="course-list">
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Mantra Vigyan Fundamentals"><div class="custom-check"></div><span class="checkbox-label">Mantra Vigyan Fundamentals</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Beej Mantras and Siddhi"><div class="custom-check"></div><span class="checkbox-label">Beej Mantras &amp; Siddhi</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Yantra and Sacred Geometry"><div class="custom-check"></div><span class="checkbox-label">Yantra &amp; Sacred Geometry</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Pooja Vidhi and Rituals"><div class="custom-check"></div><span class="checkbox-label">Pooja Vidhi &amp; Rituals</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Havan and Yagya Procedures"><div class="custom-check"></div><span class="checkbox-label">Havan &amp; Yagya Procedures</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Mala and Jaap Sadhana"><div class="custom-check"></div><span class="checkbox-label">Mala &amp; Jaap Sadhana</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Deity-Specific Sadhana"><div class="custom-check"></div><span class="checkbox-label">Deity-Specific Sadhana</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Kali / Durga Sadhana"><div class="custom-check"></div><span class="checkbox-label">Kali / Durga Sadhana</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Shiva and Shaivite Practices"><div class="custom-check"></div><span class="checkbox-label">Shiva &amp; Shaivite Practices</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Understanding Vashikaran (Ethics)"><div class="custom-check"></div><span class="checkbox-label">Understanding Vashikaran (Ethics)</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Kavach and Protective Rituals"><div class="custom-check"></div><span class="checkbox-label">Kavach &amp; Protective Rituals</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Nazar and Drishti Dosha Removal"><div class="custom-check"></div><span class="checkbox-label">Nazar &amp; Drishti Dosha Removal</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Pitra Dosha Remedies"><div class="custom-check"></div><span class="checkbox-label">Pitra Dosha Remedies</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Vastu Puja and Space Clearing"><div class="custom-check"></div><span class="checkbox-label">Vastu Puja &amp; Space Clearing</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Lal Kitab Totke and Upay"><div class="custom-check"></div><span class="checkbox-label">Lal Kitab Totke &amp; Upay</span></div>
-        </div></div>
-      </div>
-
-      <div class="category-block">
-        <div class="category-header"><span class="cat-title"><span class="cat-icon">💎</span> Gemology &amp; Sacred Sciences <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
-        <div class="category-courses"><div class="course-list">
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Ratna Shastra Fundamentals"><div class="custom-check"></div><span class="checkbox-label">Ratna Shastra Fundamentals</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Navratna - 9 Planetary Gems"><div class="custom-check"></div><span class="checkbox-label">Navratna — 9 Planetary Gems</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Gem Prescription by Birth Chart"><div class="custom-check"></div><span class="checkbox-label">Gem Prescription by Birth Chart</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Gem Authentication and Quality"><div class="custom-check"></div><span class="checkbox-label">Gem Authentication &amp; Quality</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Rudraksha Identification and Use"><div class="custom-check"></div><span class="checkbox-label">Rudraksha Identification &amp; Use</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Crystal Metaphysical Properties"><div class="custom-check"></div><span class="checkbox-label">Crystal Metaphysical Properties</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Crystal Grids and Layouts"><div class="custom-check"></div><span class="checkbox-label">Crystal Grids &amp; Layouts</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Gem Therapy Remedies"><div class="custom-check"></div><span class="checkbox-label">Gem Therapy Remedies</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Color Therapy and Chromotherapy"><div class="custom-check"></div><span class="checkbox-label">Color Therapy &amp; Chromotherapy</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Sacred Metals (Gold Silver Copper)"><div class="custom-check"></div><span class="checkbox-label">Sacred Metals (Gold, Silver, Copper)</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Parad (Mercury) Vigyan"><div class="custom-check"></div><span class="checkbox-label">Parad (Mercury) Vigyan</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Herbs and Plants in Occult"><div class="custom-check"></div><span class="checkbox-label">Herbs &amp; Plants in Occult</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Sacred Geometry Principles"><div class="custom-check"></div><span class="checkbox-label">Sacred Geometry Principles</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Alchemy and Rasayana Shastra"><div class="custom-check"></div><span class="checkbox-label">Alchemy &amp; Rasayana Shastra</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Astro-Gemology Integration"><div class="custom-check"></div><span class="checkbox-label">Astro-Gemology Integration</span></div>
-        </div></div>
-      </div>
-
-      <div class="category-block">
-        <div class="category-header"><span class="cat-title"><span class="cat-icon">👁️</span> Paranormal &amp; Psychic Arts <span class="cat-count">(15 courses)</span></span><span class="cat-arrow">▾</span></div>
-        <div class="category-courses"><div class="course-list">
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Developing Psychic Abilities"><div class="custom-check"></div><span class="checkbox-label">Developing Psychic Abilities</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Clairvoyance and Remote Viewing"><div class="custom-check"></div><span class="checkbox-label">Clairvoyance &amp; Remote Viewing</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Mediumship and Spirit Communication"><div class="custom-check"></div><span class="checkbox-label">Mediumship &amp; Spirit Communication</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Ghost Investigation Basics"><div class="custom-check"></div><span class="checkbox-label">Ghost Investigation Basics</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Entity Clearing and Space Healing"><div class="custom-check"></div><span class="checkbox-label">Entity Clearing &amp; Space Healing</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Astral Projection and OBE"><div class="custom-check"></div><span class="checkbox-label">Astral Projection &amp; OBE</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Lucid Dreaming and Dream Yoga"><div class="custom-check"></div><span class="checkbox-label">Lucid Dreaming &amp; Dream Yoga</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Dream Interpretation and Symbology"><div class="custom-check"></div><span class="checkbox-label">Dream Interpretation &amp; Symbology</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Telepathy and Mind-to-Mind"><div class="custom-check"></div><span class="checkbox-label">Telepathy &amp; Mind-to-Mind</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Psychometry (Object Reading)"><div class="custom-check"></div><span class="checkbox-label">Psychometry (Object Reading)</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Automatic Writing"><div class="custom-check"></div><span class="checkbox-label">Automatic Writing</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Black Magic Identification and Protection"><div class="custom-check"></div><span class="checkbox-label">Black Magic Identification &amp; Protection</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Witchcraft and Wicca Intro"><div class="custom-check"></div><span class="checkbox-label">Witchcraft &amp; Wicca Intro</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Shamanism and Soul Retrieval"><div class="custom-check"></div><span class="checkbox-label">Shamanism &amp; Soul Retrieval</span></div>
-          <div class="checkbox-item"><input type="checkbox" name="courses" value="Akashic Records Reading"><div class="custom-check"></div><span class="checkbox-label">Akashic Records Reading</span></div>
-        </div></div>
-      </div>
-
-      <div class="field-group" style="margin-top:18px;">
-        <label>Any Other Topics / Custom Course Ideas <span class="hint">Mention any niche or specialty topics not listed above</span></label>
-        <textarea name="custom_topics" placeholder="e.g. Nadi Jyotish, Swar Vigyan, Karmakand, Shabar Mantras..." rows="3"></textarea>
-      </div>
-    </div>
-
-    <!-- Section 4: Recording Readiness -->
-    <div class="form-card">
-      <div class="section-heading"><span class="rune">🎙️</span> Recording Readiness</div>
-      <div class="field-group">
-        <label>Do you have access to a camera/mic setup? <span class="req">*</span></label>
-        <div class="radio-group">
-          <div class="radio-item" data-group="setup" data-value="Yes - Professional Studio"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Yes – Professional Studio</span></div>
-          <div class="radio-item" data-group="setup" data-value="Yes - Basic Home Setup"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Yes – Basic Home Setup</span></div>
-          <div class="radio-item" data-group="setup" data-value="Phone / Webcam Only"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Phone / Webcam Only</span></div>
-          <div class="radio-item" data-group="setup" data-value="No - Need Assistance"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">No – Need Assistance</span></div>
-        </div>
-        <input type="hidden" name="recording_setup" id="recordingSetup">
-      </div>
-      <div class="field-group">
-        <label>Preferred Recording Mode <span class="req">*</span></label>
-        <div class="radio-group">
-          <div class="radio-item" data-group="mode" data-value="Screen + Slides"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Screen + Slides</span></div>
-          <div class="radio-item" data-group="mode" data-value="Talking Head (Face Cam)"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Talking Head (Face Cam)</span></div>
-          <div class="radio-item" data-group="mode" data-value="Mixed (Both)"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Mixed (Both)</span></div>
-          <div class="radio-item" data-group="mode" data-value="Whiteboard / Blackboard"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Whiteboard / Blackboard</span></div>
-          <div class="radio-item" data-group="mode" data-value="Open to Guidance"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Open to Guidance</span></div>
-        </div>
-        <input type="hidden" name="recording_mode" id="recordingMode">
-      </div>
-      <div class="two-col">
-        <div class="field-group">
-          <label>Availability to Start Recording <span class="req">*</span></label>
-          <select name="availability" required>
-            <option value="">— Select —</option>
-            <option>Within 1 Week</option>
-            <option>Within 2-4 Weeks</option>
-            <option>1-2 Months</option>
-            <option>After 2 Months</option>
-          </select>
-        </div>
-        <div class="field-group">
-          <label>Estimated Hours per Week for Recording</label>
-          <select name="hours_per_week">
-            <option value="">— Select —</option>
-            <option>1-3 hours</option>
-            <option>4-6 hours</option>
-            <option>7-10 hours</option>
-            <option>10+ hours</option>
-          </select>
-        </div>
-      </div>
-      <div class="field-group">
-        <label>Revenue / Collaboration Model Preference</label>
-        <div class="radio-group">
-          <div class="radio-item" data-group="revenue" data-value="Revenue Share"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Revenue Share</span></div>
-          <div class="radio-item" data-group="revenue" data-value="Fixed Recording Fee"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Fixed Recording Fee</span></div>
-          <div class="radio-item" data-group="revenue" data-value="Hybrid (Both)"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Hybrid (Both)</span></div>
-          <div class="radio-item" data-group="revenue" data-value="Open to Discussion"><div class="custom-radio"><div class="radio-dot"></div></div><span class="radio-label">Open to Discussion</span></div>
-        </div>
-        <input type="hidden" name="revenue_model" id="revenueModel">
-      </div>
-    </div>
-
-    <!-- Section 5: Final -->
-    <div class="form-card">
-      <div class="section-heading"><span class="rune">☾</span> Final Details</div>
-      <div class="field-group">
-        <label>Sample Video / Demo Link <span class="hint">YouTube, Instagram, or Drive link showcasing your teaching style</span></label>
-        <input type="url" name="demo_link" placeholder="https://...">
-      </div>
-      <div class="field-group">
-        <label>How did you hear about Occult Gurukul?</label>
-        <select name="referral_source">
-          <option value="">— Select —</option>
-          <option>Instagram</option><option>YouTube</option>
-          <option>WhatsApp / Forwarded Message</option>
-          <option>Friend / Colleague</option><option>Google Search</option>
-          <option>Occult Community / Forum</option>
-          <option>Event / Seminar</option><option>Other</option>
-        </select>
-      </div>
-      <div class="field-group">
-        <label>Message to the Gurukul <span class="hint">Your vision, teaching philosophy, or any questions</span></label>
-        <textarea name="message" placeholder="Share your intentions with Occult Gurukul..." rows="4"></textarea>
-      </div>
-      <div class="field-group">
-        <label>I agree to Occult Gurukul's content standards and ethical guidelines <span class="req">*</span></label>
-        <div class="checkbox-grid">
-          <div class="checkbox-item" id="agreeEthics" style="max-width:100%">
-            <input type="checkbox" name="agree_ethics" value="Yes, I agree">
-            <div class="custom-check"></div>
-            <span class="checkbox-label">Yes, I agree and commit to ethical, responsible teachings</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="submit-wrap">
-      <button type="submit" class="submit-btn" id="submitBtn">✦ Submit Your Application ✦</button>
-      <p class="form-note" style="margin-top:12px;">Your submission will be reviewed by the Occult Gurukul team within 3–5 working days</p>
-    </div>
   </form>
 
   <div class="success-msg" id="successMsg">
@@ -486,7 +810,7 @@
 
 <script>
   // ── Zoho Flow Webhook — routes payload to Zoho Sheet ──
-  const ZOHO_WEBHOOK = 'https://flow.zoho.in/60070293075/flow/webhook/incoming?zapikey=1001.926a70ff5988d1d236dc6fe267a1fae2.3b412d8feb9bc65e0204b98387bb7346&isdebug=false';
+  const SHEET_ENDPOINT = 'https://flow.zoho.in/60070293075/flow/webhook/incoming?zapikey=1001.926a70ff5988d1d236dc6fe267a1fae2.3b412d8feb9bc65e0204b98387bb7346&isdebug=false';
 
   /* Radio buttons */
   document.querySelectorAll('.radio-item').forEach(item => {
@@ -508,9 +832,16 @@
       item.querySelector('.custom-check').textContent = checked ? '✓' : '';
       const cb = item.querySelector('input[type="checkbox"]');
       if (cb) cb.checked = checked;
+      updateCourseCount();
       updateProgress();
     });
   });
+
+  /* Course count */
+  function updateCourseCount() {
+    const count = document.querySelectorAll('input[name="courses"]:checked').length;
+    document.getElementById('courseCount').textContent = count;
+  }
 
   /* Accordion */
   document.querySelectorAll('.category-header').forEach(h => {
@@ -598,21 +929,24 @@
     };
 
     try {
-      const res = await fetch(ZOHO_WEBHOOK, {
+      // Send as URL-encoded form data (a "simple request") so the browser
+      // does NOT send a CORS preflight OPTIONS request to Zoho Flow.
+      // Zoho Flow accepts both JSON and form-encoded payloads.
+      const formBody = new URLSearchParams(payload).toString();
+
+      await fetch(SHEET_ENDPOINT, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
+        mode: 'no-cors',              // Zoho Flow doesn't return CORS headers
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: formBody
       });
 
-      if (res.ok) {
-        document.getElementById('mentorForm').style.display = 'none';
-        document.getElementById('successMsg').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        toast('✗ Submission failed (HTTP ' + res.status + '). Please try again.', 6000);
-        btn.disabled = false;
-        btn.textContent = '✦ Submit Your Application ✦';
-      }
+      // With no-cors we can't read the response status, so we show success
+      // optimistically. Check Zoho Flow logs if you suspect failed deliveries.
+      document.getElementById('mentorForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
     } catch (err) {
       toast('✗ Network error. Please check your connection and try again.', 6000);
       btn.disabled = false;
@@ -620,5 +954,6 @@
     }
   });
 </script>
+
 </body>
 </html>
