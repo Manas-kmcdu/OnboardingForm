@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -27,58 +26,58 @@
 *{margin:0;padding:0;box-sizing:border-box}
 
 body {
-background: var(--bg);
-font-family: 'EB Garamond', serif;
-color: var(--dark);
-min-height: 100vh;
-padding: 32px 16px 80px;
+  background: var(--bg);
+  font-family: 'EB Garamond', serif;
+  color: var(--dark);
+  min-height: 100vh;
+  padding: 32px 16px 80px;
 }
 
-.wrap { max-width: 720px; margin: 0 auto; }
+.wrap { max-width: 760px; margin: 0 auto; }
 
 /* ── HEADER ── */
 .hdr {
-background: linear-gradient(150deg, #7211C6 0%, #9B3FE8 45%, #5A0FA0 100%);
-border-radius: 8px 8px 0 0;
-padding: 44px 40px 32px;
-text-align: center;
-position: relative;
-overflow: hidden;
-box-shadow: 0 8px 32px rgba(114,17,198,.35);
+  background: linear-gradient(150deg, #7211C6 0%, #9B3FE8 45%, #5A0FA0 100%);
+  border-radius: 8px 8px 0 0;
+  padding: 44px 40px 32px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(114,17,198,.35);
 }
 .hdr::after {
-content:'';position:absolute;inset:0;
-background: radial-gradient(ellipse at 50% -10%, rgba(255,255,255,.2) 0%, transparent 60%);
-pointer-events:none;
+  content:'';position:absolute;inset:0;
+  background: radial-gradient(ellipse at 50% -10%, rgba(255,255,255,.2) 0%, transparent 60%);
+  pointer-events:none;
 }
 .hdr-icon { font-size:48px; display:block; margin-bottom:12px; animation: bob 4s ease-in-out infinite alternate; }
 @keyframes bob{ from{transform:translateY(0)} to{transform:translateY(-6px)} }
 .hdr h1 {
-font-family:'Cinzel Decorative',normal;
-font-size: clamp(19px,4vw,26px);
-color:#fff; letter-spacing:.06em; line-height:1.3;
-text-shadow:0 2px 6px rgba(0,0,0,.18);
-margin-bottom:5px; position:relative;
+  font-family:'Cinzel Decorative',normal;
+  font-size: clamp(19px,4vw,26px);
+  color:#fff; letter-spacing:.06em; line-height:1.3;
+  text-shadow:0 2px 6px rgba(0,0,0,.18);
+  margin-bottom:5px; position:relative;
 }
 .hdr .sub {
-font-family:'Cinzel',serif; font-size:11px;
-letter-spacing:.28em; text-transform:uppercase;
-color:rgba(255,255,255,.78); position:relative;
+  font-family:'Cinzel',serif; font-size:11px;
+  letter-spacing:.28em; text-transform:uppercase;
+  color:rgba(255,255,255,.78); position:relative;
 }
 .hdr-line {
-display:flex; align-items:center; gap:10px;
-margin:18px 0; position:relative;
+  display:flex; align-items:center; gap:10px;
+  margin:18px 0; position:relative;
 }
 .hdr-line::before,.hdr-line::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.3)}
 .hdr-line span{color:rgba(255,255,255,.6);font-size:14px}
 .hdr p {
-font-size:15px; line-height:1.8; font-style:normal;
-color:rgba(255,255,255,.88); position:relative;
+  font-size:15px; line-height:1.8; font-style:normal;
+  color:rgba(255,255,255,.88); position:relative;
 }
 .hdr .req-note {
-margin-top:14px; font-family:'Cinzel',serif;
-font-size:11px; letter-spacing:.06em;
-color:rgba(255,255,255,.6); position:relative;
+  margin-top:14px; font-family:'Cinzel',serif;
+  font-size:11px; letter-spacing:.06em;
+  color:rgba(255,255,255,.6); position:relative;
 }
 .hdr .req-note b { color:#fff; }
 
@@ -88,317 +87,377 @@ color:rgba(255,255,255,.6); position:relative;
 
 /* ── CARDS ── */
 .card {
-background: var(--white);
-border:1px solid rgba(114,17,198,.13);
-border-top:none;
-padding:30px 36px;
-box-shadow:0 2px 10px rgba(114,17,198,.08);
+  background: var(--white);
+  border:1px solid rgba(114,17,198,.13);
+  border-top:none;
+  padding:30px 36px;
+  box-shadow:0 2px 10px rgba(114,17,198,.08);
 }
 .card:last-of-type { border-radius:0 0 8px 8px; border-bottom:2px solid var(--m-mid); }
 
 .sec-head {
-font-family:'Cinzel',serif; font-size:10.5px;
-letter-spacing:.28em; text-transform:uppercase;
-color: var(--m); margin-bottom:22px;
-padding-bottom:9px;
-border-bottom:1.5px solid var(--border);
-display:flex; align-items:center; gap:8px;
+  font-family:'Cinzel',serif; font-size:10.5px;
+  letter-spacing:.28em; text-transform:uppercase;
+  color: var(--m); margin-bottom:22px;
+  padding-bottom:9px;
+  border-bottom:1.5px solid var(--border);
+  display:flex; align-items:center; gap:8px;
 }
 .sec-head .ico { font-size:16px; }
 
 /* ── FIELD ── */
 .field { margin-bottom:22px; }
 label {
-display:block; font-family:'Cinzel',serif;
-font-size:12.5px; color: var(--dark);
-margin-bottom:8px; letter-spacing:.02em;
+  display:block; font-family:'Cinzel',serif;
+  font-size:12.5px; color: var(--dark);
+  margin-bottom:8px; letter-spacing:.02em;
 }
 label .r { color: var(--red); margin-left:2px; }
 label .sub-hint {
-display:block; font-family:'EB Garamond',serif;
-font-size:12.5px; color: var(--hint);
-font-style:normal; margin-top:2px;
-letter-spacing:0; font-weight:400;
+  display:block; font-family:'EB Garamond',serif;
+  font-size:12.5px; color: var(--hint);
+  font-style:normal; margin-top:2px;
+  letter-spacing:0; font-weight:400;
 }
 
 .two { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
 @media(max-width:540px){ .two{grid-template-columns:1fr} }
 
 input[type=text],input[type=email],input[type=tel],textarea,select {
-width:100%; background: var(--off);
-border:1.5px solid var(--border); border-radius:4px;
-color: var(--dark); font-family:'EB Garamond',serif;
-font-size:16px; padding:10px 14px; outline:none;
-transition:border-color .2s, box-shadow .2s, background .2s;
+  width:100%; background: var(--off);
+  border:1.5px solid var(--border); border-radius:4px;
+  color: var(--dark); font-family:'EB Garamond',serif;
+  font-size:16px; padding:10px 14px; outline:none;
+  transition:border-color .2s, box-shadow .2s, background .2s;
 }
 input:focus,textarea:focus,select:focus {
-border-color: var(--m); background:#fff;
-box-shadow:0 0 0 3px rgba(114,17,198,.15);
+  border-color: var(--m); background:#fff;
+  box-shadow:0 0 0 3px rgba(114,17,198,.15);
 }
 input::placeholder,textarea::placeholder { color:#9B6FCC; }
 textarea{resize:vertical;min-height:90px;line-height:1.65}
 select {
-appearance:none; cursor:pointer;
-background-image:url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 6L10 1' stroke='%237211C6' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
-background-repeat:no-repeat; background-position:right 13px center; padding-right:36px;
+  appearance:none; cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L5.5 6L10 1' stroke='%237211C6' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat; background-position:right 13px center; padding-right:36px;
 }
 select option{background:#fff;color: var(--dark)}
 
-/* ── TRIGGER BUTTON ── */
-.mega-trigger {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 20px;
-  background: linear-gradient(135deg, #5A0FA0, #9B3FE8);
-  border: none; border-radius: 5px; color: #fff;
-  font-family: 'Cinzel', serif; font-size: 11px;
-  letter-spacing: .15em; text-transform: uppercase;
-  cursor: pointer; transition: all .2s;
-  box-shadow: 0 3px 14px rgba(114,17,198,.3); margin-bottom: 10px;
-}
-.mega-trigger:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(114,17,198,.45); }
-.mega-trigger-badge {
-  background: rgba(255,255,255,.25); border-radius: 20px;
-  padding: 1px 8px; font-size: 10px;
-  font-family: 'EB Garamond', serif; letter-spacing: 0; font-style: normal;
+/* ════════════════════════════════════
+   HORIZONTAL CATEGORY NAV (Myntra-style)
+   ════════════════════════════════════ */
+
+.courses-section {
+  background: var(--white);
+  border: 1px solid rgba(114,17,198,.13);
+  border-top: none;
+  box-shadow: 0 2px 10px rgba(114,17,198,.08);
+  position: relative;
 }
 
-/* ── MEGA OVERLAY ── */
-.mega-overlay {
-  display: none; position: fixed; inset: 0; z-index: 1000;
-  background: rgba(21,0,34,.65);
-  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
-  align-items: center; justify-content: center; padding: 16px;
-}
-.mega-overlay.open { display: flex; animation: mgFade .18s ease; }
-@keyframes mgFade { from{opacity:0} to{opacity:1} }
-
-.mega-panel {
-  background: #fff; width: 100%; max-width: 1060px;
-  height: 88vh; border-radius: 10px;
-  display: flex; flex-direction: column; overflow: hidden;
-  box-shadow: 0 20px 60px rgba(114,17,198,.3);
-  animation: mgUp .22s ease;
-}
-@keyframes mgUp { from{transform:translateY(14px);opacity:0} to{transform:translateY(0);opacity:1} }
-
-.mega-topbar {
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 13px 20px;
-  background: linear-gradient(135deg, #5A0FA0, #9B3FE8); flex-shrink: 0;
-}
-.mega-topbar-title { font-family:'Cinzel',serif; font-size:11.5px; letter-spacing:.18em; text-transform:uppercase; color:#fff; }
-.mega-topbar-right { display:flex; align-items:center; gap:12px; }
-.mega-selected-badge {
-  font-family:'Cinzel',serif; font-size:10px; letter-spacing:.1em;
-  color:rgba(255,255,255,.85); background:rgba(255,255,255,.18);
-  padding:3px 12px; border-radius:20px;
-}
-.mega-close {
-  width:30px; height:30px; border-radius:50%;
-  border:1.5px solid rgba(255,255,255,.5); background:transparent;
-  color:#fff; font-size:15px; cursor:pointer;
-  display:flex; align-items:center; justify-content:center; transition:all .15s;
-}
-.mega-close:hover { background:rgba(255,255,255,.2); }
-
-/* Body: left nav + right content */
-.mega-body { display:flex; flex:1; overflow:hidden; }
-
-/* Left nav */
-.mega-nav {
-  width:190px; min-width:190px; background:#FAF6FE;
-  border-right:1.5px solid #EAD5FA; overflow-y:auto; flex-shrink:0;
-}
-.mega-nav-item {
-  display:flex; align-items:center; gap:9px;
-  padding:13px 14px; cursor:pointer; user-select:none;
-  border-left:3px solid transparent; transition:all .13s;
-}
-.mega-nav-item:hover { background:#EAD5FA; }
-.mega-nav-item.active { background:#fff; border-left-color:var(--m); }
-.mega-nav-item-icon { font-size:16px; flex-shrink:0; }
-.mega-nav-item-label { font-family:'Cinzel',serif; font-size:9.5px; color:var(--dark); letter-spacing:.04em; line-height:1.4; }
-.mega-nav-item.active .mega-nav-item-label { color:var(--m); font-weight:600; }
-.mega-nav-badge {
-  margin-left:auto; background:var(--m); color:#fff;
-  font-family:'EB Garamond',serif; font-size:10px; font-style:normal;
-  padding:1px 6px; border-radius:10px; flex-shrink:0; display:none;
-}
-.mega-nav-badge.show { display:block; }
-
-/* Right pane — shows subcategory tiles or course grid */
-.mega-content { flex:1; overflow-y:auto; background:#fff; }
-
-/* ── SUBCATEGORY TILES VIEW ── */
-.subcat-view { padding:20px 22px; }
-.subcat-view-head {
-  display:flex; align-items:center; gap:10px;
-  margin-bottom:6px; padding-bottom:10px;
-  border-bottom:1.5px solid #EAD5FA;
-}
-.subcat-view-icon { font-size:22px; }
-.subcat-view-title { font-family:'Cinzel',serif; font-size:13px; color:var(--dark); letter-spacing:.05em; }
-.subcat-view-hint {
-  font-family:'EB Garamond',serif; font-size:12px; color:var(--hint);
-  font-style:normal; margin-bottom:18px; margin-top:4px;
-}
-
-.subcat-tiles {
-  display:flex; flex-wrap:wrap; gap:10px;
-}
-.subcat-tile {
-  display:flex; flex-direction:column; align-items:flex-start; gap:4px;
-  padding:14px 16px; min-width:150px; max-width:220px;
-  border:1.5px solid #D4A8F5; border-radius:8px;
-  background:#FAF6FE; cursor:pointer; user-select:none;
-  transition:all .18s; position:relative;
-}
-.subcat-tile:hover { border-color:var(--m); background:#EAD5FA; transform:translateY(-2px); box-shadow:0 4px 14px rgba(114,17,198,.15); }
-.subcat-tile-icon { font-size:22px; }
-.subcat-tile-name { font-family:'Cinzel',serif; font-size:10px; color:var(--dark); letter-spacing:.04em; line-height:1.4; }
-.subcat-tile-count { font-family:'EB Garamond',serif; font-size:12px; color:var(--hint); font-style:normal; }
-.subcat-tile-badge {
-  position:absolute; top:8px; right:8px;
-  background:var(--m); color:#fff;
-  font-family:'EB Garamond',serif; font-size:10px; font-style:normal;
-  padding:1px 7px; border-radius:10px; display:none;
-}
-.subcat-tile-badge.show { display:block; }
-
-/* ── COURSE GRID VIEW (inside overlay) ── */
-.course-overlay {
-  display:none; position:fixed; inset:0; z-index:1100;
-  background:rgba(21,0,34,.7);
-  backdrop-filter:blur(4px); -webkit-backdrop-filter:blur(4px);
-  align-items:center; justify-content:center; padding:20px;
-}
-.course-overlay.open { display:flex; animation:mgFade .15s ease; }
-
-.course-sheet {
-  background:#fff; width:100%; max-width:960px;
-  max-height:82vh; border-radius:10px;
-  display:flex; flex-direction:column; overflow:hidden;
-  box-shadow:0 20px 60px rgba(114,17,198,.35);
-  animation:mgUp .18s ease;
-}
-.course-sheet-head {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:13px 20px; border-bottom:1.5px solid #EAD5FA; flex-shrink:0;
-}
-.course-sheet-head-left { display:flex; align-items:center; gap:10px; }
-.course-sheet-icon { font-size:20px; }
-.course-sheet-title { font-family:'Cinzel',serif; font-size:13px; color:var(--dark); letter-spacing:.05em; }
-.course-sheet-count { font-family:'EB Garamond',serif; font-size:13px; color:var(--hint); font-style:normal; }
-.course-sheet-back {
-  display:flex; align-items:center; gap:5px;
-  font-family:'Cinzel',serif; font-size:9.5px; letter-spacing:.08em;
-  color:var(--m); background:#EAD5FA; border:1.5px solid #D4A8F5;
-  border-radius:4px; padding:5px 11px; cursor:pointer; transition:all .15s;
-}
-.course-sheet-back:hover { background:#D4A8F5; }
-
-.course-sheet-body { overflow-y:auto; padding:16px 20px 20px; flex:1; }
-.course-grid {
-  display:grid; grid-template-columns:repeat(5,1fr); gap:6px;
-}
-@media(max-width:900px){ .course-grid{grid-template-columns:repeat(3,1fr)} }
-@media(max-width:560px){ .course-grid{grid-template-columns:repeat(2,1fr)} }
-
-.course-sheet-footer {
-  padding:11px 20px; border-top:1.5px solid #EAD5FA;
-  display:flex; align-items:center; justify-content:space-between;
-  background:#FAF6FE; flex-shrink:0;
-}
-.course-sheet-footer-info { font-family:'EB Garamond',serif; font-size:13px; color:var(--hint); font-style:normal; }
-.course-sheet-footer-info b { color:var(--m); font-style:normal; }
-
-/* Mega footer */
-.mega-footer {
-  display:flex; align-items:center; justify-content:space-between;
-  padding:11px 20px; border-top:1.5px solid #EAD5FA;
-  background:#FAF6FE; flex-shrink:0;
-}
-.mega-footer-info { font-family:'EB Garamond',serif; font-size:13px; color:var(--hint); font-style:normal; }
-.mega-footer-info b { color:var(--m); font-style:normal; }
-.mega-done-btn {
-  background:linear-gradient(135deg,#5A0FA0,#9B3FE8); border:none; color:#fff;
-  font-family:'Cinzel',serif; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase;
-  padding:9px 26px; border-radius:4px; cursor:pointer; transition:all .2s;
-}
-.mega-done-btn:hover { transform:translateY(-1px); box-shadow:0 4px 14px rgba(114,17,198,.4); }
-
-/* Bottom bar */
-.mega-footer {
+.courses-header {
+  padding: 26px 24px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 11px 20px;
-  border-top: 1.5px solid #EAD5FA;
-  background: #FAF6FE;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.selection-summary {
+  font-family: 'EB Garamond', serif;
+  font-size: 13px;
+  color: var(--hint);
+  font-style: italic;
+}
+.selection-summary b { color: var(--m); font-style: normal; font-family: 'Cinzel', serif; font-size: 12px; }
+
+/* Category pill strip */
+.cat-strip-wrap {
+  padding: 18px 24px 0;
+}
+
+.cat-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 14px;
+  border-radius: 50px;
+  border: 1.5px solid var(--border);
+  background: var(--off);
+  cursor: pointer;
+  transition: all .2s;
+  font-family: 'Cinzel', serif;
+  font-size: 10.5px;
+  letter-spacing: .03em;
+  color: var(--dark);
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+}
+.cat-pill:hover {
+  border-color: var(--m2);
+  background: #EAD5FA;
+  color: var(--m);
+}
+.cat-pill.active {
+  background: var(--m);
+  border-color: var(--m);
+  color: #fff;
+  box-shadow: 0 3px 12px rgba(114,17,198,.3);
+}
+.cat-pill .pill-icon { font-size: 16px; }
+.cat-pill .pill-count {
+  font-family: 'EB Garamond', serif;
+  font-size: 11px;
+  letter-spacing: 0;
+  opacity: .7;
+  font-style: normal;
+}
+.cat-pill .pill-selected-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #FFD700;
+  display: none;
   flex-shrink: 0;
 }
-.mega-footer-info {
+.cat-pill.has-selection .pill-selected-dot { display: block; }
+.cat-pill.active.has-selection .pill-selected-dot { background: rgba(255,255,255,.9); }
+
+/* Underline strip */
+.cat-strip-line {
+  margin: 14px 24px 0;
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* ════════════════════════════════════
+   OVERLAY PANEL
+   ════════════════════════════════════ */
+.overlay-panel {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(21,0,34,.55);
+  backdrop-filter: blur(3px);
+  animation: fadeIn .2s ease;
+}
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+.overlay-panel.visible { display: flex; align-items: flex-start; justify-content: center; padding: 40px 16px; overflow-y: auto; }
+
+.overlay-box {
+  background: #fff;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 24px 80px rgba(114,17,198,.3);
+  animation: slideUp .25s cubic-bezier(.22,1,.36,1);
+  overflow: hidden;
+  position: relative;
+}
+@keyframes slideUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+.overlay-top {
+  padding: 22px 28px 18px;
+  border-bottom: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #F5F0FA, #EAD5FA);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.overlay-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.overlay-title .ot-icon { font-size: 24px; }
+.overlay-title h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 14px;
+  letter-spacing: .1em;
+  color: var(--dark);
+}
+.overlay-title .ot-count {
   font-family: 'EB Garamond', serif;
   font-size: 13px;
   color: var(--hint);
   font-style: normal;
 }
-.mega-footer-info b { color: var(--m); font-style: normal; }
-.mega-done-btn {
-  background: linear-gradient(135deg, #5A0FA0, #9B3FE8);
-  border: none;
-  color: #fff;
-  font-family: 'Cinzel', serif;
-  font-size: 10.5px;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  padding: 9px 26px;
-  border-radius: 4px;
+
+.overlay-close {
+  width: 34px; height: 34px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border);
+  background: #fff;
   cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; color: var(--m);
+  transition: all .15s;
+  flex-shrink: 0;
+}
+.overlay-close:hover { background: var(--m); color: #fff; border-color: var(--m); }
+
+/* Subcategory sidebar + course grid layout */
+.overlay-body {
+  display: grid;
+  grid-template-columns: 190px 1fr;
+  min-height: 440px;
+}
+
+.overlay-sidebar {
+  border-right: 1.5px solid var(--border);
+  padding: 16px 0;
+  background: #FAF8FC;
+}
+
+.subcat-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  cursor: pointer;
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: .06em;
+  color: var(--dark);
+  border-left: 3px solid transparent;
+  transition: all .15s;
+  user-select: none;
+}
+.subcat-btn:hover { background: #EAD5FA; color: var(--m); border-left-color: var(--m-mid); }
+.subcat-btn.active { background: #EAD5FA; color: var(--m); border-left-color: var(--m); font-weight: 700; }
+.subcat-btn .sb-count { font-family: 'EB Garamond', serif; font-size: 11px; color: var(--hint); letter-spacing:0; font-weight:400; margin-left:auto; }
+.subcat-btn .sb-dot { width:6px;height:6px;border-radius:50%;background:#FFD700;display:none;flex-shrink:0; }
+.subcat-btn.has-sel .sb-dot { display:block; }
+
+/* Course content area */
+.overlay-content {
+  padding: 20px 24px;
+  overflow-y: auto;
+  max-height: 70vh;
+}
+
+.subcat-section { display: none; }
+.subcat-section.active { display: block; }
+
+.subcat-label {
+  font-family: 'Cinzel', serif;
+  font-size: 10px;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--hint);
+  margin-bottom: 12px;
+  padding-bottom: 7px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* 5-column course grid */
+.course-grid-5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+  margin-bottom: 24px;
+}
+@media(max-width: 900px) { .course-grid-5 { grid-template-columns: repeat(3,1fr); } }
+@media(max-width: 600px) { .course-grid-5 { grid-template-columns: repeat(2,1fr); } }
+
+/* Course tile */
+.ct {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 9px 10px;
+  border: 1.5px solid #C8A8F0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .15s;
+  background: var(--off);
+  user-select: none;
+  gap: 6px;
+}
+.ct:hover { border-color: var(--m2); background: #EAD5FA; }
+.ct.on { border-color: var(--m); background: #EAD5FA; }
+.ct input { display: none; }
+
+.ct-check {
+  width: 15px; height: 15px;
+  border: 1.5px solid #9B3FE8;
+  border-radius: 3px;
+  display: flex; align-items: center; justify-content: center;
+  background: #fff;
+  transition: all .15s;
+  flex-shrink: 0;
+}
+.ct.on .ct-check {
+  background: var(--m);
+  border-color: var(--m);
+}
+.ct.on .ct-check::after {
+  content: '✓';
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.ct-txt {
+  font-family: 'EB Garamond', serif;
+  font-size: 13px;
+  color: var(--mid);
+  line-height: 1.3;
+}
+
+/* Overlay footer */
+.overlay-footer {
+  padding: 14px 28px;
+  border-top: 1.5px solid var(--border);
+  background: #FAF8FC;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.overlay-footer .sel-info {
+  font-family: 'EB Garamond', serif;
+  font-size: 14px;
+  color: var(--hint);
+  font-style: italic;
+}
+.overlay-footer .sel-info b { color: var(--m); font-style: normal; font-weight: 700; }
+.btn-done {
+  background: linear-gradient(135deg, #5A0FA0, #9B3FE8 60%, #6A15B8);
+  border: none; color: #fff;
+  font-family: 'Cinzel', serif; font-size: 11px;
+  letter-spacing: .18em; text-transform: uppercase;
+  padding: 11px 28px; cursor: pointer; border-radius: 5px;
+  box-shadow: 0 4px 14px rgba(114,17,198,.35);
   transition: all .2s;
 }
-.mega-done-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(114,17,198,.4); }
-
-/* ── CHECKBOX ITEMS ── */
-.cb-item {
-display:flex; align-items:flex-start; gap:9px;
-padding:8px 11px; border:1.5px solid #C8A8F0; border-radius:4px;
-cursor:pointer; transition:all .15s; background: var(--off); user-select:none;
-}
-.cb-item:hover { border-color: var(--m2); background:#EAD5FA; }
-.cb-item.on { border-color: var(--m); background:#EAD5FA; }
-.cb-item input { display:none; }
-.cb-box {
-width:16px; height:16px; min-width:16px;
-border:1.5px solid #9B3FE8; border-radius:3px;
-display:flex; align-items:center; justify-content:center;
-font-size:11px; font-weight:900; color:#fff; line-height:1;
-background:#fff; margin-top:2px; transition:all .15s;
-flex-shrink: 0;
-}
-.cb-item.on .cb-box {
-background: var(--m);
-border-color: var(--m);
-}
-.cb-item.on .cb-box::after {
-content: '✓';
-color: #fff;
-font-size: 11px;
-font-weight: 900;
-line-height: 1;
-}
-.cb-txt { font-family:'EB Garamond',serif; font-size:14.5px; color: var(--mid); line-height:1.35; }
+.btn-done:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(114,17,198,.5); }
 
 /* ── SUBMIT ── */
 .submit-area { text-align:center; padding:32px 0 12px; }
 .btn {
-background: linear-gradient(135deg, #5A0FA0, #9B3FE8 60%, #6A15B8);
-border:none; color:#fff;
-font-family:'Cinzel',serif; font-size:12.5px;
-letter-spacing:.22em; text-transform:uppercase;
-padding:15px 50px; cursor:pointer; border-radius:5px;
-box-shadow:0 4px 18px rgba(114,17,198,.35);
-transition:all .25s;
+  background: linear-gradient(135deg, #5A0FA0, #9B3FE8 60%, #6A15B8);
+  border:none; color:#fff;
+  font-family:'Cinzel',serif; font-size:12.5px;
+  letter-spacing:.22em; text-transform:uppercase;
+  padding:15px 50px; cursor:pointer; border-radius:5px;
+  box-shadow:0 4px 18px rgba(114,17,198,.35);
+  transition:all .25s;
 }
 .btn:hover{transform:translateY(-2px);box-shadow:0 8px 26px rgba(114,17,198,.5)}
 .btn:active{transform:translateY(0)}
@@ -407,113 +466,22 @@ transition:all .25s;
 
 /* ── TOAST ── */
 .toast {
-position:fixed;bottom:28px;left:50%;
-transform:translateX(-50%) translateY(70px);
-background: var(--dark);color:#fff;
-font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.08em;
-padding:11px 26px;border-radius:4px;
-box-shadow:0 8px 24px rgba(0,0,0,.2);
-z-index:9999;opacity:0;transition:all .3s ease;
+  position:fixed;bottom:28px;left:50%;
+  transform:translateX(-50%) translateY(70px);
+  background: var(--dark);color:#fff;
+  font-family:'Cinzel',serif;font-size:11.5px;letter-spacing:.08em;
+  padding:11px 26px;border-radius:4px;
+  box-shadow:0 8px 24px rgba(0,0,0,.2);
+  z-index:9999;opacity:0;transition:all .3s ease;
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
-<script>
-const megaOverlay = document.getElementById("megaOverlay");
-const megaTrigger = document.getElementById("megaTriggerBtn");
-const megaClose = document.getElementById("megaClose");
-const megaContent = document.getElementById("megaContent");
-const megaDone = document.getElementById("megaDone");
 
-let selectedCourses = new Set();
-
-/* OPEN */
-megaTrigger.onclick = () => {
-  megaOverlay.classList.add("open");
-};
-
-/* CLOSE */
-megaClose.onclick = closeMega;
-megaDone.onclick = closeMega;
-
-function closeMega() {
-  megaOverlay.classList.remove("open");
-}
-
-/* CATEGORY SWITCH */
-document.querySelectorAll(".mega-nav-item").forEach(item => {
-  item.addEventListener("click", () => {
-
-    document.querySelectorAll(".mega-nav-item")
-      .forEach(i => i.classList.remove("active"));
-
-    item.classList.add("active");
-
-    const cat = item.dataset.cat;
-    loadCategory(cat);
-  });
-});
-
-/* LOAD CATEGORY */
-function loadCategory(cat) {
-  const pool = document.querySelector(`.cat-pool[data-cat="${cat}"]`);
-  if (!pool) return;
-
-  megaContent.innerHTML = "";
-
-  const clone = pool.querySelector(".course-grid").cloneNode(true);
-
-  megaContent.appendChild(clone);
-
-  attachCheckboxLogic();
-}
-
-/* CHECKBOX LOGIC */
-function attachCheckboxLogic() {
-  document.querySelectorAll(".cb-item").forEach(item => {
-
-    const checkbox = item.querySelector("input");
-
-    /* restore state */
-    if (selectedCourses.has(checkbox.value)) {
-      checkbox.checked = true;
-      item.classList.add("on");
-    }
-
-    item.onclick = () => {
-      checkbox.checked = !checkbox.checked;
-
-      if (checkbox.checked) {
-        selectedCourses.add(checkbox.value);
-        item.classList.add("on");
-      } else {
-        selectedCourses.delete(checkbox.value);
-        item.classList.remove("on");
-      }
-
-      updateUI();
-    };
-  });
-}
-
-/* UPDATE COUNTERS */
-function updateUI() {
-  const count = selectedCourses.size;
-
-  document.getElementById("megaSelectedBadge").innerText = count + " selected";
-  document.getElementById("megaFooterCount").innerText = count + " selected";
-  document.getElementById("megaTriggerBadge").innerText = count + " selected";
-}
-
-/* INITIAL LOAD */
-loadCategory("astrology");
-</script>
-  
-  
 /* ── SUCCESS ── */
 .success {
-display:none;text-align:center;
-padding:64px 36px;background: var(--white);
-border:1.5px solid var(--m-mid);border-radius:8px;
-box-shadow:0 4px 24px rgba(114,17,198,.1);
+  display:none;text-align:center;
+  padding:64px 36px;background: var(--white);
+  border:1.5px solid var(--m-mid);border-radius:8px;
+  box-shadow:0 4px 24px rgba(114,17,198,.1);
 }
 .success .ico2{font-size:60px;margin-bottom:16px;animation:bob 4s ease-in-out infinite alternate}
 .success h2{font-family:'Cinzel Decorative',cursive;color: var(--m);font-size:21px;margin-bottom:10px}
@@ -522,13 +490,11 @@ box-shadow:0 4px 24px rgba(114,17,198,.1);
 .success .s-line span{color: var(--m)}
 .success p{color: var(--mid);font-size:16px;line-height:1.8;font-style:normal}
 </style>
-
 </head>
 <body>
 <div class="wrap">
 
 <!-- HEADER -->
-
 <div class="hdr">
   <span class="hdr-icon">🔮</span>
   <h1>Occult Gurukul</h1>
@@ -542,7 +508,6 @@ box-shadow:0 4px 24px rgba(114,17,198,.1);
 <form id="form" novalidate>
 
 <!-- 1 · BASIC DETAILS -->
-
 <div class="card">
   <div class="sec-head"><span class="ico">☽</span> Your Details</div>
 
@@ -588,547 +553,59 @@ box-shadow:0 4px 24px rgba(114,17,198,.1);
   </div>
 </div>
 
-<!-- 2 · COURSES -->
-
-<div class="card">
-  <div class="sec-head"><span class="ico">🌟</span> Which Courses Can You Teach?
-    <span style="margin-left:auto;font-family:'EB Garamond',serif;font-size:12px;color:var(--hint);font-style:normal;font-weight:400;letter-spacing:0;text-transform:none;">Select all that apply</span>
-  </div>
-  <p style="font-size:14px;color:var(--soft);font-style:normal;margin-bottom:14px;">Tap a category below to see its courses, then tick every topic you're confident teaching.</p>
-
-  <!-- TRIGGER BUTTON -->
-  <button class="mega-trigger" id="megaTriggerBtn" type="button">
-    🌟 Browse &amp; Select Courses
-    <span class="mega-trigger-badge" id="megaTriggerBadge">0 selected</span>
-  </button>
-
-  <!-- MEGA MENU OVERLAY -->
-  <div class="mega-overlay" id="megaOverlay">
-    <div class="mega-panel">
-
-      <div class="mega-topbar">
-        <span class="mega-topbar-title">🌟 Select Courses You Can Teach</span>
-        <div class="mega-topbar-right">
-          <span class="mega-selected-badge" id="megaSelectedBadge">0 selected</span>
-          <button class="mega-close" id="megaClose" type="button">✕</button>
-        </div>
-      </div>
-
-      <div class="mega-body">
-        <nav class="mega-nav" id="megaNav">
-          <div class="mega-nav-item active" data-cat="astrology">
-            <span class="mega-nav-item-icon">&#9800;</span>
-            <span class="mega-nav-item-label">Pure Astrology</span>
-            <span class="mega-nav-badge" id="nbadge-astrology"></span>
-          </div>
-          <div class="mega-nav-item" data-cat="occult">
-            <span class="mega-nav-item-icon">&#127183;</span>
-            <span class="mega-nav-item-label">Tarot &amp; Divination</span>
-            <span class="mega-nav-badge" id="nbadge-occult"></span>
-          </div>
-          <div class="mega-nav-item" data-cat="energy">
-            <span class="mega-nav-item-icon">&#127744;</span>
-            <span class="mega-nav-item-label">Energy &amp; Healing</span>
-            <span class="mega-nav-badge" id="nbadge-energy"></span>
-          </div>
-          <div class="mega-nav-item" data-cat="tracks">
-            <span class="mega-nav-item-icon">&#128218;</span>
-            <span class="mega-nav-item-label">Specialised Tracks</span>
-            <span class="mega-nav-badge" id="nbadge-tracks"></span>
-          </div>
-          <div class="mega-nav-item" data-cat="love">
-            <span class="mega-nav-item-icon">&#128158;</span>
-            <span class="mega-nav-item-label">Love &amp; Marriage</span>
-            <span class="mega-nav-badge" id="nbadge-love"></span>
-          </div>
-          <div class="mega-nav-item" data-cat="health">
-            <span class="mega-nav-item-icon">&#127807;</span>
-            <span class="mega-nav-item-label">Health &amp; Spiritual</span>
-            <span class="mega-nav-badge" id="nbadge-health"></span>
-          </div>
-          <div class="mega-nav-item" data-cat="career">
-            <span class="mega-nav-item-icon">&#128188;</span>
-            <span class="mega-nav-item-label">Career &amp; Growth</span>
-            <span class="mega-nav-badge" id="nbadge-career"></span>
-          </div>
-          <div class="mega-nav-item" data-cat="money">
-            <span class="mega-nav-item-icon">&#128176;</span>
-            <span class="mega-nav-item-label">Money &amp; Finance</span>
-            <span class="mega-nav-badge" id="nbadge-money"></span>
-          </div>
-          <div class="mega-nav-item" data-cat="protection">
-            <span class="mega-nav-item-icon">&#128737;</span>
-            <span class="mega-nav-item-label">Protection &amp; Safety</span>
-            <span class="mega-nav-badge" id="nbadge-protection"></span>
-          </div>
-        </nav>
-        <div class="mega-content" id="megaContent"></div>
-      </div>
-
-      <div class="mega-footer">
-        <span class="mega-footer-info">Click any course to select · <b id="megaFooterCount">0 selected</b></span>
-        <button class="mega-done-btn" id="megaDone" type="button">Done ✓</button>
-      </div>
-
+<!-- 2 · COURSES — horizontal nav -->
+<div class="courses-section">
+  <div class="courses-header">
+    <div class="sec-head" style="margin-bottom:0;border:none;padding-bottom:0;">
+      <span class="ico">🌟</span> Which Courses Can You Teach?
     </div>
+    <div class="selection-summary"><b id="totalCount">0</b> courses selected</div>
   </div>
 
-  <!-- COURSE DATA (hidden pools) -->
-  <div style="display:none">
-<!-- ONLY SHOWING UPDATED / FIXED PARTS -->
-
-<!-- 🔥 FIXED: COURSE POOL STRUCTURE (NO NESTED GRID BUG) -->
-<div class="cat-pool" data-cat="astrology" data-icon="♈" data-title="Pure Astrology">
-
-  <!-- ❌ REMOVED duplicate course-grid wrapper -->
-  <!-- ✅ ONLY ONE GRID -->
-
-  <div class="course-grid">
-
-    <div class="cb-item">
-      <input type="checkbox" name="courses" value="Astrology Basics">
-      <div class="cb-box"></div>
-      <span class="cb-txt">Astrology Basics</span>
+  <!-- horizontal pill nav -->
+  <div class="cat-strip-wrap">
+    <div class="cat-strip" id="catStrip">
+      <div class="cat-pill" data-cat="astrology">
+        <span class="pill-icon">♈</span> Pure Astrology
+        <span class="pill-count">100</span>
+        <span class="pill-selected-dot"></span>
+      </div>
+      <div class="cat-pill" data-cat="tarot">
+        <span class="pill-icon">🃏</span> Tarot & Divination
+        <span class="pill-count">95</span>
+        <span class="pill-selected-dot"></span>
+      </div>
+      <div class="cat-pill" data-cat="energy">
+        <span class="pill-icon">🌀</span> Energy & Manifestation
+        <span class="pill-count">54</span>
+        <span class="pill-selected-dot"></span>
+      </div>
+      <div class="cat-pill" data-cat="specialised">
+        <span class="pill-icon">📚</span> Specialised Tracks
+        <span class="pill-count">33</span>
+        <span class="pill-selected-dot"></span>
+      </div>
+      <div class="cat-pill" data-cat="love">
+        <span class="pill-icon">💞</span> Love & Marriage
+        <span class="pill-count">40</span>
+        <span class="pill-selected-dot"></span>
+      </div>
+      <div class="cat-pill" data-cat="health">
+        <span class="pill-icon">🌿</span> Health & Spiritual
+        <span class="pill-count">15</span>
+        <span class="pill-selected-dot"></span>
+      </div>
     </div>
-
-    <div class="cb-item">
-      <input type="checkbox" name="courses" value="12 Houses Deep Dive">
-      <div class="cb-box"></div>
-      <span class="cb-txt">12 Houses Deep Dive</span>
-    </div>
-
-    <!-- KEEP ALL YOUR COURSES SAME -->
-    
   </div>
+  <div class="cat-strip-line"></div>
+
+  <!-- helper text -->
+  <p style="padding:14px 24px 20px;font-size:13.5px;color:var(--soft);font-style:normal;">
+    Tap a category above to browse and select courses you can teach.
+  </p>
 </div>
-  <!-- PURE ASTROLOGY -->
-  <div class="cat-pool" data-cat="astrology" data-icon="♈" data-title="Pure Astrology" data-count="100 courses" data-sub="Foundations · Chart Reading · Dashas · Divisional Charts · Jaimini · Yogas & Doshas · Muhurat · Prashna">
-    <div class="course-grid">
-      <p style="font-size:12px;color:var(--hint);font-style:normal;margin-bottom:4px;">Foundations · Chart Reading · Dashas · Divisional Charts · Jaimini · Yogas & Doshas · Muhurat · Prashna</p>
-      <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Astrology Basics"><div class="cb-box"></div><span class="cb-txt">Astrology Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="12 Houses Deep Dive"><div class="cb-box"></div><span class="cb-txt">12 Houses Deep Dive</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="12 Signs Psychology"><div class="cb-box"></div><span class="cb-txt">12 Signs Psychology</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="9 Planets Explained"><div class="cb-box"></div><span class="cb-txt">9 Planets Explained</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lagna Importance"><div class="cb-box"></div><span class="cb-txt">Lagna Importance</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Moon Chart Reading"><div class="cb-box"></div><span class="cb-txt">Moon Chart Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Sun Chart Reading"><div class="cb-box"></div><span class="cb-txt">Sun Chart Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Planetary Dignities"><div class="cb-box"></div><span class="cb-txt">Planetary Dignities</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Retrograde Planets"><div class="cb-box"></div><span class="cb-txt">Retrograde Planets</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Combustion in Astrology"><div class="cb-box"></div><span class="cb-txt">Combustion in Astrology</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Aspects Explained"><div class="cb-box"></div><span class="cb-txt">Aspects Explained</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Conjunction Basics"><div class="cb-box"></div><span class="cb-txt">Conjunction Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Stellium Meaning"><div class="cb-box"></div><span class="cb-txt">Stellium Meaning</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Elements & Modalities"><div class="cb-box"></div><span class="cb-txt">Elements & Modalities</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Chart Structure Basics"><div class="cb-box"></div><span class="cb-txt">Chart Structure Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="How to Read Any Chart"><div class="cb-box"></div><span class="cb-txt">How to Read Any Chart</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lagna-Based Interpretation"><div class="cb-box"></div><span class="cb-txt">Lagna-Based Interpretation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Multi-Chart Synthesis"><div class="cb-box"></div><span class="cb-txt">Multi-Chart Synthesis</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Transit Reading"><div class="cb-box"></div><span class="cb-txt">Transit Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Planetary Strength (Shadbala)"><div class="cb-box"></div><span class="cb-txt">Planetary Strength (Shadbala)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Yogas Identification"><div class="cb-box"></div><span class="cb-txt">Yogas Identification</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Prediction Basics"><div class="cb-box"></div><span class="cb-txt">Prediction Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Prediction"><div class="cb-box"></div><span class="cb-txt">Advanced Prediction</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Event Timing"><div class="cb-box"></div><span class="cb-txt">Event Timing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Case Study Analysis"><div class="cb-box"></div><span class="cb-txt">Case Study Analysis</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Birth Time Rectification"><div class="cb-box"></div><span class="cb-txt">Birth Time Rectification</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Chart Pattern Recognition"><div class="cb-box"></div><span class="cb-txt">Chart Pattern Recognition</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Planet Dominance"><div class="cb-box"></div><span class="cb-txt">Planet Dominance</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Weak Planet Fix"><div class="cb-box"></div><span class="cb-txt">Weak Planet Fix</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Chart Correction Techniques"><div class="cb-box"></div><span class="cb-txt">Chart Correction Techniques</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Vimshottari Dasha"><div class="cb-box"></div><span class="cb-txt">Vimshottari Dasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Yogini Dasha"><div class="cb-box"></div><span class="cb-txt">Yogini Dasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Chara Dasha"><div class="cb-box"></div><span class="cb-txt">Chara Dasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Narayana Dasha"><div class="cb-box"></div><span class="cb-txt">Narayana Dasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Kalachakra Dasha"><div class="cb-box"></div><span class="cb-txt">Kalachakra Dasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dasha Sandhi"><div class="cb-box"></div><span class="cb-txt">Dasha Sandhi</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Conditional Dashas"><div class="cb-box"></div><span class="cb-txt">Conditional Dashas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dasha + Transit Integration"><div class="cb-box"></div><span class="cb-txt">Dasha + Transit Integration</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Life Timeline Mapping"><div class="cb-box"></div><span class="cb-txt">Life Timeline Mapping</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dasha Case Studies"><div class="cb-box"></div><span class="cb-txt">Dasha Case Studies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rahu Mahadasha"><div class="cb-box"></div><span class="cb-txt">Rahu Mahadasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Saturn Mahadasha"><div class="cb-box"></div><span class="cb-txt">Saturn Mahadasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Venus Mahadasha"><div class="cb-box"></div><span class="cb-txt">Venus Mahadasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Mars Mahadasha"><div class="cb-box"></div><span class="cb-txt">Mars Mahadasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jupiter Mahadasha"><div class="cb-box"></div><span class="cb-txt">Jupiter Mahadasha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Navamsa (D9)"><div class="cb-box"></div><span class="cb-txt">Navamsa (D9)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dashamsa (D10)"><div class="cb-box"></div><span class="cb-txt">Dashamsa (D10)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Saptamsa (D7)"><div class="cb-box"></div><span class="cb-txt">Saptamsa (D7)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="D12 Parents"><div class="cb-box"></div><span class="cb-txt">D12 Parents</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="D24 Education"><div class="cb-box"></div><span class="cb-txt">D24 Education</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="D27 Strength"><div class="cb-box"></div><span class="cb-txt">D27 Strength</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="D30 Misfortune"><div class="cb-box"></div><span class="cb-txt">D30 Misfortune</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="D60 Karma"><div class="cb-box"></div><span class="cb-txt">D60 Karma</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Vargas Integration"><div class="cb-box"></div><span class="cb-txt">Vargas Integration</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Predictive Vargas"><div class="cb-box"></div><span class="cb-txt">Predictive Vargas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Marriage via D9"><div class="cb-box"></div><span class="cb-txt">Marriage via D9</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Career via D10"><div class="cb-box"></div><span class="cb-txt">Career via D10</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Childbirth via D7"><div class="cb-box"></div><span class="cb-txt">Childbirth via D7</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Spiritual Charts"><div class="cb-box"></div><span class="cb-txt">Spiritual Charts</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Vargas"><div class="cb-box"></div><span class="cb-txt">Advanced Vargas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jaimini Basics"><div class="cb-box"></div><span class="cb-txt">Jaimini Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Karakas"><div class="cb-box"></div><span class="cb-txt">Karakas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jaimini Raj Yogas"><div class="cb-box"></div><span class="cb-txt">Jaimini Raj Yogas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Marriage Indicators (Jaimini)"><div class="cb-box"></div><span class="cb-txt">Marriage Indicators (Jaimini)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Argala"><div class="cb-box"></div><span class="cb-txt">Argala</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jaimini Aspects"><div class="cb-box"></div><span class="cb-txt">Jaimini Aspects</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Career via Jaimini"><div class="cb-box"></div><span class="cb-txt">Career via Jaimini</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jaimini + Parashara"><div class="cb-box"></div><span class="cb-txt">Jaimini + Parashara</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Raj Yogas"><div class="cb-box"></div><span class="cb-txt">Raj Yogas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dhan Yogas"><div class="cb-box"></div><span class="cb-txt">Dhan Yogas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Vipreet Raj Yoga"><div class="cb-box"></div><span class="cb-txt">Vipreet Raj Yoga</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Neech Bhanga"><div class="cb-box"></div><span class="cb-txt">Neech Bhanga</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Kemadruma"><div class="cb-box"></div><span class="cb-txt">Kemadruma</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Kala Sarpa"><div class="cb-box"></div><span class="cb-txt">Kala Sarpa</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Manglik Dosha"><div class="cb-box"></div><span class="cb-txt">Manglik Dosha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Pitru Dosha"><div class="cb-box"></div><span class="cb-txt">Pitru Dosha</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Guru Chandal"><div class="cb-box"></div><span class="cb-txt">Guru Chandal</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Daridra Yoga"><div class="cb-box"></div><span class="cb-txt">Daridra Yoga</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Muhurat Basics"><div class="cb-box"></div><span class="cb-txt">Muhurat Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Marriage Muhurat"><div class="cb-box"></div><span class="cb-txt">Marriage Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Business Muhurat"><div class="cb-box"></div><span class="cb-txt">Business Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Investment Muhurat"><div class="cb-box"></div><span class="cb-txt">Investment Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Property Muhurat"><div class="cb-box"></div><span class="cb-txt">Property Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Surgery Muhurat"><div class="cb-box"></div><span class="cb-txt">Surgery Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Travel Muhurat"><div class="cb-box"></div><span class="cb-txt">Travel Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Griha Pravesh Muhurat"><div class="cb-box"></div><span class="cb-txt">Griha Pravesh Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Education Muhurat"><div class="cb-box"></div><span class="cb-txt">Education Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Agreement Muhurat"><div class="cb-box"></div><span class="cb-txt">Agreement Muhurat</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Prashna Basics"><div class="cb-box"></div><span class="cb-txt">Prashna Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Yes/No Predictions (Prashna)"><div class="cb-box"></div><span class="cb-txt">Yes/No Predictions</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lost Object (Prashna)"><div class="cb-box"></div><span class="cb-txt">Lost Object (Prashna)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Relationship Questions (Prashna)"><div class="cb-box"></div><span class="cb-txt">Relationship Questions</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Career Questions (Prashna)"><div class="cb-box"></div><span class="cb-txt">Career Questions (Prashna)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Finance Questions (Prashna)"><div class="cb-box"></div><span class="cb-txt">Finance Questions (Prashna)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Court Cases (Prashna)"><div class="cb-box"></div><span class="cb-txt">Court Cases (Prashna)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Radical Charts"><div class="cb-box"></div><span class="cb-txt">Radical Charts</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Moon in Prashna"><div class="cb-box"></div><span class="cb-txt">Moon in Prashna</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Horary"><div class="cb-box"></div><span class="cb-txt">Advanced Horary</span></div>
-  </div><!-- end astrology pool -->
-
-  <!-- TAROT & DIVINATION -->
-
-  <div class="cat-pool" data-cat="occult" data-icon="🃏" data-title="Tarot & Divination" data-count="95 courses" data-sub="">
-    <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Card Meanings"><div class="cb-box"></div><span class="cb-txt">Card Meanings</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Beginner Spreads"><div class="cb-box"></div><span class="cb-txt">Beginner Spreads</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Love Tarot"><div class="cb-box"></div><span class="cb-txt">Love Tarot</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Career Tarot"><div class="cb-box"></div><span class="cb-txt">Career Tarot</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Timing Techniques"><div class="cb-box"></div><span class="cb-txt">Timing Techniques</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Combinations"><div class="cb-box"></div><span class="cb-txt">Tarot Combinations</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Healing Tarot"><div class="cb-box"></div><span class="cb-txt">Healing Tarot</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Journaling"><div class="cb-box"></div><span class="cb-txt">Tarot Journaling</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Professional Tarot"><div class="cb-box"></div><span class="cb-txt">Professional Tarot</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Intuitive Tarot"><div class="cb-box"></div><span class="cb-txt">Intuitive Tarot</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Shadow Tarot"><div class="cb-box"></div><span class="cb-txt">Shadow Tarot</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Manifestation Tarot"><div class="cb-box"></div><span class="cb-txt">Manifestation Tarot</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Daily Tarot Practice"><div class="cb-box"></div><span class="cb-txt">Daily Tarot Practice</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Ethics"><div class="cb-box"></div><span class="cb-txt">Tarot Ethics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot + Intuition"><div class="cb-box"></div><span class="cb-txt">Tarot + Intuition</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Case Studies"><div class="cb-box"></div><span class="cb-txt">Tarot Case Studies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Tarot"><div class="cb-box"></div><span class="cb-txt">Advanced Tarot</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Business Setup"><div class="cb-box"></div><span class="cb-txt">Tarot Business Setup</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tarot Mastery"><div class="cb-box"></div><span class="cb-txt">Tarot Mastery</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Basics"><div class="cb-box"></div><span class="cb-txt">Rune Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Meanings"><div class="cb-box"></div><span class="cb-txt">Rune Meanings</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Casting"><div class="cb-box"></div><span class="cb-txt">Rune Casting</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Spreads"><div class="cb-box"></div><span class="cb-txt">Rune Spreads</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Runes"><div class="cb-box"></div><span class="cb-txt">Advanced Runes</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Magic"><div class="cb-box"></div><span class="cb-txt">Rune Magic</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Protection"><div class="cb-box"></div><span class="cb-txt">Rune Protection</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Manifestation"><div class="cb-box"></div><span class="cb-txt">Rune Manifestation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Healing"><div class="cb-box"></div><span class="cb-txt">Rune Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Case Studies"><div class="cb-box"></div><span class="cb-txt">Rune Case Studies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Nordic Symbolism"><div class="cb-box"></div><span class="cb-txt">Nordic Symbolism</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Rituals"><div class="cb-box"></div><span class="cb-txt">Rune Rituals</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Energy Work"><div class="cb-box"></div><span class="cb-txt">Rune Energy Work</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Intuition"><div class="cb-box"></div><span class="cb-txt">Rune Intuition</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rune Mastery"><div class="cb-box"></div><span class="cb-txt">Rune Mastery</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Pendulum Basics"><div class="cb-box"></div><span class="cb-txt">Pendulum Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Yes/No Dowsing"><div class="cb-box"></div><span class="cb-txt">Yes/No Dowsing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energy Detection"><div class="cb-box"></div><span class="cb-txt">Energy Detection</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Chakra Dowsing"><div class="cb-box"></div><span class="cb-txt">Chakra Dowsing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dowsing Decision Making"><div class="cb-box"></div><span class="cb-txt">Decision Making</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Dowsing"><div class="cb-box"></div><span class="cb-txt">Advanced Dowsing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dowsing Maps"><div class="cb-box"></div><span class="cb-txt">Dowsing Maps</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Healing Dowsing"><div class="cb-box"></div><span class="cb-txt">Healing Dowsing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Clearing Energy (Dowsing)"><div class="cb-box"></div><span class="cb-txt">Clearing Energy</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dowsing Practice"><div class="cb-box"></div><span class="cb-txt">Dowsing Practice</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Business Decisions (Dowsing)"><div class="cb-box"></div><span class="cb-txt">Business Decisions</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Location Dowsing"><div class="cb-box"></div><span class="cb-txt">Location Dowsing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Health Scanning (Dowsing)"><div class="cb-box"></div><span class="cb-txt">Health Scanning</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dowsing Mastery"><div class="cb-box"></div><span class="cb-txt">Dowsing Mastery</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Intuition Activation"><div class="cb-box"></div><span class="cb-txt">Intuition Activation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Third Eye Awakening"><div class="cb-box"></div><span class="cb-txt">Third Eye Awakening</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Psychic Development"><div class="cb-box"></div><span class="cb-txt">Psychic Development</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Clairvoyance"><div class="cb-box"></div><span class="cb-txt">Clairvoyance</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Aura Reading"><div class="cb-box"></div><span class="cb-txt">Aura Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energy Scanning"><div class="cb-box"></div><span class="cb-txt">Energy Scanning</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Psychic Protection"><div class="cb-box"></div><span class="cb-txt">Psychic Protection</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Remote Viewing"><div class="cb-box"></div><span class="cb-txt">Remote Viewing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Spirit Communication"><div class="cb-box"></div><span class="cb-txt">Spirit Communication</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Psychic"><div class="cb-box"></div><span class="cb-txt">Advanced Psychic</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Mediumship Basics"><div class="cb-box"></div><span class="cb-txt">Mediumship Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energy Sensitivity"><div class="cb-box"></div><span class="cb-txt">Energy Sensitivity</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Intuitive Decision Making"><div class="cb-box"></div><span class="cb-txt">Intuitive Decision Making</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Inner Guidance System"><div class="cb-box"></div><span class="cb-txt">Inner Guidance System</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reading People Energetically"><div class="cb-box"></div><span class="cb-txt">Reading People Energetically</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Psychic Boundaries"><div class="cb-box"></div><span class="cb-txt">Psychic Boundaries</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Intuition for Business"><div class="cb-box"></div><span class="cb-txt">Intuition for Business</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Intuition for Relationships"><div class="cb-box"></div><span class="cb-txt">Intuition for Relationships</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Psychic Mastery"><div class="cb-box"></div><span class="cb-txt">Psychic Mastery</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Coffee Reading"><div class="cb-box"></div><span class="cb-txt">Coffee Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Tea Reading"><div class="cb-box"></div><span class="cb-txt">Tea Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dice Divination"><div class="cb-box"></div><span class="cb-txt">Dice Divination</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Coin Divination"><div class="cb-box"></div><span class="cb-txt">Coin Divination</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Bibliomancy"><div class="cb-box"></div><span class="cb-txt">Bibliomancy</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Charm Casting"><div class="cb-box"></div><span class="cb-txt">Charm Casting</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Oil Divination"><div class="cb-box"></div><span class="cb-txt">Oil Divination</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Rice Divination"><div class="cb-box"></div><span class="cb-txt">Rice Divination</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Cowrie Reading"><div class="cb-box"></div><span class="cb-txt">Cowrie Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Dream Interpretation"><div class="cb-box"></div><span class="cb-txt">Dream Interpretation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Akashic Records"><div class="cb-box"></div><span class="cb-txt">Akashic Records</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Past Life Reading"><div class="cb-box"></div><span class="cb-txt">Past Life Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Spirit Animal Reading"><div class="cb-box"></div><span class="cb-txt">Spirit Animal Reading</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Shamanic Journeying"><div class="cb-box"></div><span class="cb-txt">Shamanic Journeying</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Egyptian Oracle"><div class="cb-box"></div><span class="cb-txt">Egyptian Oracle</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Hermetic Systems"><div class="cb-box"></div><span class="cb-txt">Hermetic Systems</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Hybrid Divination"><div class="cb-box"></div><span class="cb-txt">Hybrid Divination</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Divination Mastery"><div class="cb-box"></div><span class="cb-txt">Divination Mastery</span></div>
-      </div>
-  </div>
-
-  <!-- ENERGY & MANIFESTATION (merged into occult pool) -->
-  <div class="cat-pool" data-cat="energy" data-icon="🌀" data-title="Energy, Healing & Manifestation" data-count="54 courses" data-sub="Reiki · Chakras · Crystal Healing · Manifestation">
-    <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reiki Level 1"><div class="cb-box"></div><span class="cb-txt">Reiki Level 1</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reiki Level 2"><div class="cb-box"></div><span class="cb-txt">Reiki Level 2</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Daily Reiki Practice"><div class="cb-box"></div><span class="cb-txt">Daily Reiki Practice</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Chakra Healing (Reiki)"><div class="cb-box"></div><span class="cb-txt">Chakra Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Emotional Healing (Reiki)"><div class="cb-box"></div><span class="cb-txt">Emotional Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Distance Healing"><div class="cb-box"></div><span class="cb-txt">Distance Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Money Healing (Reiki)"><div class="cb-box"></div><span class="cb-txt">Money Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Relationship Healing (Reiki)"><div class="cb-box"></div><span class="cb-txt">Relationship Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Health Healing (Reiki)"><div class="cb-box"></div><span class="cb-txt">Health Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energy Protection"><div class="cb-box"></div><span class="cb-txt">Energy Protection</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reiki + Manifestation"><div class="cb-box"></div><span class="cb-txt">Reiki + Manifestation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reiki Case Studies"><div class="cb-box"></div><span class="cb-txt">Reiki Case Studies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reiki Business"><div class="cb-box"></div><span class="cb-txt">Reiki Business</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Reiki"><div class="cb-box"></div><span class="cb-txt">Advanced Reiki</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reiki Mastery"><div class="cb-box"></div><span class="cb-txt">Reiki Mastery</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Vastu Basics"><div class="cb-box"></div><span class="cb-txt">Vastu Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Home Vastu"><div class="cb-box"></div><span class="cb-txt">Home Vastu</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Office Vastu"><div class="cb-box"></div><span class="cb-txt">Office Vastu</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Wealth Vastu"><div class="cb-box"></div><span class="cb-txt">Wealth Vastu</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Relationship Vastu"><div class="cb-box"></div><span class="cb-txt">Relationship Vastu</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Entrance Vastu"><div class="cb-box"></div><span class="cb-txt">Entrance Vastu</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Bedroom Vastu"><div class="cb-box"></div><span class="cb-txt">Bedroom Vastu</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Kitchen Vastu"><div class="cb-box"></div><span class="cb-txt">Kitchen Vastu</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Zero-cost Vastu Remedies"><div class="cb-box"></div><span class="cb-txt">Zero-cost Vastu Remedies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Plants & Symbols (Vastu)"><div class="cb-box"></div><span class="cb-txt">Plants & Symbols</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Vastu Space Clearing"><div class="cb-box"></div><span class="cb-txt">Space Clearing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energy Flow (Vastu)"><div class="cb-box"></div><span class="cb-txt">Energy Flow</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Vastu Case Studies"><div class="cb-box"></div><span class="cb-txt">Vastu Case Studies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Advanced Vastu"><div class="cb-box"></div><span class="cb-txt">Advanced Vastu</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Vastu Mastery"><div class="cb-box"></div><span class="cb-txt">Vastu Mastery</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Law of Attraction"><div class="cb-box"></div><span class="cb-txt">Law of Attraction</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Scripting"><div class="cb-box"></div><span class="cb-txt">Scripting</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="369 Method"><div class="cb-box"></div><span class="cb-txt">369 Method</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Water Charging"><div class="cb-box"></div><span class="cb-txt">Water Charging</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Candle Magic"><div class="cb-box"></div><span class="cb-txt">Candle Magic</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Sigil Creation"><div class="cb-box"></div><span class="cb-txt">Sigil Creation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Mirror Work"><div class="cb-box"></div><span class="cb-txt">Mirror Work</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Affirmations"><div class="cb-box"></div><span class="cb-txt">Affirmations</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Switchwords"><div class="cb-box"></div><span class="cb-txt">Switchwords</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Grabovoi Codes"><div class="cb-box"></div><span class="cb-txt">Grabovoi Codes</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energy Shifting"><div class="cb-box"></div><span class="cb-txt">Energy Shifting</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Block Removal"><div class="cb-box"></div><span class="cb-txt">Block Removal</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Money Manifestation"><div class="cb-box"></div><span class="cb-txt">Money Manifestation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Love Manifestation"><div class="cb-box"></div><span class="cb-txt">Love Manifestation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reality Shifting"><div class="cb-box"></div><span class="cb-txt">Reality Shifting</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Frequency Work"><div class="cb-box"></div><span class="cb-txt">Frequency Work</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Shadow Work"><div class="cb-box"></div><span class="cb-txt">Shadow Work</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Inner Child Healing"><div class="cb-box"></div><span class="cb-txt">Inner Child Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Cord Cutting"><div class="cb-box"></div><span class="cb-txt">Cord Cutting</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Aura Cleansing"><div class="cb-box"></div><span class="cb-txt">Aura Cleansing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Moon Rituals"><div class="cb-box"></div><span class="cb-txt">Moon Rituals</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Elemental Magic"><div class="cb-box"></div><span class="cb-txt">Elemental Magic</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Daily Ritual System"><div class="cb-box"></div><span class="cb-txt">Daily Ritual System</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Manifestation Mastery"><div class="cb-box"></div><span class="cb-txt">Manifestation Mastery</span></div>
-      </div>
-  </div><!-- end occult-extra pool -->
-
-  <!-- SPECIALISED TRACKS -->
-  <div class="cat-pool" data-cat="tracks" data-icon="📚" data-title="Specialised Tracks" data-count="33 courses" data-sub="Jaimini · Lal Kitab · Numerology">
-    <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jaimini Track Basics"><div class="cb-box"></div><span class="cb-txt">Jaimini Track Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Karakas Deep Dive"><div class="cb-box"></div><span class="cb-txt">Karakas Deep Dive</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Argala (Jaimini)"><div class="cb-box"></div><span class="cb-txt">Argala (Jaimini)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jaimini Remedies"><div class="cb-box"></div><span class="cb-txt">Jaimini Remedies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jaimini for Professionals"><div class="cb-box"></div><span class="cb-txt">Jaimini for Professionals</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Jaimini Certification"><div class="cb-box"></div><span class="cb-txt">Jaimini Certification</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Basics"><div class="cb-box"></div><span class="cb-txt">Lal Kitab Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Houses in Lal Kitab"><div class="cb-box"></div><span class="cb-txt">Houses in Lal Kitab</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Planets in Lal Kitab"><div class="cb-box"></div><span class="cb-txt">Planets in Lal Kitab</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Remedies System"><div class="cb-box"></div><span class="cb-txt">Remedies System</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Debt & Money Remedies"><div class="cb-box"></div><span class="cb-txt">Debt & Money Remedies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Relationship Remedies"><div class="cb-box"></div><span class="cb-txt">Relationship Remedies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Health Remedies"><div class="cb-box"></div><span class="cb-txt">Health Remedies (LK)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Career Remedies"><div class="cb-box"></div><span class="cb-txt">Career Remedies (LK)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Dosha Correction"><div class="cb-box"></div><span class="cb-txt">Dosha Correction (LK)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Case Studies"><div class="cb-box"></div><span class="cb-txt">Lal Kitab Case Studies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Advanced Remedies"><div class="cb-box"></div><span class="cb-txt">Advanced Remedies (LK)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Ethics"><div class="cb-box"></div><span class="cb-txt">Lal Kitab Ethics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Lal Kitab Mastery"><div class="cb-box"></div><span class="cb-txt">Lal Kitab Mastery</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Numerology Basics"><div class="cb-box"></div><span class="cb-txt">Numerology Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Mulank"><div class="cb-box"></div><span class="cb-txt">Mulank</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Bhagyank"><div class="cb-box"></div><span class="cb-txt">Bhagyank</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Name Numerology"><div class="cb-box"></div><span class="cb-txt">Name Numerology</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Mobile Number Analysis"><div class="cb-box"></div><span class="cb-txt">Mobile Number Analysis</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Business Name Numerology"><div class="cb-box"></div><span class="cb-txt">Business Name</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Signature Correction"><div class="cb-box"></div><span class="cb-txt">Signature Correction</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Numerology Compatibility"><div class="cb-box"></div><span class="cb-txt">Compatibility</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Timing via Numbers"><div class="cb-box"></div><span class="cb-txt">Timing via Numbers</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Numerology Remedies"><div class="cb-box"></div><span class="cb-txt">Numerology Remedies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Numerology Case Studies"><div class="cb-box"></div><span class="cb-txt">Numerology Case Studies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Numerology + Astrology"><div class="cb-box"></div><span class="cb-txt">Numerology + Astrology</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Predictive Numerology"><div class="cb-box"></div><span class="cb-txt">Predictive Numerology</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Numerology Mastery"><div class="cb-box"></div><span class="cb-txt">Numerology Mastery</span></div>
-      </div>
-  </div>
-
-  <!-- LOVE -->
-  <div class="cat-pool" data-cat="love" data-icon="💞" data-title="Love, Relationships & Marriage" data-count="40 courses" data-sub="">
-    <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Attract Love (Astro + Energy)"><div class="cb-box"></div><span class="cb-txt">Attract Love (Astro + Energy)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Why You Attract Wrong Partners"><div class="cb-box"></div><span class="cb-txt">Why You Attract Wrong Partners</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Heal Love Life (Moon Energy)"><div class="cb-box"></div><span class="cb-txt">Heal Love Life (Moon Energy)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Venus Activation for Love"><div class="cb-box"></div><span class="cb-txt">Venus Activation for Love</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Remove Emotional Blocks in Love"><div class="cb-box"></div><span class="cb-txt">Remove Emotional Blocks</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Calling in a Soulmate"><div class="cb-box"></div><span class="cb-txt">Calling in a Soulmate</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Love Timing Through Astrology"><div class="cb-box"></div><span class="cb-txt">Love Timing (Astrology)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Self-Love Activation Program"><div class="cb-box"></div><span class="cb-txt">Self-Love Activation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Heal Past Relationship Trauma"><div class="cb-box"></div><span class="cb-txt">Heal Relationship Trauma</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Love Manifestation in 21 Days"><div class="cb-box"></div><span class="cb-txt">Love Manifestation 21 Days</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Why Love Doesn't Stay (Chart)"><div class="cb-box"></div><span class="cb-txt">Why Love Doesn't Stay</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Open Your Heart Chakra"><div class="cb-box"></div><span class="cb-txt">Open Your Heart Chakra</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Attraction vs Attachment"><div class="cb-box"></div><span class="cb-txt">Attraction vs Attachment</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Love Compatibility Basics"><div class="cb-box"></div><span class="cb-txt">Love Compatibility Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Reignite Passion in Relationships"><div class="cb-box"></div><span class="cb-txt">Reignite Passion</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Stop Chasing - Start Attracting"><div class="cb-box"></div><span class="cb-txt">Stop Chasing, Start Attracting</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Remove Love Blockages (Karmic)"><div class="cb-box"></div><span class="cb-txt">Remove Love Blockages</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Divine Feminine / Masculine Balance"><div class="cb-box"></div><span class="cb-txt">Divine Feminine / Masculine</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energetic Boundaries in Love"><div class="cb-box"></div><span class="cb-txt">Energetic Boundaries</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Marriage Delay - Causes & Remedies"><div class="cb-box"></div><span class="cb-txt">Marriage Delay - Remedies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="When Will You Get Married?"><div class="cb-box"></div><span class="cb-txt">When Will You Get Married?</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Arranged vs Love Marriage Indicators"><div class="cb-box"></div><span class="cb-txt">Arranged vs Love Marriage</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Fixing Marriage Blockages"><div class="cb-box"></div><span class="cb-txt">Fixing Marriage Blockages</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Manglik Dosha - Practical"><div class="cb-box"></div><span class="cb-txt">Manglik Dosha (Practical)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Second Marriage Yogas"><div class="cb-box"></div><span class="cb-txt">Second Marriage Yogas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Strengthening Marriage Bond"><div class="cb-box"></div><span class="cb-txt">Strengthening Marriage Bond</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="In-Laws Harmony (Astrology)"><div class="cb-box"></div><span class="cb-txt">In-Laws Harmony</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Marriage Compatibility Deep Dive"><div class="cb-box"></div><span class="cb-txt">Marriage Compatibility</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Divorce Indicators & Prevention"><div class="cb-box"></div><span class="cb-txt">Divorce Indicators</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Karmic Marriages Explained"><div class="cb-box"></div><span class="cb-txt">Karmic Marriages</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Spouse Nature Prediction"><div class="cb-box"></div><span class="cb-txt">Spouse Nature Prediction</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Marriage Timing Masterclass"><div class="cb-box"></div><span class="cb-txt">Marriage Timing Masterclass</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Fixing Repeated Broken Alliances"><div class="cb-box"></div><span class="cb-txt">Fixing Broken Alliances</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Healing Marriage Conflicts"><div class="cb-box"></div><span class="cb-txt">Healing Marriage Conflicts</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Spouse Attraction Through Remedies"><div class="cb-box"></div><span class="cb-txt">Spouse Attraction Remedies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Marriage Stability Indicators"><div class="cb-box"></div><span class="cb-txt">Marriage Stability</span></div>
-      </div>
-  </div>
-
-  <!-- HEALTH -->
-  <div class="cat-pool" data-cat="health" data-icon="🌿" data-title="Health, Wellbeing & Spiritual Growth" data-count="15 courses" data-sub="">
-    <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Stress & Anxiety Healing"><div class="cb-box"></div><span class="cb-txt">Stress & Anxiety Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Sleep Issues - Causes & Remedies"><div class="cb-box"></div><span class="cb-txt">Sleep Issues - Remedies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Emotional Healing (Moon)"><div class="cb-box"></div><span class="cb-txt">Emotional Healing (Moon)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Mental Clarity Activation"><div class="cb-box"></div><span class="cb-txt">Mental Clarity Activation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Overthinking Control System"><div class="cb-box"></div><span class="cb-txt">Overthinking Control</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energy Detox & Cleansing"><div class="cb-box"></div><span class="cb-txt">Energy Detox & Cleansing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Healing Chronic Patterns"><div class="cb-box"></div><span class="cb-txt">Healing Chronic Patterns</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Inner Child Healing Program"><div class="cb-box"></div><span class="cb-txt">Inner Child Healing Program</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Emotional Stability Techniques"><div class="cb-box"></div><span class="cb-txt">Emotional Stability</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Daily Energy Hygiene Routine"><div class="cb-box"></div><span class="cb-txt">Daily Energy Hygiene</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Find Your Life Purpose (Astrology)"><div class="cb-box"></div><span class="cb-txt">Find Your Life Purpose</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Spiritual Awakening - Safe Path"><div class="cb-box"></div><span class="cb-txt">Spiritual Awakening</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Karma & Past Life Understanding"><div class="cb-box"></div><span class="cb-txt">Karma & Past Life</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Connecting with Higher Guidance"><div class="cb-box"></div><span class="cb-txt">Higher Guidance</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Building a Spiritual Routine"><div class="cb-box"></div><span class="cb-txt">Building Spiritual Routine</span></div>
-      </div>
-  </div>
-
-  <!-- CAREER -->
-  <div class="cat-pool" data-cat="career" data-icon="💼" data-title="Career & Professional Growth" data-count="20 courses" data-sub="">
-    <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Find Your Right Career Path (Astrology)"><div class="cb-box"></div><span class="cb-txt">Find Your Right Career Path</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Career Confusion to Clarity"><div class="cb-box"></div><span class="cb-txt">Career Confusion to Clarity</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Job Change Timing"><div class="cb-box"></div><span class="cb-txt">Job Change Timing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Promotion Indicators"><div class="cb-box"></div><span class="cb-txt">Promotion Indicators</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Government Job Yogas"><div class="cb-box"></div><span class="cb-txt">Government Job Yogas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Business vs Job – What Suits You"><div class="cb-box"></div><span class="cb-txt">Business vs Job – What Suits You</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Entrepreneurship Astrology"><div class="cb-box"></div><span class="cb-txt">Entrepreneurship Astrology</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Career Growth Blockages"><div class="cb-box"></div><span class="cb-txt">Career Growth Blockages</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Saturn Lessons for Career"><div class="cb-box"></div><span class="cb-txt">Saturn Lessons for Career</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Work Stress & Burnout Healing"><div class="cb-box"></div><span class="cb-txt">Work Stress & Burnout Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Skill Alignment Through Chart"><div class="cb-box"></div><span class="cb-txt">Skill Alignment Through Chart</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Leadership Activation"><div class="cb-box"></div><span class="cb-txt">Leadership Activation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Career Success Manifestation"><div class="cb-box"></div><span class="cb-txt">Career Success Manifestation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Decision Making in Career"><div class="cb-box"></div><span class="cb-txt">Decision Making in Career</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Switching Careers Safely"><div class="cb-box"></div><span class="cb-txt">Switching Careers Safely</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Finding Your Purpose Professionally"><div class="cb-box"></div><span class="cb-txt">Finding Your Purpose Professionally</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Office Politics & Energy Protection"><div class="cb-box"></div><span class="cb-txt">Office Politics & Energy Protection</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Career Stability Indicators"><div class="cb-box"></div><span class="cb-txt">Career Stability Indicators</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Personal Brand Energy"><div class="cb-box"></div><span class="cb-txt">Personal Brand Energy</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Building Authority & Recognition"><div class="cb-box"></div><span class="cb-txt">Building Authority & Recognition</span></div>
-      </div>
-  </div>
-
-  <!-- MONEY -->
-  <div class="cat-pool" data-cat="money" data-icon="💰" data-title="Money & Financial Growth" data-count="20 courses" data-sub="">
-    <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Wealth Yogas in Your Chart"><div class="cb-box"></div><span class="cb-txt">Wealth Yogas in Your Chart</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Remove Money Blockages"><div class="cb-box"></div><span class="cb-txt">Remove Money Blockages</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Money Mindset Reset"><div class="cb-box"></div><span class="cb-txt">Money Mindset Reset</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Financial Stability Through Astrology"><div class="cb-box"></div><span class="cb-txt">Financial Stability (Astrology)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Income Growth Strategies (Astro + Energy)"><div class="cb-box"></div><span class="cb-txt">Income Growth Strategies</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Debt Removal Energy Work"><div class="cb-box"></div><span class="cb-txt">Debt Removal Energy Work</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Investment Timing Astrology"><div class="cb-box"></div><span class="cb-txt">Investment Timing Astrology</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Business Profit Activation"><div class="cb-box"></div><span class="cb-txt">Business Profit Activation</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Luxury & Lifestyle Yogas"><div class="cb-box"></div><span class="cb-txt">Luxury & Lifestyle Yogas</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Stop Financial Leakages"><div class="cb-box"></div><span class="cb-txt">Stop Financial Leakages</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Passive Income Indicators"><div class="cb-box"></div><span class="cb-txt">Passive Income Indicators</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Wealth Manifestation System"><div class="cb-box"></div><span class="cb-txt">Wealth Manifestation System</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Money Karma Healing"><div class="cb-box"></div><span class="cb-txt">Money Karma Healing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Saving vs Spending Patterns"><div class="cb-box"></div><span class="cb-txt">Saving vs Spending Patterns</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Attracting Opportunities for Income"><div class="cb-box"></div><span class="cb-txt">Attracting Income Opportunities</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Financial Discipline Through Saturn"><div class="cb-box"></div><span class="cb-txt">Financial Discipline (Saturn)</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Money Energy Activation Rituals"><div class="cb-box"></div><span class="cb-txt">Money Energy Rituals</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Business Expansion Timing"><div class="cb-box"></div><span class="cb-txt">Business Expansion Timing</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Cash Flow Stability Techniques"><div class="cb-box"></div><span class="cb-txt">Cash Flow Stability</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Abundance Consciousness Training"><div class="cb-box"></div><span class="cb-txt">Abundance Consciousness</span></div>
-      </div>
-  </div>
-
-  <!-- PROTECTION -->
-  <div class="cat-pool" data-cat="protection" data-icon="🛡️" data-title="Protection & Energy Safety" data-count="5 courses" data-sub="">
-    <div class="course-grid">
-        <div class="cb-item"><input type="checkbox" name="courses" value="Nazar (Evil Eye) Detection & Removal"><div class="cb-box"></div><span class="cb-txt">Nazar (Evil Eye) Detection & Removal</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Psychic Attack – Identification & Protection"><div class="cb-box"></div><span class="cb-txt">Psychic Attack – Identification & Protection</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Energy Shielding Basics"><div class="cb-box"></div><span class="cb-txt">Energy Shielding Basics</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Home Energy Protection System"><div class="cb-box"></div><span class="cb-txt">Home Energy Protection System</span></div>
-        <div class="cb-item"><input type="checkbox" name="courses" value="Cord Cutting & Energy Boundaries"><div class="cb-box"></div><span class="cb-txt">Cord Cutting & Energy Boundaries</span></div>
-      </div>
-  </div>
-
-  </div><!-- end hidden pools wrapper -->
-
-</div><!-- end courses card -->
 
 <!-- 3 · MESSAGE -->
-
 <div class="card">
   <div class="sec-head"><span class="ico">☾</span> Anything Else?</div>
   <div class="field">
@@ -1147,7 +624,6 @@ box-shadow:0 4px 24px rgba(114,17,198,.1);
 </form>
 
 <!-- SUCCESS -->
-
 <div class="success" id="success">
   <div class="ico2">✨</div>
   <h2>Application Submitted!</h2>
@@ -1156,264 +632,224 @@ box-shadow:0 4px 24px rgba(114,17,198,.1);
 </div>
 
 </div><!-- wrap -->
+
+<!-- ══════════════ OVERLAY PANEL ══════════════ -->
+<div class="overlay-panel" id="overlayPanel">
+  <div class="overlay-box" id="overlayBox">
+    <div class="overlay-top">
+      <div class="overlay-title">
+        <span class="ot-icon" id="overlayIcon"></span>
+        <div>
+          <h2 id="overlayTitle">Category</h2>
+          <span class="ot-count" id="overlayCount"></span>
+        </div>
+      </div>
+      <button class="overlay-close" id="overlayClose" type="button">✕</button>
+    </div>
+
+    <div class="overlay-body">
+      <!-- sidebar subcats will be injected here -->
+      <div class="overlay-sidebar" id="overlaySidebar"></div>
+      <!-- content area -->
+      <div class="overlay-content" id="overlayContent"></div>
+    </div>
+
+    <div class="overlay-footer">
+      <div class="sel-info">Selected in this category: <b id="overlaySelCount">0</b></div>
+      <button class="btn-done" type="button" id="btnDone">Done ✓</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
+<!-- ══════════════ DATA ══════════════ -->
 <script>
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzcNPv86mD5R7q8lwVersF2byxfLd0P2d_0pTCwoKdUuIStWckWpHEfdwOe2OSMqYYM/exec';
 
-/* ── MEGA MENU ── */
-(function() {
-
-  // ── Subcategory data ─────────────────────────────────────────────────────
-  const SUBCATS = {
-    astrology: [
-      { key:'ast-foundations', icon:'🌐', name:'Foundations', courses:['Astrology Basics','12 Houses Deep Dive','12 Signs Psychology','9 Planets Explained','Lagna Importance','Moon Chart Reading','Sun Chart Reading','Planetary Dignities','Retrograde Planets','Combustion in Astrology','Aspects Explained','Conjunction Basics','Stellium Meaning','Elements & Modalities','Chart Structure Basics'] },
-      { key:'ast-chart',       icon:'🗺️', name:'Chart Reading', courses:['How to Read Any Chart','Lagna-Based Interpretation','Multi-Chart Synthesis','Transit Reading','Planetary Strength (Shadbala)','Yogas Identification','Prediction Basics','Advanced Prediction','Event Timing','Case Study Analysis','Birth Time Rectification','Chart Pattern Recognition','Planet Dominance','Weak Planet Fix','Chart Correction Techniques'] },
-      { key:'ast-dashas',      icon:'⏳', name:'Dashas', courses:['Vimshottari Dasha','Yogini Dasha','Chara Dasha','Narayana Dasha','Kalachakra Dasha','Dasha Sandhi','Conditional Dashas','Dasha + Transit Integration','Life Timeline Mapping','Dasha Case Studies','Rahu Mahadasha','Saturn Mahadasha','Venus Mahadasha','Mars Mahadasha','Jupiter Mahadasha'] },
-      { key:'ast-divisional',  icon:'📐', name:'Divisional Charts', courses:['Navamsa (D9)','Dashamsa (D10)','Saptamsa (D7)','D12 Parents','D24 Education','D27 Strength','D30 Misfortune','D60 Karma','Vargas Integration','Predictive Vargas','Marriage via D9','Career via D10','Childbirth via D7','Spiritual Charts','Advanced Vargas'] },
-      { key:'ast-jaimini',     icon:'✡️', name:'Jaimini', courses:['Jaimini Basics','Karakas','Jaimini Raj Yogas','Marriage Indicators (Jaimini)','Argala','Jaimini Aspects','Career via Jaimini','Jaimini + Parashara'] },
-      { key:'ast-yogas',       icon:'☯️', name:'Yogas & Doshas', courses:['Raj Yogas','Dhan Yogas','Vipreet Raj Yoga','Neech Bhanga','Kemadruma','Kala Sarpa','Manglik Dosha','Pitru Dosha','Guru Chandal','Daridra Yoga'] },
-      { key:'ast-muhurat',     icon:'🕐', name:'Muhurat', courses:['Muhurat Basics','Marriage Muhurat','Business Muhurat','Investment Muhurat','Property Muhurat','Surgery Muhurat','Travel Muhurat','Griha Pravesh Muhurat','Education Muhurat','Agreement Muhurat'] },
-      { key:'ast-prashna',     icon:'❓', name:'Prashna / Horary', courses:['Prashna Basics','Yes/No Predictions (Prashna)','Lost Object (Prashna)','Relationship Questions (Prashna)','Career Questions (Prashna)','Finance Questions (Prashna)','Court Cases (Prashna)','Radical Charts','Moon in Prashna','Advanced Horary'] },
-    ],
-    occult: [
-      { key:'occ-basics',    icon:'🃏', name:'Tarot Basics', courses:['Tarot Card Meanings','Tarot Beginner Spreads','Tarot Combinations','Healing Tarot'] },
-      { key:'occ-readings',  icon:'🔍', name:'Tarot Readings', courses:['Love Tarot','Career Tarot','Tarot Timing Techniques'] },
-      { key:'occ-advanced',  icon:'🌙', name:'Advanced Tarot', courses:['Tarot Card Meanings','Tarot Beginner Spreads','Love Tarot','Career Tarot','Tarot Timing Techniques','Tarot Combinations','Healing Tarot'] },
-    ],
-    energy: [
-      { key:'en-reiki',    icon:'✋', name:'Reiki', courses:['Reiki Level 1','Reiki Level 2','Daily Reiki Practice','Chakra Healing (Reiki)','Emotional Healing (Reiki)','Distance Healing','Money Healing (Reiki)','Relationship Healing (Reiki)','Health Healing (Reiki)','Energy Protection','Reiki + Manifestation'] },
-      { key:'en-chakra',   icon:'🌈', name:'Chakra Healing', courses:['Chakra Healing Basics','7 Chakras Explained','Root Chakra Healing','Sacral Chakra Work','Solar Plexus Power','Heart Chakra Opening','Throat Chakra Clarity','Third Eye Activation','Crown Chakra Connection','Chakra Balancing Rituals','Chakra Meditation','Chakra + Crystals'] },
-      { key:'en-crystal',  icon:'💎', name:'Crystal Healing', courses:['Crystals for Beginners','Crystal Cleansing','Crystal Grid Basics','Crystals for Love','Crystals for Wealth','Crystals for Protection','Crystals for Healing','Rose Quartz Deep Dive','Amethyst Work','Black Tourmaline','Advanced Crystal Work','Crystal Elixirs'] },
-      { key:'en-manifest', icon:'✨', name:'Manifestation', courses:['Law of Attraction Basics','Vision Board Science','Scripting Manifestation','369 Method','Subliminal Reprogramming','Affirmation Systems','Manifestation + Astrology','Moon Rituals','Elemental Magic','Daily Ritual System','Manifestation Mastery'] },
-    ],
-    tracks: [
-      { key:'tr-jaimini', icon:'✡️', name:'Jaimini Track', courses:['Jaimini Track Basics','Karakas Deep Dive','Argala (Jaimini)','Jaimini Remedies','Jaimini for Professionals','Jaimini Certification'] },
-      { key:'tr-lalkitab',icon:'📖', name:'Lal Kitab', courses:['Lal Kitab Basics','Houses in Lal Kitab','Planets in Lal Kitab','Lal Kitab Remedies System','Lal Kitab Debt & Money Remedies','Lal Kitab Relationship Remedies','Lal Kitab Health Remedies','Lal Kitab Career Remedies','Lal Kitab Dosha Correction','Lal Kitab Case Studies','Lal Kitab Advanced Remedies','Lal Kitab Ethics','Lal Kitab Mastery'] },
-      { key:'tr-numerology',icon:'🔢', name:'Numerology', courses:['Numerology Basics','Mulank','Bhagyank','Name Numerology','Mobile Number Analysis','Business Name Numerology','Signature Correction','Numerology Compatibility','Timing via Numbers','Numerology Remedies','Numerology Case Studies','Numerology + Astrology','Predictive Numerology','Numerology Mastery'] },
-    ],
-    love: [
-      { key:'lv-attract',  icon:'💘', name:'Attracting Love', courses:['Attract Love (Astro + Energy)','Why You Attract Wrong Partners','Heal Love Life (Moon Energy)','Venus Activation for Love','Remove Emotional Blocks in Love','Calling in a Soulmate','Love Timing Through Astrology','Self-Love Activation Program','Heal Past Relationship Trauma','Love Manifestation in 21 Days','Why Love Doesn't Stay (Chart)','Open Your Heart Chakra','Attraction vs Attachment','Love Compatibility Basics','Reignite Passion in Relationships','Stop Chasing - Start Attracting','Remove Love Blockages (Karmic)','Divine Feminine / Masculine Balance','Energetic Boundaries in Love'] },
-      { key:'lv-marriage', icon:'💍', name:'Marriage', courses:['Marriage Delay - Causes & Remedies','When Will You Get Married?','Arranged vs Love Marriage Indicators','Fixing Marriage Blockages','Manglik Dosha - Practical','Second Marriage Yogas','Strengthening Marriage Bond','In-Laws Harmony (Astrology)','Marriage Compatibility Deep Dive','Divorce Indicators & Prevention','Karmic Marriages Explained','Spouse Nature Prediction','Marriage Timing Masterclass','Fixing Repeated Broken Alliances','Healing Marriage Conflicts','Spouse Attraction Through Remedies','Marriage Stability Indicators'] },
-    ],
-    health: [
-      { key:'hl-mental',   icon:'🧠', name:'Mental & Emotional', courses:['Stress & Anxiety Healing','Sleep Issues - Causes & Remedies','Emotional Healing (Moon)','Mental Clarity Activation','Overthinking Control System','Healing Chronic Patterns','Inner Child Healing Program','Emotional Stability Techniques'] },
-      { key:'hl-spiritual',icon:'🕉️', name:'Spiritual Growth', courses:['Energy Detox & Cleansing','Daily Energy Hygiene Routine','Find Your Life Purpose (Astrology)','Spiritual Awakening - Safe Path','Karma & Past Life Understanding','Connecting with Higher Guidance','Building a Spiritual Routine'] },
-    ],
-    career: [
-      { key:'ca-path',    icon:'🧭', name:'Finding Your Path', courses:['Find Your Right Career Path (Astrology)','Career Confusion to Clarity','Business vs Job – What Suits You','Entrepreneurship Astrology','Skill Alignment Through Chart','Finding Your Purpose Professionally','Personal Brand Energy'] },
-      { key:'ca-growth',  icon:'📈', name:'Growth & Timing', courses:['Job Change Timing','Promotion Indicators','Government Job Yogas','Career Growth Blockages','Saturn Lessons for Career','Leadership Activation','Career Success Manifestation','Decision Making in Career','Switching Careers Safely','Career Stability Indicators','Building Authority & Recognition'] },
-      { key:'ca-wellbeing',icon:'🌱',name:'Work Wellbeing', courses:['Work Stress & Burnout Healing','Office Politics & Energy Protection'] },
-    ],
-    money: [
-      { key:'mn-wealth',  icon:'💎', name:'Wealth & Yogas', courses:['Wealth Yogas in Your Chart','Dhan Yogas','Raj Yogas','Luxury & Lifestyle Yogas','Passive Income Indicators','Wealth Manifestation System','Abundance Consciousness Training'] },
-      { key:'mn-blocks',  icon:'🔓', name:'Remove Blockages', courses:['Remove Money Blockages','Money Mindset Reset','Debt Removal Energy Work','Stop Financial Leakages','Money Karma Healing','Saving vs Spending Patterns','Financial Discipline Through Saturn'] },
-      { key:'mn-growth',  icon:'📊', name:'Financial Growth', courses:['Financial Stability Through Astrology','Income Growth Strategies (Astro + Energy)','Investment Timing Astrology','Business Profit Activation','Attracting Opportunities for Income','Money Energy Activation Rituals','Business Expansion Timing','Cash Flow Stability Techniques'] },
-    ],
-    protection: [
-      { key:'pr-all', icon:'🛡️', name:'All Protection Courses', courses:['Nazar (Evil Eye) Detection & Removal','Psychic Attack – Identification & Protection','Energy Shielding Basics','Home Energy Protection System','Cord Cutting & Energy Boundaries'] },
-    ],
-  };
-
-  const overlay   = document.getElementById('megaOverlay');
-  const content   = document.getElementById('megaContent');
-  const trigBadge = document.getElementById('megaTriggerBadge');
-  const topBadge  = document.getElementById('megaSelectedBadge');
-  const footCount = document.getElementById('megaFooterCount');
-  let activeCat   = 'astrology';
-
-  // Course overlay elements (built once)
-  const courseOverlay = document.createElement('div');
-  courseOverlay.className = 'course-overlay';
-  courseOverlay.id = 'courseOverlay';
-  courseOverlay.innerHTML = `
-    <div class="course-sheet">
-      <div class="course-sheet-head">
-        <div class="course-sheet-head-left">
-          <span class="course-sheet-icon" id="csIcon"></span>
-          <span class="course-sheet-title" id="csTitle"></span>
-          <span class="course-sheet-count" id="csCount"></span>
-        </div>
-        <button class="course-sheet-back" id="csBack" type="button">← Back</button>
-      </div>
-      <div class="course-sheet-body">
-        <div class="course-grid" id="csGrid"></div>
-      </div>
-      <div class="course-sheet-footer">
-        <span class="course-sheet-footer-info"><b id="csSelectedCount">0</b> selected in this section</span>
-      </div>
-    </div>`;
-  document.body.appendChild(courseOverlay);
-
-  document.getElementById('csBack').addEventListener('click', closeCourseOverlay);
-  courseOverlay.addEventListener('click', e => { if(e.target === courseOverlay) closeCourseOverlay(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape' && courseOverlay.classList.contains('open')) closeCourseOverlay(); });
-
-  // Helper: get pool item by value
-  function getPoolItem(value) {
-    const candidates = document.querySelectorAll('.cat-pool input[name="courses"]');
-    for (const input of candidates) {
-      if (input.value === value) return input.closest('.cb-item');
+const CATEGORIES = {
+  astrology: {
+    icon: '♈', label: 'Pure Astrology', count: 100,
+    subcats: {
+      'Foundations & Chart Reading': ['Astrology Basics','12 Houses Deep Dive','12 Signs Psychology','9 Planets Explained','Lagna Importance','Moon Chart Reading','Sun Chart Reading','Planetary Dignities','Retrograde Planets','Combustion in Astrology','Aspects Explained','Conjunction Basics','Stellium Meaning','Elements & Modalities','Chart Structure Basics'],
+      'Chart Reading & Prediction': ['How to Read Any Chart','Lagna-Based Interpretation','Multi-Chart Synthesis','Transit Reading','Planetary Strength (Shadbala)','Yogas Identification','Prediction Basics','Advanced Prediction','Event Timing','Case Study Analysis','Birth Time Rectification','Chart Pattern Recognition','Planet Dominance','Weak Planet Fix','Chart Correction Techniques'],
+      'Dashas': ['Vimshottari Dasha','Yogini Dasha','Chara Dasha','Narayana Dasha','Kalachakra Dasha','Dasha Sandhi','Conditional Dashas','Dasha + Transit Integration','Life Timeline Mapping','Dasha Case Studies','Rahu Mahadasha','Saturn Mahadasha','Venus Mahadasha','Mars Mahadasha','Jupiter Mahadasha'],
+      'Divisional Charts': ['Navamsa (D9)','Dashamsa (D10)','Saptamsa (D7)','D12 Parents','D24 Education','D27 Strength','D30 Misfortune','D60 Karma','Vargas Integration','Predictive Vargas','Marriage via D9','Career via D10','Childbirth via D7','Spiritual Charts','Advanced Vargas'],
+      'Jaimini': ['Jaimini Basics','Karakas','Jaimini Raj Yogas','Marriage Indicators (Jaimini)','Argala','Jaimini Aspects','Career via Jaimini','Jaimini + Parashara'],
+      'Yogas & Doshas': ['Raj Yogas','Dhan Yogas','Vipreet Raj Yoga','Neech Bhanga','Kemadruma','Kala Sarpa','Manglik Dosha','Pitru Dosha','Guru Chandal','Daridra Yoga'],
+      'Muhurat': ['Muhurat Basics','Marriage Muhurat','Business Muhurat','Investment Muhurat','Property Muhurat','Surgery Muhurat','Travel Muhurat','Griha Pravesh Muhurat','Education Muhurat','Agreement Muhurat'],
+      'Prashna (Horary)': ['Prashna Basics','Yes/No Predictions (Prashna)','Lost Object (Prashna)','Relationship Questions (Prashna)','Career Questions (Prashna)','Finance Questions (Prashna)','Court Cases (Prashna)','Radical Charts','Moon in Prashna','Advanced Horary'],
     }
-    return null;
+  },
+  tarot: {
+    icon: '🃏', label: 'Tarot & Divination', count: 95,
+    subcats: {
+      'Tarot': ['Tarot Card Meanings','Tarot Beginner Spreads','Love Tarot','Career Tarot','Tarot Timing Techniques','Tarot Combinations','Healing Tarot','Tarot Journaling','Professional Tarot','Intuitive Tarot','Shadow Tarot','Manifestation Tarot','Daily Tarot Practice','Tarot Ethics','Tarot + Intuition','Tarot Case Studies','Advanced Tarot','Tarot Business Setup','Tarot Mastery'],
+      'Runes': ['Rune Basics','Rune Meanings','Rune Casting','Rune Spreads','Advanced Runes','Rune Magic','Rune Protection','Rune Manifestation','Rune Healing','Rune Case Studies','Nordic Symbolism','Rune Rituals','Rune Energy Work','Rune Intuition','Rune Mastery'],
+      'Pendulum & Dowsing': ['Pendulum Basics','Yes/No Dowsing','Energy Detection','Chakra Dowsing','Dowsing Decision Making','Advanced Dowsing','Dowsing Maps','Healing Dowsing','Clearing Energy (Dowsing)','Dowsing Practice','Business Decisions (Dowsing)','Location Dowsing','Health Scanning (Dowsing)','Dowsing Mastery'],
+      'Psychic & Intuition': ['Intuition Activation','Third Eye Awakening','Psychic Development','Clairvoyance','Aura Reading','Energy Scanning','Psychic Protection','Remote Viewing','Spirit Communication','Advanced Psychic','Mediumship Basics','Energy Sensitivity','Intuitive Decision Making','Inner Guidance System','Reading People Energetically','Psychic Boundaries','Intuition for Business','Intuition for Relationships','Psychic Mastery'],
+      'Other Divination': ['Coffee Reading','Tea Reading','Dice Divination','Coin Divination','Bibliomancy','Charm Casting','Oil Divination','Rice Divination','Cowrie Reading','Dream Interpretation','Akashic Records','Past Life Reading','Spirit Animal Reading','Shamanic Journeying','Egyptian Oracle','Hermetic Systems','Hybrid Divination','Divination Mastery'],
+    }
+  },
+  energy: {
+    icon: '🌀', label: 'Energy, Healing & Manifestation', count: 54,
+    subcats: {
+      'Reiki': ['Reiki Level 1','Reiki Level 2','Daily Reiki Practice','Chakra Healing (Reiki)','Emotional Healing (Reiki)','Distance Healing','Money Healing (Reiki)','Relationship Healing (Reiki)','Health Healing (Reiki)','Energy Protection','Reiki + Manifestation','Reiki Case Studies','Reiki Business','Advanced Reiki','Reiki Mastery'],
+      'Vastu': ['Vastu Basics','Home Vastu','Office Vastu','Wealth Vastu','Relationship Vastu','Entrance Vastu','Bedroom Vastu','Kitchen Vastu','Zero-cost Vastu Remedies','Plants & Symbols (Vastu)','Vastu Space Clearing','Energy Flow (Vastu)','Vastu Case Studies','Advanced Vastu','Vastu Mastery'],
+      'Manifestation & Magic': ['Law of Attraction','Scripting','369 Method','Water Charging','Candle Magic','Sigil Creation','Mirror Work','Affirmations','Switchwords','Grabovoi Codes','Energy Shifting','Block Removal','Money Manifestation','Love Manifestation','Reality Shifting','Frequency Work','Shadow Work','Inner Child Healing','Cord Cutting','Aura Cleansing','Moon Rituals','Elemental Magic','Daily Ritual System','Manifestation Mastery'],
+    }
+  },
+  specialised: {
+    icon: '📚', label: 'Specialised Tracks', count: 33,
+    subcats: {
+      'Jaimini Track': ['Jaimini Track Basics','Karakas Deep Dive','Argala (Jaimini)','Jaimini Remedies','Jaimini for Professionals','Jaimini Certification'],
+      'Lal Kitab': ['Lal Kitab Basics','Houses in Lal Kitab','Planets in Lal Kitab','Lal Kitab Remedies System','Lal Kitab Debt & Money Remedies','Lal Kitab Relationship Remedies','Lal Kitab Health Remedies','Lal Kitab Career Remedies','Lal Kitab Dosha Correction','Lal Kitab Case Studies','Lal Kitab Advanced Remedies','Lal Kitab Ethics','Lal Kitab Mastery'],
+      'Numerology': ['Numerology Basics','Mulank','Bhagyank','Name Numerology','Mobile Number Analysis','Business Name Numerology','Signature Correction','Numerology Compatibility','Timing via Numbers','Numerology Remedies','Numerology Case Studies','Numerology + Astrology','Predictive Numerology','Numerology Mastery'],
+    }
+  },
+  love: {
+    icon: '💞', label: 'Love, Relationships & Marriage', count: 40,
+    subcats: {
+      'Love & Attraction': ['Attract Love (Astro + Energy)','Why You Attract Wrong Partners','Heal Love Life (Moon Energy)','Venus Activation for Love','Remove Emotional Blocks in Love','Calling in a Soulmate','Love Timing Through Astrology','Self-Love Activation Program','Heal Past Relationship Trauma','Love Manifestation in 21 Days','Why Love Doesn\'t Stay (Chart)','Open Your Heart Chakra','Attraction vs Attachment','Love Compatibility Basics','Reignite Passion in Relationships','Stop Chasing - Start Attracting','Remove Love Blockages (Karmic)','Divine Feminine / Masculine Balance','Energetic Boundaries in Love'],
+      'Marriage': ['Marriage Delay - Causes & Remedies','When Will You Get Married?','Arranged vs Love Marriage Indicators','Fixing Marriage Blockages','Manglik Dosha - Practical','Second Marriage Yogas','Strengthening Marriage Bond','In-Laws Harmony (Astrology)','Marriage Compatibility Deep Dive','Divorce Indicators & Prevention','Karmic Marriages Explained','Spouse Nature Prediction','Marriage Timing Masterclass','Fixing Repeated Broken Alliances','Healing Marriage Conflicts','Spouse Attraction Through Remedies','Marriage Stability Indicators'],
+    }
+  },
+  health: {
+    icon: '🌿', label: 'Health, Wellbeing & Spiritual Growth', count: 15,
+    subcats: {
+      'Health & Wellbeing': ['Stress & Anxiety Healing','Sleep Issues - Causes & Remedies','Emotional Healing (Moon)','Mental Clarity Activation','Overthinking Control System','Energy Detox & Cleansing','Healing Chronic Patterns','Inner Child Healing Program','Emotional Stability Techniques','Daily Energy Hygiene Routine'],
+      'Spiritual Growth': ['Find Your Life Purpose (Astrology)','Spiritual Awakening - Safe Path','Karma & Past Life Understanding','Connecting with Higher Guidance','Building a Spiritual Routine'],
+    }
   }
+};
 
-  function getSubcatSelected(subcat) {
-    return subcat.courses.filter(v => {
-      const item = getPoolItem(v);
-      return item && item.classList.contains('on');
-    }).length;
-  }
+// Track selected courses globally
+const selected = new Set();
+let activeCat = null;
+let activeSubcat = null;
 
-  function getTotalSelected() {
-    return document.querySelectorAll('.cat-pool input[name="courses"]:checked').length;
-  }
+// ── OVERLAY OPEN ──
+function openOverlay(catKey) {
+  activeCat = catKey;
+  const cat = CATEGORIES[catKey];
+  const subcats = Object.keys(cat.subcats);
 
-  function getCatSelected(catKey) {
-    const subs = SUBCATS[catKey] || [];
-    return subs.reduce((sum, s) => sum + getSubcatSelected(s), 0);
-  }
+  document.getElementById('overlayIcon').textContent = cat.icon;
+  document.getElementById('overlayTitle').textContent = cat.label;
+  document.getElementById('overlayCount').textContent = cat.count + ' courses';
 
-  function updateAllCounts() {
-    const total = getTotalSelected();
-    trigBadge.textContent = total + ' selected';
-    topBadge.textContent  = total + ' selected';
-    footCount.textContent = total + ' selected';
-    document.querySelectorAll('.mega-nav-item').forEach(nav => {
-      const k = nav.dataset.cat;
-      const n = getCatSelected(k);
-      const badge = document.getElementById('nbadge-' + k);
-      if (badge) { badge.textContent = n; badge.classList.toggle('show', n > 0); }
-    });
-  }
+  // Build sidebar
+  const sidebar = document.getElementById('overlaySidebar');
+  sidebar.innerHTML = '';
+  subcats.forEach((sc, i) => {
+    const courses = cat.subcats[sc];
+    const selCount = courses.filter(c => selected.has(c)).length;
+    const btn = document.createElement('div');
+    btn.className = 'subcat-btn' + (selCount > 0 ? ' has-sel' : '') + (i === 0 ? ' active' : '');
+    btn.dataset.subcat = sc;
+    btn.innerHTML = `<span class="sb-dot"></span>${sc}<span class="sb-count">${courses.length}</span>`;
+    btn.addEventListener('click', () => activateSubcat(sc));
+    sidebar.appendChild(btn);
+  });
 
-  // ── Render subcategory tile view ────────────────────────────────────────────
-  function renderSubcats(catKey) {
-    activeCat = catKey;
-    document.querySelectorAll('.mega-nav-item').forEach(n => n.classList.toggle('active', n.dataset.cat === catKey));
-    const pool = document.querySelector(`.cat-pool[data-cat="${catKey}"]`);
-    const icon  = pool ? pool.dataset.icon  : '';
-    const title = pool ? pool.dataset.title : catKey;
-    const subs  = SUBCATS[catKey] || [];
+  // Build content
+  const content = document.getElementById('overlayContent');
+  content.innerHTML = '';
+  subcats.forEach((sc, i) => {
+    const section = document.createElement('div');
+    section.className = 'subcat-section' + (i === 0 ? ' active' : '');
+    section.dataset.subcat = sc;
 
-    content.innerHTML = '';
-    const view = document.createElement('div');
-    view.className = 'subcat-view';
+    const label = document.createElement('div');
+    label.className = 'subcat-label';
+    label.textContent = sc;
+    section.appendChild(label);
 
-    const head = document.createElement('div');
-    head.className = 'subcat-view-head';
-    head.innerHTML = `<span class="subcat-view-icon">${icon}</span><span class="subcat-view-title">${title}</span>`;
-    view.appendChild(head);
+    const grid = document.createElement('div');
+    grid.className = 'course-grid-5';
 
-    const hint = document.createElement('p');
-    hint.className = 'subcat-view-hint';
-    hint.textContent = 'Choose a topic area to browse courses';
-    view.appendChild(hint);
-
-    const tilesWrap = document.createElement('div');
-    tilesWrap.className = 'subcat-tiles';
-
-    subs.forEach(sub => {
+    cat.subcats[sc].forEach(course => {
       const tile = document.createElement('div');
-      tile.className = 'subcat-tile';
-      tile.dataset.subkey = sub.key;
-      const n = getSubcatSelected(sub);
-      tile.innerHTML = `
-        <span class="subcat-tile-badge${n>0?' show':''}" id="tbadge-${sub.key}">${n}</span>
-        <span class="subcat-tile-icon">${sub.icon}</span>
-        <span class="subcat-tile-name">${sub.name}</span>
-        <span class="subcat-tile-count">${sub.courses.length} courses</span>`;
-      tile.addEventListener('click', () => openCourseOverlay(sub, catKey));
-      tilesWrap.appendChild(tile);
+      tile.className = 'ct' + (selected.has(course) ? ' on' : '');
+      tile.innerHTML = `<input type="checkbox" name="courses" value="${course}" ${selected.has(course)?'checked':''}><div class="ct-check"></div><span class="ct-txt">${course}</span>`;
+      tile.addEventListener('click', () => toggleCourse(course, tile, catKey));
+      grid.appendChild(tile);
     });
 
-    view.appendChild(tilesWrap);
-    content.appendChild(view);
+    section.appendChild(grid);
+    content.appendChild(section);
+  });
+
+  activeSubcat = subcats[0];
+  updateOverlaySelCount();
+  document.getElementById('overlayPanel').classList.add('visible');
+  document.body.style.overflow = 'hidden';
+}
+
+function activateSubcat(sc) {
+  activeSubcat = sc;
+  document.querySelectorAll('.subcat-btn').forEach(b => b.classList.toggle('active', b.dataset.subcat === sc));
+  document.querySelectorAll('.subcat-section').forEach(s => s.classList.toggle('active', s.dataset.subcat === sc));
+}
+
+function toggleCourse(course, tile, catKey) {
+  if (selected.has(course)) {
+    selected.delete(course);
+    tile.classList.remove('on');
+    tile.querySelector('input').checked = false;
+  } else {
+    selected.add(course);
+    tile.classList.add('on');
+    tile.querySelector('input').checked = true;
   }
-
-  // ── Open course overlay for a subcategory ────────────────────────────────────
-  function openCourseOverlay(sub, catKey) {
-    const pool = document.querySelector(`.cat-pool[data-cat="${catKey}"]`);
-    document.getElementById('csIcon').textContent  = sub.icon;
-    document.getElementById('csTitle').textContent = sub.name;
-    document.getElementById('csCount').textContent = ` · ${sub.courses.length} courses`;
-
-    const grid = document.getElementById('csGrid');
-    grid.innerHTML = '';
-
-    sub.courses.forEach(val => {
-      const origItem = getPoolItem(val);
-      if (!origItem) return;
-      const clone = origItem.cloneNode(true);
-      const origCb = origItem.querySelector('input[type=checkbox]');
-      const cloneCb = clone.querySelector('input[type=checkbox]');
-      if (origCb && origCb.checked) { clone.classList.add('on'); if(cloneCb) cloneCb.checked=true; }
-      clone.addEventListener('click', () => {
-        const nowOn = !clone.classList.contains('on');
-        clone.classList.toggle('on', nowOn);
-        if (cloneCb) cloneCb.checked = nowOn;
-        origItem.classList.toggle('on', nowOn);
-        if (origCb) origCb.checked = nowOn;
-        updateCourseOverlayCounts(sub);
-        updateAllCounts();
-        updateProgress();
-        // update tile badge
-        const n = getSubcatSelected(sub);
-        const tb = document.getElementById('tbadge-' + sub.key);
-        if (tb) { tb.textContent = n; tb.classList.toggle('show', n > 0); }
-      });
-      grid.appendChild(clone);
+  updateOverlaySelCount();
+  updatePillDot(catKey);
+  updateTotalCount();
+  // update sidebar dot
+  if (activeCat && activeSubcat) {
+    const cat = CATEGORIES[activeCat];
+    document.querySelectorAll('.subcat-btn').forEach(btn => {
+      const courses = cat.subcats[btn.dataset.subcat] || [];
+      const hasSel = courses.some(c => selected.has(c));
+      btn.classList.toggle('has-sel', hasSel);
     });
-
-    updateCourseOverlayCounts(sub);
-    courseOverlay.classList.add('open');
   }
+}
 
-  function updateCourseOverlayCounts(sub) {
-    document.getElementById('csSelectedCount').textContent = getSubcatSelected(sub);
-  }
+function updateOverlaySelCount() {
+  if (!activeCat) return;
+  const cat = CATEGORIES[activeCat];
+  const allCourses = Object.values(cat.subcats).flat();
+  const count = allCourses.filter(c => selected.has(c)).length;
+  document.getElementById('overlaySelCount').textContent = count;
+}
 
-  function closeCourseOverlay() {
-    courseOverlay.classList.remove('open');
-    // Refresh tile badges
-    renderSubcats(activeCat);
-    updateAllCounts();
-  }
+function updatePillDot(catKey) {
+  const cat = CATEGORIES[catKey];
+  const allCourses = Object.values(cat.subcats).flat();
+  const hasSel = allCourses.some(c => selected.has(c));
+  const pill = document.querySelector(`.cat-pill[data-cat="${catKey}"]`);
+  if (pill) pill.classList.toggle('has-selection', hasSel);
+}
 
-  // ── Mega open/close ───────────────────────────────────────────────────────
-  function openMega() {
-    overlay.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    renderSubcats(activeCat);
-    updateAllCounts();
-  }
-  function closeMega() {
-    courseOverlay.classList.remove('open');
-    overlay.classList.remove('open');
-    document.body.style.overflow = '';
-    updateAllCounts();
-  }
+function updateTotalCount() {
+  document.getElementById('totalCount').textContent = selected.size;
+}
 
-  document.getElementById('megaTriggerBtn').addEventListener('click', openMega);
-  document.getElementById('megaClose').addEventListener('click', closeMega);
-  document.getElementById('megaDone').addEventListener('click', closeMega);
-  overlay.addEventListener('click', e => { if(e.target === overlay) closeMega(); });
-  document.addEventListener('keydown', e => { if(e.key === 'Escape' && overlay.classList.contains('open') && !courseOverlay.classList.contains('open')) closeMega(); });
+function closeOverlay() {
+  document.getElementById('overlayPanel').classList.remove('visible');
+  document.body.style.overflow = '';
+  activeCat = null;
+}
 
-  document.querySelectorAll('.mega-nav-item').forEach(nav => {
-    nav.addEventListener('click', () => renderSubcats(nav.dataset.cat));
-  });
-
-})();
-
-/* Checkboxes — tick handled purely by CSS ::after, no textContent needed */
-document.querySelectorAll('.cb-item').forEach(item => {
-  item.addEventListener('click', () => {
-    item.classList.toggle('on');
-    const cb = item.querySelector('input[type=checkbox]');
-    if (cb) cb.checked = item.classList.contains('on');
-    updateProgress();
-  });
+// ── EVENTS ──
+document.querySelectorAll('.cat-pill').forEach(pill => {
+  pill.addEventListener('click', () => openOverlay(pill.dataset.cat));
+});
+document.getElementById('overlayClose').addEventListener('click', closeOverlay);
+document.getElementById('btnDone').addEventListener('click', closeOverlay);
+document.getElementById('overlayPanel').addEventListener('click', e => {
+  if (e.target === document.getElementById('overlayPanel')) closeOverlay();
 });
 
 /* Progress */
@@ -1439,8 +875,7 @@ function toast(msg, ms=4000) {
 
 /* Collect selected courses */
 function getCourses() {
-  return Array.from(document.querySelectorAll('input[name="courses"]:checked'))
-    .map(c => c.value).join(', ') || 'None selected';
+  return selected.size > 0 ? [...selected].join(', ') : 'None selected';
 }
 
 /* Submit */
@@ -1470,25 +905,7 @@ document.getElementById('form').addEventListener('submit', async function(e) {
     message:      document.querySelector('[name=message]').value.trim(),
     submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
   };
-.mega-content {
-  flex: 1;
-  overflow-y: auto;
-  padding: 16px;
-}
 
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 8px;
-}
-
-/* better mobile */
-@media(max-width:900px){
-  .course-grid{grid-template-columns:repeat(3,1fr)}
-}
-@media(max-width:560px){
-  .course-grid{grid-template-columns:repeat(2,1fr)}
-}
   try {
     await fetch(SHEET_URL, {
       method: 'POST', mode: 'no-cors',
