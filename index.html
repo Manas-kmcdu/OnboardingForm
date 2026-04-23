@@ -416,7 +416,98 @@ box-shadow:0 8px 24px rgba(0,0,0,.2);
 z-index:9999;opacity:0;transition:all .3s ease;
 }
 .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+<script>
+const megaOverlay = document.getElementById("megaOverlay");
+const megaTrigger = document.getElementById("megaTriggerBtn");
+const megaClose = document.getElementById("megaClose");
+const megaContent = document.getElementById("megaContent");
+const megaDone = document.getElementById("megaDone");
 
+let selectedCourses = new Set();
+
+/* OPEN */
+megaTrigger.onclick = () => {
+  megaOverlay.classList.add("open");
+};
+
+/* CLOSE */
+megaClose.onclick = closeMega;
+megaDone.onclick = closeMega;
+
+function closeMega() {
+  megaOverlay.classList.remove("open");
+}
+
+/* CATEGORY SWITCH */
+document.querySelectorAll(".mega-nav-item").forEach(item => {
+  item.addEventListener("click", () => {
+
+    document.querySelectorAll(".mega-nav-item")
+      .forEach(i => i.classList.remove("active"));
+
+    item.classList.add("active");
+
+    const cat = item.dataset.cat;
+    loadCategory(cat);
+  });
+});
+
+/* LOAD CATEGORY */
+function loadCategory(cat) {
+  const pool = document.querySelector(`.cat-pool[data-cat="${cat}"]`);
+  if (!pool) return;
+
+  megaContent.innerHTML = "";
+
+  const clone = pool.querySelector(".course-grid").cloneNode(true);
+
+  megaContent.appendChild(clone);
+
+  attachCheckboxLogic();
+}
+
+/* CHECKBOX LOGIC */
+function attachCheckboxLogic() {
+  document.querySelectorAll(".cb-item").forEach(item => {
+
+    const checkbox = item.querySelector("input");
+
+    /* restore state */
+    if (selectedCourses.has(checkbox.value)) {
+      checkbox.checked = true;
+      item.classList.add("on");
+    }
+
+    item.onclick = () => {
+      checkbox.checked = !checkbox.checked;
+
+      if (checkbox.checked) {
+        selectedCourses.add(checkbox.value);
+        item.classList.add("on");
+      } else {
+        selectedCourses.delete(checkbox.value);
+        item.classList.remove("on");
+      }
+
+      updateUI();
+    };
+  });
+}
+
+/* UPDATE COUNTERS */
+function updateUI() {
+  const count = selectedCourses.size;
+
+  document.getElementById("megaSelectedBadge").innerText = count + " selected";
+  document.getElementById("megaFooterCount").innerText = count + " selected";
+  document.getElementById("megaTriggerBadge").innerText = count + " selected";
+}
+
+/* INITIAL LOAD */
+loadCategory("astrology");
+</script>
+  
+  
 /* ── SUCCESS ── */
 .success {
 display:none;text-align:center;
@@ -584,7 +675,32 @@ box-shadow:0 4px 24px rgba(114,17,198,.1);
 
   <!-- COURSE DATA (hidden pools) -->
   <div style="display:none">
+<!-- ONLY SHOWING UPDATED / FIXED PARTS -->
 
+<!-- 🔥 FIXED: COURSE POOL STRUCTURE (NO NESTED GRID BUG) -->
+<div class="cat-pool" data-cat="astrology" data-icon="♈" data-title="Pure Astrology">
+
+  <!-- ❌ REMOVED duplicate course-grid wrapper -->
+  <!-- ✅ ONLY ONE GRID -->
+
+  <div class="course-grid">
+
+    <div class="cb-item">
+      <input type="checkbox" name="courses" value="Astrology Basics">
+      <div class="cb-box"></div>
+      <span class="cb-txt">Astrology Basics</span>
+    </div>
+
+    <div class="cb-item">
+      <input type="checkbox" name="courses" value="12 Houses Deep Dive">
+      <div class="cb-box"></div>
+      <span class="cb-txt">12 Houses Deep Dive</span>
+    </div>
+
+    <!-- KEEP ALL YOUR COURSES SAME -->
+    
+  </div>
+</div>
   <!-- PURE ASTROLOGY -->
   <div class="cat-pool" data-cat="astrology" data-icon="♈" data-title="Pure Astrology" data-count="100 courses" data-sub="Foundations · Chart Reading · Dashas · Divisional Charts · Jaimini · Yogas & Doshas · Muhurat · Prashna">
     <div class="course-grid">
@@ -1354,7 +1470,25 @@ document.getElementById('form').addEventListener('submit', async function(e) {
     message:      document.querySelector('[name=message]').value.trim(),
     submitted_at: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
   };
+.mega-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+}
 
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+/* better mobile */
+@media(max-width:900px){
+  .course-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:560px){
+  .course-grid{grid-template-columns:repeat(2,1fr)}
+}
   try {
     await fetch(SHEET_URL, {
       method: 'POST', mode: 'no-cors',
