@@ -1135,7 +1135,11 @@ const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzcNPv86mD5R7q8lwVers
 
   // Helper: get pool item by value
   function getPoolItem(value) {
-    return document.querySelector(`.cat-pool input[name="courses"][value="${CSS.escape(value)}"]`)?.closest('.cb-item');
+    const candidates = document.querySelectorAll('.cat-pool input[name="courses"]');
+    for (const input of candidates) {
+      if (input.value === value) return input.closest('.cb-item');
+    }
+    return null;
   }
 
   function getSubcatSelected(subcat) {
