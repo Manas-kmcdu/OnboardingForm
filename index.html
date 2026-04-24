@@ -595,6 +595,21 @@ select option{background:#fff;color: var(--dark)}
         <span class="pill-count">15</span>
         <span class="pill-selected-dot"></span>
       </div>
+      <div class="cat-pill" data-cat="career">
+        <span class="pill-icon">💼</span> Career & Professional
+        <span class="pill-count">20</span>
+        <span class="pill-selected-dot"></span>
+      </div>
+      <div class="cat-pill" data-cat="money">
+        <span class="pill-icon">💰</span> Money & Financial
+        <span class="pill-count">20</span>
+        <span class="pill-selected-dot"></span>
+      </div>
+      <div class="cat-pill" data-cat="protection">
+        <span class="pill-icon">🛡️</span> Protection & Safety
+        <span class="pill-count">5</span>
+        <span class="pill-selected-dot"></span>
+      </div>
     </div>
   </div>
   <div class="cat-strip-line"></div>
@@ -648,9 +663,7 @@ select option{background:#fff;color: var(--dark)}
     </div>
 
     <div class="overlay-body">
-      <!-- sidebar subcats will be injected here -->
       <div class="overlay-sidebar" id="overlaySidebar"></div>
-      <!-- content area -->
       <div class="overlay-content" id="overlayContent"></div>
     </div>
 
@@ -719,6 +732,28 @@ const CATEGORIES = {
     subcats: {
       'Health & Wellbeing': ['Stress & Anxiety Healing','Sleep Issues - Causes & Remedies','Emotional Healing (Moon)','Mental Clarity Activation','Overthinking Control System','Energy Detox & Cleansing','Healing Chronic Patterns','Inner Child Healing Program','Emotional Stability Techniques','Daily Energy Hygiene Routine'],
       'Spiritual Growth': ['Find Your Life Purpose (Astrology)','Spiritual Awakening - Safe Path','Karma & Past Life Understanding','Connecting with Higher Guidance','Building a Spiritual Routine'],
+    }
+  },
+  career: {
+    icon: '💼', label: 'Career & Professional Growth', count: 20,
+    subcats: {
+      'Career Clarity & Direction': ['Find Your Right Career Path (Astrology)','Career Confusion to Clarity','Business vs Job – What Suits You','Entrepreneurship Astrology','Skill Alignment Through Chart','Finding Your Purpose Professionally','Personal Brand Energy'],
+      'Career Timing & Growth': ['Job Change Timing','Promotion Indicators','Government Job Yogas','Career Growth Blockages','Switching Careers Safely','Career Stability Indicators','Building Authority & Recognition'],
+      'Career Challenges & Energy': ['Saturn Lessons for Career','Work Stress & Burnout Healing','Decision Making in Career','Leadership Activation','Career Success Manifestation','Office Politics & Energy Protection'],
+    }
+  },
+  money: {
+    icon: '💰', label: 'Money & Financial Growth', count: 20,
+    subcats: {
+      'Wealth & Abundance': ['Wealth Yogas in Your Chart','Luxury & Lifestyle Yogas','Passive Income Indicators','Abundance Consciousness Training','Money Karma Healing','Wealth Manifestation System'],
+      'Money Blockages & Mindset': ['Remove Money Blockages','Money Mindset Reset','Stop Financial Leakages','Saving vs Spending Patterns','Financial Discipline Through Saturn','Money Energy Activation Rituals'],
+      'Financial Growth & Timing': ['Financial Stability Through Astrology','Income Growth Strategies (Astro + Energy)','Debt Removal Energy Work','Investment Timing Astrology','Business Profit Activation','Business Expansion Timing','Cash Flow Stability Techniques','Attracting Opportunities for Income'],
+    }
+  },
+  protection: {
+    icon: '🛡️', label: 'Protection & Energy Safety', count: 5,
+    subcats: {
+      'Protection & Shielding': ['Nazar (Evil Eye) Detection & Removal','Psychic Attack – Identification & Protection','Energy Shielding Basics','Home Energy Protection System','Cord Cutting & Energy Boundaries'],
     }
   }
 };
@@ -805,7 +840,6 @@ function toggleCourse(course, tile, catKey) {
   updateOverlaySelCount();
   updatePillDot(catKey);
   updateTotalCount();
-  // update sidebar dot
   if (activeCat && activeSubcat) {
     const cat = CATEGORIES[activeCat];
     document.querySelectorAll('.subcat-btn').forEach(btn => {
